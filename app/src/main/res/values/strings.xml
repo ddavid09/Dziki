@@ -4,9 +4,9 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_map">Mapa</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_activity_login_activiy">LoginActiviy</string>
+    <string name="title_dashboard">List</string>
+    <string name="title_notifications">Moje</string>
+    <string name="title_activity_login_activiy">Info</string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
@@ -15,4 +15,5 @@
     <string name="city">Miasto</string>
     <string name="borough">Powiat</string>
     <string name="voivodeship">Województwo</string>
+    <string name="title_info">Info</string>
 </resources>
