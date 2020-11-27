@@ -1,22 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dashboard.DashboardFragment">
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    android:gravity="center">
 
-    <TextView
-        android:id="@+id/text_dashboard"
+
+    <EditText
+        android:hint="@string/city"
+        android:layout_width="match_parent"
+        android:textSize="18sp"
+        android:id="@+id/city_text_view"
+        android:imeOptions="actionNone"
+        android:maxLines="1"
+        android:inputType="text"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="@string/borough"
+        android:id="@+id/borough_text_view"
+        android:textSize="18sp"
+        android:inputType="text"
+        android:layout_margin="10dp"
+        android:imeOptions="actionNone"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="@string/voivodeship"
+        android:id="@+id/voivodeship_text_view"
+        android:textSize="18sp"
+        android:inputType="text"
+        android:layout_margin="10dp"
+        android:imeOptions="actionNone"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="SUBMIT AS FUCK"
+        android:id="@+id/go_to_map_button"/>
+
+
+
+</LinearLayout>
