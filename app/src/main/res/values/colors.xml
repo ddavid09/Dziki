@@ -10,5 +10,6 @@
     <color name="navy1">#45540E</color>
     <color name="navy2">#39381d</color>
     <color name="green">#5d9117</color>
+    <color name="grey_light">#BDB9B9</color>
     <color name="grey">#6b7359</color>
 </resources>
