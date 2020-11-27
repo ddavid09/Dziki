@@ -1,6 +1,7 @@
 package coddiers.hackyeah.dziki.database
 
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.google.android.gms.maps.model.LatLng
@@ -13,6 +14,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import java.io.ByteArrayOutputStream
+import java.io.File
 
 
 class DataBase() {
@@ -70,7 +72,6 @@ class DataBase() {
         }
     }
 
-
     fun getReports(dead:Boolean?, region:String, subregion:String, commune:String): MutableLiveData<ArrayList<Report>> {
         //borough:String
         val MLreports :MutableLiveData<ArrayList<Report>> = MutableLiveData<ArrayList<Report>>()
@@ -118,6 +119,24 @@ class DataBase() {
         return MLreports
 
     }
+
+    fun getPhoto(report: Report): MutableLiveData<Bitmap>{
+        val liveBitmap: MutableLiveData<Bitmap> = MutableLiveData()
+        val storageRef = storage.reference
+
+        var pictureRef = storageRef.child("photos/"+ report.ID + ".jpg")
+
+        val localFile = File.createTempFile("image_"+report.ID, "jpg")
+
+        pictureRef.getFile(localFile).addOnSuccessListener {
+            liveBitmap.value = BitmapFactory.decodeFile(localFile.absolutePath)
+            // Local temp file has been created
+        }.addOnFailureListener {
+            // Handle any errors
+        }
+        return liveBitmap
+    }
+
 
 
 
