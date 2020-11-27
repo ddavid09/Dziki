@@ -34,6 +34,7 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
 
         map.uiSettings.isZoomControlsEnabled = true
         map.setOnMarkerClickListener(this)
+        map.mapType = GoogleMap.MAP_TYPE_HYBRID
 
         setUpMap()
     }
