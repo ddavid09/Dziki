@@ -2,6 +2,7 @@ package coddiers.hackyeah.dziki.ui.dashboard
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Intent
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
@@ -23,6 +24,7 @@ class DashboardFragment : Fragment() {
     private lateinit var voivodeshipEditText: EditText;
     private lateinit var goToMapButton: Button;
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,6 +35,11 @@ class DashboardFragment : Fragment() {
         boroughEditText = root.findViewById(R.id.borough_text_view)
         voivodeshipEditText = root.findViewById(R.id.voivodeship_text_view)
         goToMapButton = root.findViewById(R.id.go_to_map_button)
+        val intent = Intent(this.activity, MapToApplicationActivity::class.java)
+        goToMapButton.setOnClickListener{
+            activity?.startActivity(intent)
+        }
+
         cityEditText.setOnKeyListener(View.OnKeyListener { _, keyCode, keyevent ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && keyevent.action == KeyEvent.ACTION_UP) {
                 getAddress(cityEditText.text.toString())
@@ -68,3 +75,4 @@ class DashboardFragment : Fragment() {
         imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
 }
+
