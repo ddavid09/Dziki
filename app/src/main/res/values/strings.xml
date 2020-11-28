@@ -16,4 +16,6 @@
     <string name="borough">Powiat</string>
     <string name="voivodeship">Województwo</string>
     <string name="title_info">Info</string>
+    <string name="fab_content_desc">Przycisk dodawania zgloszenia</string>
+    <string name="extended_fab_label">Dodaj zgłoszenie</string>
 </resources>
