@@ -1,17 +1,11 @@
-package coddiers.hackyeah.dziki.ui.dashboard
+package coddiers.hackyeah.dziki
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.PackageManager
-import android.location.Address
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.Report
-import coddiers.hackyeah.dziki.ui.map.MapFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -50,7 +44,7 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleM
                 Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
                 arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                MapToApplicationActivity.LOCATION_PERMISSION_REQUEST_CODE
+                LOCATION_PERMISSION_REQUEST_CODE
             )
             return
         }
@@ -66,7 +60,8 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleM
                 .title("Marker in Sydney")
                 .draggable(true)
         )
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, 17f))
     }
 
     override fun onMarkerClick(p0: Marker?): Boolean {

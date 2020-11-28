@@ -1,5 +1,6 @@
 package coddiers.hackyeah.dziki
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -16,11 +17,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        val intentToMap = Intent(this, BoarNotificationAvtivity::class.java).apply {
 
+        }
         val navController = findNavController(R.id.nav_host_fragment)
         val button : Button = findViewById(R.id.extended_fab_add_new_boar)
         button.setOnClickListener{
-            Toast.makeText(this, "Super dziala", Toast.LENGTH_LONG).show()
+            startActivity(intentToMap)
         }
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
