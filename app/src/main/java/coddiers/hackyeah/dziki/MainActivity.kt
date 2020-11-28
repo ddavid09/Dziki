@@ -75,21 +75,14 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-        var fragment: Fragment? = null
-        fragment = MapFragment();
-        replaceFragment(fragment)
-
-
         var nv = findViewById<BottomNavigationView>(R.id.nav_view)
 
 
         nv.setOnNavigationItemSelectedListener { item ->
             var fragment: Fragment? = null
-            Log.d("huj", "whcuj")
                 when(item.itemId) {
 
                 R.id.navigation_info -> {
-                    Log.d("huj", "whcuj")
                     var intent = Intent(this, InfoSliderActivity::class.java)
                     startActivity(intent)
                     true
@@ -109,6 +102,21 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 else -> false
+            }
+        }
+
+        var Intent = intent
+        var fragment: Fragment? = null
+        when(intent.getStringExtra("tab")) {
+            "lista" -> {
+                fragment = NotificationsFragment();
+                replaceFragment(fragment)
+                nv.selectedItemId = R.id.navigation_notifications
+                true
+            }
+            else -> {
+                fragment = MapFragment();
+                replaceFragment(fragment)
             }
         }
     }

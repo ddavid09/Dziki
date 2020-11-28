@@ -1,6 +1,7 @@
 package coddiers.hackyeah.dziki
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -43,12 +44,18 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback, Google
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
 
-        topAppBar.setNavigationOnClickListener {finish();}
+        topAppBar.setNavigationOnClickListener {
+            finish()
+        }
 
         topAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.accept -> {
                     createReport()
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("tab","lista")
+                    startActivity(intent)
+                    finish()
                     true
                 }
                 else -> false
