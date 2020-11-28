@@ -75,7 +75,7 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback, Google
         }catch (exp: IllegalStateException){
             bitmap = null
         }
-        Log.d("DESC", intent.getStringExtra("description"))
+        Log.d("DESC", intent.getBooleanExtra("deathStatus", false).toString())
         database.uploadReport(currentLocation,
                 intent.getStringExtra("description"),
                 bitmap,

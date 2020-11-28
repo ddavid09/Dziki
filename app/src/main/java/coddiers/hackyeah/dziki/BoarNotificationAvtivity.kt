@@ -149,10 +149,12 @@ class BoarNotificationAvtivity : AppCompatActivity() {
                 R.id.alive ->
                     if (checked) {
                         deathStatus = false
+                        intentToMap.putExtra("deathStatus", deathStatus)
                     }
                 R.id.dead ->
                     if (checked) {
                         deathStatus = true
+                        intentToMap.putExtra("deathStatus", deathStatus)
                     }
             }
         }
@@ -179,7 +181,6 @@ class BoarNotificationAvtivity : AppCompatActivity() {
             intentToMap.putExtra("lng", location.longitude.toString())
             intentToMap.putExtra("region", location.adminArea.toLowerCase())
             intentToMap.putExtra("subregion", location.subAdminArea.toLowerCase())
-            intentToMap.putExtra("deathStatus", deathStatus)
             boroughEditText.setText("" + location.subAdminArea.toString().toLowerCase())
             voivodeshipEditText.setText("" + location.adminArea.toString().toLowerCase())
             Log.d("letter", location.adminArea.toLowerCase())
