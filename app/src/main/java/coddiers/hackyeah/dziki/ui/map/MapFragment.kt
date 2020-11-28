@@ -15,7 +15,11 @@ import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import coddiers.hackyeah.dziki.ItemViewModel
 import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.DataBase
 import coddiers.hackyeah.dziki.database.Report
@@ -31,10 +35,11 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
     private lateinit var map: GoogleMap
     private lateinit var lastLocation: Location
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private var currentLocation: DoubleArray = doubleArrayOf(0.0, 0.0)
+    private var creating: Boolean = true
 
     companion object{private const val LOCATION_PERMISSION_REQUEST_CODE = 1}
 
+    private val viewModel: ItemViewModel by activityViewModels()
     private val callback = OnMapReadyCallback { googleMap ->
         map = googleMap
 
@@ -47,6 +52,7 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
                 .getReports(null, "mazowieckie", "Warszawa", "Bemowo")
                 .observe(this, Observer { arrayListOfReports -> setMarkers(arrayListOfReports) })
         setUpMap()
+        creating = false
     }
 
     override fun onCreateView(
@@ -77,10 +83,14 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
         }
         map.isMyLocationEnabled = true
         fusedLocationClient.lastLocation.addOnSuccessListener { location ->
-            if (location != null) {
-                lastLocation = location
-                val currentLatLng = LatLng(location.latitude, location.longitude)
-                map.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 17f))
+            if(viewModel.getCurrentLocation() != null)
+                map.moveCamera(CameraUpdateFactory.newLatLngZoom(viewModel.getCurrentLocation(), 17f))
+            else {
+                if (location != null) {
+                    lastLocation = location
+                    val currentLatLng = LatLng(location.latitude, location.longitude)
+                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 17f))
+                }
             }
         }
     }
@@ -120,8 +130,9 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
     }
 
     override fun onCameraMove() {
-        currentLocation = doubleArrayOf(map.cameraPosition.target.latitude, map.cameraPosition.target.longitude)
-        Log.w("Location", "${currentLocation[0]},${currentLocation[1]}")
+        val currentLocation = map.cameraPosition.target
+        if(!creating) viewModel.setCurrentLocation(map.cameraPosition.target)
+        Log.w("Location", "${currentLocation.latitude},${currentLocation.longitude}")
     }
 
     override fun onLocationChanged(location: Location?) {
