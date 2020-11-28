@@ -32,10 +32,12 @@
         <activity android:name=".ui.notifications.DetailsActivity"></activity>
         <activity android:name=".ui.dashboard.MapToApplicationActivity" />
         <activity android:name=".BoarNotificationAvtivity"
-            android:theme="@style/Theme.Dziki.NO_FUCKING_ACTION_BAR"></activity>
+            android:theme="@style/Theme.Dziki.NO_FUCKING_ACTION_BAR"
+            android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".ui.notifications.DetailsActivity" />
-        <activity android:name=".MapToApplicationActivity" />
-        <activity android:name=".BoarNotificationAvtivity"></activity>
+        <activity android:name=".MapToApplicationActivity"
+            android:theme="@style/Theme.Dziki.NO_FUCKING_ACTION_BAR"
+            android:parentActivityName=".BoarNotificationAvtivity"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
