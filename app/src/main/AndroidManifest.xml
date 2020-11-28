@@ -8,6 +8,7 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
@@ -19,7 +20,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dziki">
-        <activity android:name=".ui.InfoSliderActivity"></activity>
+        <activity android:name=".ui.InfoSliderActivity" />
+
+        <provider
+            android:authorities="package coddiers.hackyeah.dziki.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider"/>
+        </provider>
 
         <service
             android:name=".database.MessagingService"

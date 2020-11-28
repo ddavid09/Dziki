@@ -7,8 +7,10 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.location.*
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
 import android.view.KeyEvent
@@ -20,8 +22,10 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.content.FileProvider
 import kotlinx.android.synthetic.main.activity_boar_notification_avtivity.*
 import java.io.ByteArrayOutputStream
+import java.io.File
 
 class BoarNotificationAvtivity : AppCompatActivity() {
     private lateinit var cityEditText: EditText;
@@ -32,11 +36,13 @@ class BoarNotificationAvtivity : AppCompatActivity() {
     private lateinit var mLocationManager: LocationManager
     private lateinit var sweetPhotoOfPiggy: ImageView
     private lateinit var phtotByteArray: ByteArrayOutputStream
+    private val FILE_NAME = "photo.jpg"
+    private val REQUEST_CODE = 42
+    private lateinit var photoFile: File
 
     var LOCATION_REFRESH_DISTANCE = 1f
     var LOCATION_REFRESH_TIME: Long = 100
     val REQUEST_IMAGE_CAPTURE = 1
-    val REQUEST_CODE = 200
 
     private val mLocationListener: LocationListener = object : LocationListener {
         override fun onLocationChanged(location: Location?) {
@@ -73,7 +79,19 @@ class BoarNotificationAvtivity : AppCompatActivity() {
                 LOCATION_REFRESH_DISTANCE, mLocationListener);
         makeAPhotoButton = findViewById(R.id.make_a_photo_button)
         makeAPhotoButton.setOnClickListener {
-            capturePhoto()
+            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            photoFile = getPhotoFile(FILE_NAME)
+
+            // This DOESN'T work for API >= 24 (starting 2016)
+            // takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoFile)
+
+            val fileProvider = FileProvider.getUriForFile(this, "package coddiers.hackyeah.dziki.fileprovider", photoFile)
+            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider)
+            if (takePictureIntent.resolveActivity(this.packageManager) != null) {
+                startActivityForResult(takePictureIntent, REQUEST_CODE)
+            } else {
+                Toast.makeText(this, "Unable to open camera", Toast.LENGTH_SHORT).show()
+            }
         }
         intentToMap = Intent(this, MapToApplicationActivity::class.java)
 
@@ -103,16 +121,33 @@ class BoarNotificationAvtivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE && data != null){
-            val bmp: Bitmap  = data?.extras?.get("data") as Bitmap
-            sweetPhotoOfPiggy.setImageBitmap(data.extras?.get("data") as Bitmap)
-            phtotByteArray = ByteArrayOutputStream()
-            bmp.compress(Bitmap.CompressFormat.PNG, 100, phtotByteArray)
-            var byteArrayp = phtotByteArray.toByteArray()
-            intentToMap.putExtra("img", byteArrayp)
+        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+//            val takenImage = data?.extras?.get("data") as Bitmap
+            val takenImage = BitmapFactory.decodeFile(photoFile.absolutePath)
+            sweetPhotoOfPiggy.setImageBitmap(takenImage)
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
         }
+
     }
+
+    private fun getPhotoFile(fileName: String): File {
+        // Use `getExternalFilesDir` on Context to access package-specific directories.
+        val storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        return File.createTempFile(fileName, ".jpg", storageDirectory)
+    }
+
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE && data != null){
+//            val bmp: Bitmap  = data?.extras?.get("data") as Bitmap
+//            sweetPhotoOfPiggy.setImageBitmap(data.extras?.get("data") as Bitmap)
+//            phtotByteArray = ByteArrayOutputStream()
+//            bmp.compress(Bitmap.CompressFormat.PNG, 100, phtotByteArray)
+//            var byteArrayp = phtotByteArray.toByteArray()
+//            intentToMap.putExtra("img", byteArrayp)
+//        }
+//    }
 
     fun capturePhoto() {
 
