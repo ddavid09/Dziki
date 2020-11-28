@@ -24,8 +24,6 @@ class InfoFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         MainActivity.btn.visibility = View.GONE;
-        var intent = Intent(context, InfoSliderActivity::class.java)
-        startActivity(intent)
         return inflater.inflate(R.layout.fragment_info, container, false)
     }
 
