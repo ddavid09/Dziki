@@ -1,6 +1,13 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.Dziki" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="FirebaseUI.AuthMethodPicker.Logo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="LoginThemeDziki" parent="FirebaseUI">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/navy1</item>
         <item name="colorPrimaryVariant">@color/navy2</item>
@@ -10,7 +17,8 @@
         <item name="colorSecondaryVariant">@color/grey</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+
 </resources>

@@ -48,7 +48,8 @@ class LoginActivity : AppCompatActivity() {
             AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setAvailableProviders(providers)
-                .setLogo(R.drawable.ic_logo)
+                .setLogo(R.drawable.ic_login_logo_1)
+                .setTheme(R.style.LoginThemeDziki)
                 .build(),
             RC_SIGN_IN)
         // [END auth_fui_create_intent]
