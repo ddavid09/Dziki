@@ -8,7 +8,8 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <uses-feature android:name="android.hardware.camera"
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="true" />
 
     <application
@@ -18,6 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dziki">
+        <activity android:name=".ui.InfoSliderActivity"></activity>
+
         <service
             android:name=".database.MessagingService"
             android:exported="false">
@@ -26,18 +29,17 @@
             </intent-filter>
         </service>
 
-
-
-
-        <activity android:name=".ui.notifications.DetailsActivity"></activity>
-        <activity android:name=".ui.dashboard.MapToApplicationActivity" />
-        <activity android:name=".BoarNotificationAvtivity"
-            android:theme="@style/Theme.Dziki.NO_FUCKING_ACTION_BAR"
-            android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".ui.notifications.DetailsActivity" />
-        <activity android:name=".MapToApplicationActivity"
-            android:theme="@style/Theme.Dziki.NO_FUCKING_ACTION_BAR"
-            android:parentActivityName=".BoarNotificationAvtivity"/>
+        <activity android:name=".ui.dashboard.MapToApplicationActivity" />
+        <activity
+            android:name=".BoarNotificationAvtivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.Dziki.NO_FUCKING_ACTION_BAR" />
+        <activity android:name=".ui.notifications.DetailsActivity" />
+        <activity
+            android:name=".MapToApplicationActivity"
+            android:parentActivityName=".BoarNotificationAvtivity"
+            android:theme="@style/Theme.Dziki.NO_FUCKING_ACTION_BAR" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -59,8 +61,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main">
-        </activity>
+            android:label="@string/title_activity_main"></activity>
     </application>
 
 </manifest>

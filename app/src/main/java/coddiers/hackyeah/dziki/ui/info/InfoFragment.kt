@@ -1,5 +1,6 @@
 package coddiers.hackyeah.dziki.ui.info
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import coddiers.hackyeah.dziki.MainActivity
 import coddiers.hackyeah.dziki.R
+import coddiers.hackyeah.dziki.ui.InfoSliderActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class InfoFragment : Fragment() {
@@ -22,6 +24,8 @@ class InfoFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         MainActivity.btn.visibility = View.GONE;
+        var intent = Intent(context, InfoSliderActivity::class.java)
+        startActivity(intent)
         return inflater.inflate(R.layout.fragment_info, container, false)
     }
 
