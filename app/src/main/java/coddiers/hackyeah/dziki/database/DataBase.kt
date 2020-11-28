@@ -31,7 +31,7 @@ class DataBase() {
         val firebaseRef = db.collection("uploadReports").document()
 
 
-        if(bitmap == null){
+        if (bitmap == null) {
             val report = Report(
                     firebaseRef.id,
                     user!!.uid,
@@ -52,8 +52,7 @@ class DataBase() {
                     .addOnFailureListener { e ->
                         Log.w(TAG, "Error adding document", e)
                     }
-        }
-        else{
+        } else {
             val report = Report(
                     firebaseRef.id,
                     user!!.uid,
@@ -77,7 +76,7 @@ class DataBase() {
                         Log.d(TAG, "Picture send id:" + firebaseRef.id)
                     }.addOnFailureListener { e ->
                         Log.w(TAG, "Error sending picture", e)
-                    }.continueWithTask{
+                    }.continueWithTask {
                         firebaseRef.set(report)
                                 .addOnSuccessListener {
                                     Log.d(TAG, "DocumentSnapshot added with ID: ${firebaseRef.id}")
@@ -92,9 +91,9 @@ class DataBase() {
 
     fun getReports(dead: Boolean?, region: String, subregion: String, commune: String): MutableLiveData<ArrayList<Report>> {
         //borough:String
-        val MLreports :MutableLiveData<ArrayList<Report>> = MutableLiveData<ArrayList<Report>>()
+        val MLreports: MutableLiveData<ArrayList<Report>> = MutableLiveData<ArrayList<Report>>()
 
-        if(dead == null) {
+        if (dead == null) {
             db.collection("reports")
                     .orderBy("timestamp", Query.Direction.DESCENDING).whereEqualTo("region", region)
                     .whereEqualTo("subregion", subregion)
@@ -113,8 +112,7 @@ class DataBase() {
                         }
                         MLreports.value = reportList
                     }
-        }
-        else {
+        } else {
             db.collection("reports")
                     .orderBy("timestamp", Query.Direction.DESCENDING).whereEqualTo("region", region)
                     .whereEqualTo("subregion", subregion).whereEqualTo("dead", dead)
@@ -138,11 +136,11 @@ class DataBase() {
 
     }
 
-    fun getPhoto(report: Report, resources: Resources): MutableLiveData<Bitmap>{
+    fun getPhoto(report: Report, resources: Resources): MutableLiveData<Bitmap> {
         val liveBitmap: MutableLiveData<Bitmap> = MutableLiveData()
-        liveBitmap.value = BitmapFactory.decodeResource(resources,R.drawable.dzik);
-        Log.w(TAG, "bitmap: "+liveBitmap.value.toString())
-        if(report.photoID!="null"){
+        liveBitmap.value = BitmapFactory.decodeResource(resources, R.drawable.dzik);
+        Log.w(TAG, "bitmap: " + liveBitmap.value.toString())
+        if (report.photoID != "null") {
             val storageRef = storage.reference
 
             var pictureRef = storageRef.child("photos/" + report.ID + ".jpg")
@@ -161,12 +159,11 @@ class DataBase() {
 
         return liveBitmap
     }
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
