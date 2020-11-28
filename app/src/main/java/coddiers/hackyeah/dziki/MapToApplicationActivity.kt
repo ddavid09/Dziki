@@ -92,22 +92,6 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback, Google
     }
 
     override fun onMyLocationButtonClick(): Boolean {
-        if (ActivityCompat.checkSelfPermission(applicationContext,
-                Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                LOCATION_PERMISSION_REQUEST_CODE
-            )
-            return false
-        }
-
-        mMap.isMyLocationEnabled = true
-        fusedLocationClient.lastLocation.addOnSuccessListener { location ->
-            if (location != null) {
-                val currentLatLng = LatLng(location.latitude, location.longitude)
-                mMap.addMarker(MarkerOptions().position(currentLatLng).draggable(true))
-            }
-        }
         return false
     }
 
