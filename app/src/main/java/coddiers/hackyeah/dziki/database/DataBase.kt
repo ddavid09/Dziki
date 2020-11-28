@@ -67,6 +67,23 @@ class DataBase() {
         }
         return MLreports
     }
+    
+    fun getFromLatLong(location: LatLng): MutableLiveData<Report>{
+        val locationGeoPoint = GeoPoint(location.latitude, location.longitude)
+        val MLreport :MutableLiveData<Report> = MutableLiveData()
+        db.collection("reports")
+                .whereEqualTo("locationGeoPoint", locationGeoPoint).limit(1).addSnapshotListener { value, e ->
+                    if (e != null) {
+                        Log.w(TAG, "Listen failed.", e)
+                        return@addSnapshotListener
+                    }
+                    for (doc in value!!) {
+                        MLreport.value=doc.toObject(Report::class.java)
+                        break
+                    }
+                }
+        return MLreport
+    }
 
     fun uploadReport(location: LatLng, description: String, bitmap: Bitmap?, wildBoar: ArrayList<Int>, dead: Boolean, region: String, subregion: String, borough: String): Task<Void> {
         val locationGeoPoint = GeoPoint(location.latitude, location.longitude)
