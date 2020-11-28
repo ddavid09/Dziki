@@ -23,6 +23,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.firestore.GeoPoint
 import kotlinx.android.synthetic.main.activity_boar_notification_avtivity.*
 import java.io.File
+import java.lang.Exception
 
 
 class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnCameraMoveListener {
@@ -68,9 +69,15 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback, Google
     }
 
     private fun createReport()  {
+        var bitmap : Bitmap? = null
+        try {
+            bitmap = getImageFromPath(intent.getStringExtra("img"))
+        }catch (exp: IllegalStateException){
+            bitmap = null
+        }
         database.uploadReport(currentLocation,
                 "super opis kurwo",
-                getImageFromPath(intent.getStringExtra("img")),
+                bitmap,
                 arrayListOf(1,0,0), intent.getBooleanExtra("deathStatus", false),
                 intent.getStringExtra("region").toString().decapitalize(),
                 intent.getStringExtra("subregion").toString(),

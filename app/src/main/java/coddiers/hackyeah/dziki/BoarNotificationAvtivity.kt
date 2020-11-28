@@ -36,7 +36,7 @@ class BoarNotificationAvtivity : AppCompatActivity() {
     private var deathStatus: Boolean = false;
     private val FILE_NAME = "photo.jpg"
     private val REQUEST_CODE = 42
-    private lateinit var photoFile: File
+    private var photoFile: File? = null
 
     var LOCATION_REFRESH_DISTANCE = 1f
     var LOCATION_REFRESH_TIME: Long = 100
@@ -83,7 +83,7 @@ class BoarNotificationAvtivity : AppCompatActivity() {
             // This DOESN'T work for API >= 24 (starting 2016)
             // takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoFile)
 
-            val fileProvider = FileProvider.getUriForFile(this, "package coddiers.hackyeah.dziki.fileprovider", photoFile)
+            val fileProvider = FileProvider.getUriForFile(this, "package coddiers.hackyeah.dziki.fileprovider", photoFile!!)
             takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider)
             if (takePictureIntent.resolveActivity(this.packageManager) != null) {
                 startActivityForResult(takePictureIntent, REQUEST_CODE)
@@ -121,9 +121,9 @@ class BoarNotificationAvtivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
 //            val takenImage = data?.extras?.get("data") as Bitmap
-            val takenImage = BitmapFactory.decodeFile(photoFile.absolutePath)
+            val takenImage = BitmapFactory.decodeFile(photoFile?.absolutePath)
             sweetPhotoOfPiggy.setImageBitmap(takenImage)
-            intentToMap.putExtra("img", photoFile.absolutePath)
+            intentToMap.putExtra("img", photoFile?.absolutePath)
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
