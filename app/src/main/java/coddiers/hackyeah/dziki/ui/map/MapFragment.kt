@@ -1,31 +1,31 @@
 package coddiers.hackyeah.dziki.ui.map
 
 import android.Manifest
+import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.location.Location
 import android.location.LocationListener
-import androidx.fragment.app.Fragment
-
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.DataBase
 import coddiers.hackyeah.dziki.database.Report
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.*
+
 
 class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
     private lateinit var map: GoogleMap
@@ -37,12 +37,11 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
     private val callback = OnMapReadyCallback { googleMap ->
         map = googleMap
 
-        map.uiSettings.isZoomControlsEnabled = true
         map.setOnMarkerClickListener(this)
         map.mapType = GoogleMap.MAP_TYPE_HYBRID
         DataBase()
                 .getReports(null, "Mazowieckie", "Warszawa", "Bemowo")
-                .observe(this, Observer { arrayListOfReports -> setMarkers(arrayListOfReports)})
+                .observe(this, Observer { arrayListOfReports -> setMarkers(arrayListOfReports) })
         setUpMap()
     }
 
@@ -62,10 +61,14 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
     }
 
     private fun setUpMap() {
-        if (ActivityCompat.checkSelfPermission(requireContext(),
-                        Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(requireActivity(),
-                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
+        if (ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE
+            )
             return
         }
         map.isMyLocationEnabled = true
@@ -78,11 +81,38 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
         }
     }
 
+    private fun getBitmapFromVectorDrawable(context: Context?, drawableId: Int): BitmapDescriptor? {
+        val drawable = context?.let { ContextCompat.getDrawable(it, drawableId) }
+        val bitmap = Bitmap.createBitmap(
+            drawable!!.intrinsicWidth,
+            drawable.intrinsicHeight, Bitmap.Config.ARGB_8888
+        )
+        val canvas = Canvas(bitmap)
+        drawable.setBounds(0, 0, canvas.width, canvas.height)
+        drawable.draw(canvas)
+        return BitmapDescriptorFactory.fromBitmap(bitmap)
+    }
+
     private fun setMarkers(listOfReports: ArrayList<Report>) {
         for (report in listOfReports ){
-            map.addMarker(MarkerOptions().position(LatLng(report.locationGeoPoint.latitude, report.locationGeoPoint.longitude)).title(report.description))
-            map.moveCamera(CameraUpdateFactory.newLatLng(LatLng(report.locationGeoPoint.latitude, report.locationGeoPoint.longitude)))
+            val markerOptions = MarkerOptions().position(
+                LatLng(
+                    report.locationGeoPoint.latitude,
+                    report.locationGeoPoint.longitude
+                )
+            )
+            markerOptions.title(report.description)
+            if(report.dead)
+                markerOptions.icon(getBitmapFromVectorDrawable(requireContext(), R.drawable.dead_boar))
+            else
+                markerOptions.icon(getBitmapFromVectorDrawable(requireContext(), R.drawable.live_boar))
+            map.addMarker(markerOptions)
         }
+    }
+
+    override fun onMarkerClick(p0: Marker?): Boolean {
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(p0?.position, 17f))
+        return false
     }
 
     override fun onLocationChanged(location: Location?) {
@@ -103,10 +133,5 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
 
     override fun onMapReady(p0: GoogleMap?) {
         TODO("Not yet implemented")
-    }
-
-    override fun onMarkerClick(p0: Marker?): Boolean {
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(p0?.position, 17f))
-        return false
     }
 }
