@@ -2,9 +2,12 @@ package coddiers.hackyeah.dziki
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import coddiers.hackyeah.dziki.database.DataBase
 import coddiers.hackyeah.dziki.database.Report
 import coddiers.hackyeah.dziki.ui.map.MapFragment
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -24,6 +27,7 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleM
     private lateinit var mMap: GoogleMap
     private lateinit var report: Report;
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private val database: DataBase = DataBase()
     companion object{ private const val LOCATION_PERMISSION_REQUEST_CODE = 1}
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +42,16 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleM
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
+    }
+
+    private fun createReport()  {
+        val byteArray = intent.getByteArrayExtra("img")
+        val bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
+        val location = LatLng(intent.getStringExtra("lat").toDouble(), intent.getStringExtra("lng").toDouble())
+        database.uploadReport(location,
+                "super opis kurwo",
+                bmp, ArrayList(), false, intent.getStringExtra("region"),
+                intent.getStringExtra("subregion"), "waszkowiakowskieborough")
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
