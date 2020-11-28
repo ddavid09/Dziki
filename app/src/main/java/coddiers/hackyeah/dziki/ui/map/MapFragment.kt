@@ -39,7 +39,7 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
 
         map.setOnMarkerClickListener(this)
         map.mapType = GoogleMap.MAP_TYPE_HYBRID
-        map.uiSettings.isMapToolbarEnabled = true
+        map.uiSettings.isMapToolbarEnabled = false
         map.uiSettings.isCompassEnabled = true
         DataBase()
                 .getReports(null, "mazowieckie", "Warszawa", "Bemowo")
@@ -114,7 +114,7 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
 
     override fun onMarkerClick(p0: Marker?): Boolean {
         map.animateCamera(CameraUpdateFactory.newLatLngZoom(p0?.position, 17f))
-        return true
+        return false
     }
 
     override fun onLocationChanged(location: Location?) {
