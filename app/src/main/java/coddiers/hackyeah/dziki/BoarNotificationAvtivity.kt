@@ -3,18 +3,23 @@ package coddiers.hackyeah.dziki
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.location.*
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import java.io.ByteArrayOutputStream
 
 class BoarNotificationAvtivity : AppCompatActivity() {
     private lateinit var cityEditText: EditText;
@@ -22,11 +27,17 @@ class BoarNotificationAvtivity : AppCompatActivity() {
     private lateinit var voivodeshipEditText: EditText;
     private lateinit var lat: EditText;
     private lateinit var lng: EditText;
-    private lateinit var goToMapButton: Button;
-    private lateinit var intentToMap: Intent;
+    private lateinit var goToMapButton: Button
+    private lateinit var intentToMap: Intent
+    private lateinit var makeAPhotoButton: Button
     private lateinit var mLocationManager: LocationManager
+    private lateinit var sweetPhotoOfPiggy: ImageView
+    private lateinit var phtotByteArray: ByteArrayOutputStream
+
     var LOCATION_REFRESH_DISTANCE = 1f
     var LOCATION_REFRESH_TIME: Long = 100
+    val REQUEST_IMAGE_CAPTURE = 1
+    val REQUEST_CODE = 200
 
     private val mLocationListener: LocationListener = object : LocationListener {
         override fun onLocationChanged(location: Location?) {
@@ -52,8 +63,10 @@ class BoarNotificationAvtivity : AppCompatActivity() {
         cityEditText = findViewById(R.id.city_text_view)
         boroughEditText = findViewById(R.id.borough_text_view)
         voivodeshipEditText = findViewById(R.id.voivodeship_text_view)
+        sweetPhotoOfPiggy = findViewById(R.id.sweetPhotoOfPiggy)
         lat = findViewById(R.id.lat)
         lng = findViewById(R.id.lng)
+
         mLocationManager =getSystemService(LOCATION_SERVICE) as LocationManager;
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -61,6 +74,10 @@ class BoarNotificationAvtivity : AppCompatActivity() {
         }
         mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, LOCATION_REFRESH_TIME,
                 LOCATION_REFRESH_DISTANCE, mLocationListener);
+        makeAPhotoButton = findViewById(R.id.make_a_photo_button)
+        makeAPhotoButton.setOnClickListener {
+            capturePhoto()
+        }
         goToMapButton = findViewById(R.id.go_to_map_button)
         intentToMap = Intent(this, MapToApplicationActivity::class.java)
         goToMapButton.setOnClickListener{
@@ -75,6 +92,24 @@ class BoarNotificationAvtivity : AppCompatActivity() {
             }
             false
         })
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE && data != null){
+            val bmp: Bitmap  = data?.extras?.get("data") as Bitmap
+            sweetPhotoOfPiggy.setImageBitmap(data.extras?.get("data") as Bitmap)
+            phtotByteArray = ByteArrayOutputStream()
+            bmp.compress(Bitmap.CompressFormat.PNG, 100, phtotByteArray)
+            var byteArrayp = phtotByteArray.toByteArray()
+            intentToMap.putExtra("img", byteArrayp)
+        }
+    }
+
+    fun capturePhoto() {
+
+        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        startActivityForResult(cameraIntent, REQUEST_CODE)
     }
 
 

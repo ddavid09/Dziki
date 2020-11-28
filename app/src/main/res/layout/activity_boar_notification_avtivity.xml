@@ -67,6 +67,17 @@
         android:layout_height="wrap_content"
         android:text="SUBMIT AS FUCK"
         android:id="@+id/go_to_map_button"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MAKE A SWEET PHOTO OF YOUR PIGGY"
+        android:id="@+id/make_a_photo_button"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/sweetPhotoOfPiggy"
+        android:src="@drawable/ic_boar"
+        />
 
 
 

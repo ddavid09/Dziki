@@ -8,6 +8,8 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -26,11 +28,10 @@
 
 
 
+
         <activity android:name=".ui.notifications.DetailsActivity"></activity>
-        <activity android:name=".ui.dashboard.MapToApplicationActivity" />
-        <activity android:name=".BoarNotificationAvtivity"></activity>
-        <activity android:name=".ui.notifications.DetailsActivity" />
         <activity android:name=".MapToApplicationActivity" />
+        <activity android:name=".BoarNotificationAvtivity"></activity>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -39,7 +39,6 @@ class DataBase() {
         else{
             return null
         }
-
     }
 
     fun uploadReport(location: LatLng, description: String, bitmap: Bitmap?, wildBoar: ArrayList<Int>, dead: Boolean, region: String, subregion: String, borough: String): Task<Void> {
