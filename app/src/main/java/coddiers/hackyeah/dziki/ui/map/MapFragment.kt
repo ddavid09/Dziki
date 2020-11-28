@@ -39,8 +39,10 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
 
         map.setOnMarkerClickListener(this)
         map.mapType = GoogleMap.MAP_TYPE_HYBRID
+        map.uiSettings.isMapToolbarEnabled = true
+        map.uiSettings.isCompassEnabled = true
         DataBase()
-                .getReports(null, "Mazowieckie", "Warszawa", "Bemowo")
+                .getReports(null, "mazowieckie", "Warszawa", "Bemowo")
                 .observe(this, Observer { arrayListOfReports -> setMarkers(arrayListOfReports) })
         setUpMap()
     }
@@ -103,16 +105,16 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
             )
             markerOptions.title(report.description)
             if(report.dead)
-                markerOptions.icon(getBitmapFromVectorDrawable(requireContext(), R.drawable.dead_boar))
+                markerOptions.icon(getBitmapFromVectorDrawable(requireContext(), R.drawable.ic_dead_boar_marker))
             else
-                markerOptions.icon(getBitmapFromVectorDrawable(requireContext(), R.drawable.live_boar))
+                markerOptions.icon(getBitmapFromVectorDrawable(requireContext(), R.drawable.ic_lives_boar_marker))
             map.addMarker(markerOptions)
         }
     }
 
     override fun onMarkerClick(p0: Marker?): Boolean {
         map.animateCamera(CameraUpdateFactory.newLatLngZoom(p0?.position, 17f))
-        return false
+        return true
     }
 
     override fun onLocationChanged(location: Location?) {
