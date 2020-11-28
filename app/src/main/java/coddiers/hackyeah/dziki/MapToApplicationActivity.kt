@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import coddiers.hackyeah.dziki.database.Report
+import coddiers.hackyeah.dziki.ui.map.MapFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -18,7 +19,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.firestore.GeoPoint
 
 
-class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMarkerClickListener {
+class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMarkerClickListener, GoogleMap.OnMyLocationButtonClickListener {
 
     private lateinit var mMap: GoogleMap
     private lateinit var report: Report;
@@ -52,6 +53,7 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleM
         mMap.isMyLocationEnabled = true
         mMap.uiSettings.isZoomControlsEnabled = true
         mMap.setOnMarkerClickListener(this)
+        mMap.setOnMyLocationButtonClickListener(this)
         // Add a marker in Sydney and move the camera
         val sydney = LatLng(report.locationGeoPoint.latitude, report.locationGeoPoint.longitude)
         mMap.addMarker(
@@ -68,4 +70,28 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleM
         return false
     }
 
+    override fun onMyLocationButtonClick(): Boolean {
+        if (ActivityCompat.checkSelfPermission(applicationContext,
+                Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                LOCATION_PERMISSION_REQUEST_CODE
+            )
+            return false
+        }
+
+        mMap.isMyLocationEnabled = true
+
+        fusedLocationClient.lastLocation.addOnSuccessListener { location ->
+            if (location != null) {
+                val currentLatLng = LatLng(location.latitude, location.longitude)
+                mMap.addMarker(
+                    MarkerOptions()
+                        .position(currentLatLng)
+                        .draggable(true)
+                )
+            }
+        }
+        return false
+    }
 }
