@@ -1,13 +1,13 @@
 package coddiers.hackyeah.dziki
 
-import android.content.ClipData
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.activity.viewModels
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -16,7 +16,14 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import coddiers.hackyeah.dziki.ui.InfoSliderActivity
+import coddiers.hackyeah.dziki.ui.dashboard.DashboardFragment
+import coddiers.hackyeah.dziki.ui.map.MapFragment
+import coddiers.hackyeah.dziki.ui.notifications.NotificationsFragment
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 class ItemViewModel : ViewModel() {
     private val currentLocation = MutableLiveData<LatLng>()
@@ -35,6 +42,7 @@ class ItemViewModel : ViewModel() {
         currentLocation.value = location
         Log.w("Passing", "2: ${currentLocation.value}")
     }
+
 }
 
 class MainActivity : AppCompatActivity() {
@@ -44,17 +52,23 @@ class MainActivity : AppCompatActivity() {
         lateinit var btn: Button
     }
 
+    fun replaceFragment(someFragment: Fragment?) {
+        val transaction: FragmentTransaction =
+            supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.nav_host_fragment, someFragment!!)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.selectedItem.observe(this, Observer { item ->
             Log.w("Passing", "Przekazano: $item")
         })
         setContentView(R.layout.activity_main)
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
         val intentToMap = Intent(this, BoarNotificationAvtivity::class.java).apply {
 
         }
-        val navController = findNavController(R.id.nav_host_fragment)
         btn = findViewById(R.id.extended_fab_add_new_boar)
         btn.setOnClickListener{
             startActivity(intentToMap)
@@ -63,10 +77,45 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_map, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.navigation_map, R.id.navigation_dashboard, R.id.navigation_notifications, R.id.navigation_info
             )
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+
+        var fragment: Fragment? = null
+        fragment = MapFragment();
+        replaceFragment(fragment)
+
+
+        var nv = findViewById<BottomNavigationView>(R.id.nav_view)
+
+
+        nv.setOnNavigationItemSelectedListener { item ->
+            var fragment: Fragment? = null
+            Log.d("huj", "whcuj")
+                when(item.itemId) {
+
+                R.id.navigation_info -> {
+                    Log.d("huj", "whcuj")
+                    var intent = Intent(this, InfoSliderActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_map -> {
+                    fragment = MapFragment();
+                    replaceFragment(fragment)
+                    true
+                }R.id.navigation_dashboard -> {
+                    fragment = DashboardFragment();
+                    replaceFragment(fragment)
+                    true
+                }R.id.navigation_notifications -> {
+                    fragment = NotificationsFragment();
+                    replaceFragment(fragment)
+                    true
+                }
+
+                else -> false
+            }
+        }
     }
 }
