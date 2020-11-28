@@ -36,4 +36,7 @@
     </string-array>
     <string name="fab_content_desc">Przycisk dodawania zgloszenia</string>
     <string name="extended_fab_label">Dodaj zgłoszenie</string>
+    <string name="add_boar">Dodaj zgłoszenie</string>
+    <string name="accept">go</string>
+    <string name="content_description_more">desc</string>
 </resources>
