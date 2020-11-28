@@ -4,6 +4,8 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
+import android.location.Address
+import android.location.Geocoder
 import android.media.session.PlaybackState
 import android.os.Bundle
 import android.provider.MediaStore
@@ -25,9 +27,9 @@ class NotificationsFragment : Fragment() {
 
     lateinit var voivodeship : String
     lateinit var district   : String
+    var dead: Boolean? = null
 
     data class Report(var name: String, var image: Bitmap)
-
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -37,19 +39,15 @@ class NotificationsFragment : Fragment() {
 
         return inflater.inflate(R.layout.fragment_notifications, container, false)
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
+
         val voivodeships = resources.getStringArray(R.array.voivodeships)
         var districts = resources.getStringArray(R.array.dolnoslaskie)
-
         val arrayAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, voivodeships)
         voivodeshipSpinner.adapter = arrayAdapter
-
-
-
         voivodeshipSpinner.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -59,26 +57,13 @@ class NotificationsFragment : Fragment() {
                     id: Long
             ) {
                 var voivodeship = voivodeships[position]
-
-                when (voivodeship){
-                    "dolnoslaskie" -> districts = resources.getStringArray(R.array.dolnoslaskie)
-                    "kujawskopomorskie" -> districts = resources.getStringArray(R.array.kujawskopomorskie)
-                    "lubelskie" -> districts = resources.getStringArray(R.array.lubelskie)
-                    "lubuskie" -> districts = resources.getStringArray(R.array.lubuskie)
-                    "lodzkie" -> districts = resources.getStringArray(R.array.lodzkie)
-                    "malopolskie" -> districts = resources.getStringArray(R.array.malopolskie)
-                    "mazowieckie" -> districts = resources.getStringArray(R.array.mazowieckie)
-                    "opolskie" -> districts = resources.getStringArray(R.array.opolskie)
-                    "podkarpackie" -> districts = resources.getStringArray(R.array.podkarpackie)
-                    "podlaskie" -> districts = resources.getStringArray(R.array.podlaskie)
-                    "pomorskie" -> districts = resources.getStringArray(R.array.pomorskie)
-                    "slaskie" -> districts = resources.getStringArray(R.array.slaskie)
-                    "swietokszyskie" -> districts = resources.getStringArray(R.array.swietokszyskie)
-                    "warminskomazurskie" -> districts = resources.getStringArray(R.array.warminskomazurskie)
-                    "wielkopolskie" -> districts = resources.getStringArray(R.array.wielkopolskie)
-                    "zachodniopomorskie" -> districts = resources.getStringArray(R.array.zachodniopomorskie)
-
+                var resourcesID = resources.getIdentifier(voivodeship,"array",context?.packageName)
+                if(resourcesID!=0){
+                    Log.d("NotificationsFragment",resourcesID.toString())
+                    districts = resources.getStringArray(resourcesID)
+                    Log.d("NotificationsFragment",districts[0])
                 }
+                Log.d("NotificationsFragment","resourcesID: "+resourcesID+" "+context?.packageName)
                 val arrayAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, districts)
                 districtSpinner.adapter = arrayAdapter
 
@@ -97,21 +82,12 @@ class NotificationsFragment : Fragment() {
                     override fun onNothingSelected(parent: AdapterView<*>?) {
                         TODO("Not yet implemented")
                     }
-
                 }
             }
-
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 TODO("Not yet implemented")
             }
-            
-
         }
-
-
-
-
-
 
         class CustomAdaptor(var context: Context, var report: ArrayList<Report>) : BaseAdapter() {
 
@@ -161,62 +137,57 @@ class NotificationsFragment : Fragment() {
 
         var listView = notificationList as ListView
         var arrReport: ArrayList<Report> = ArrayList()
-//        arrReport.add(Report("pierwszy",R.drawable.live_boar))
-//        arrReport.add(Report("pierwszy",R.drawable.ic_logo))
         listView.adapter = CustomAdaptor(requireContext(), arrReport)
 
-
-
         searchButton.setOnClickListener {
-
+            arrReport.clear()
             voivodeship = voivodeshipSpinner.selectedItem.toString()
             district = districtSpinner.selectedItem.toString()
 
-            var id: Int = radiogroup.checkedRadioButtonId
-            var dead: Boolean? = null
-            when(id){
-                0 -> dead = null
-                1 -> dead = false
-                2 -> dead = true
-            }
+            if(radioButton7.isChecked) dead = null
+            if(radioButton8.isChecked) dead = false
+            if(radioButton9.isChecked) dead = true
             val notifications = DataBase().getReports(dead, voivodeship, district, "")
-            Log.d("Adapter", dead.toString())
-            Log.d("Adapter", voivodeship.toString())
-            Log.d("Adapter", district.toString())
-
-
-            var descriptionList: ArrayList<String> = ArrayList()
-
-            var photoList: ArrayList<Bitmap> = ArrayList()
             notifications.observe(viewLifecycleOwner, Observer { reportsList ->
                 if (reportsList != null) {
-                    Log.d("Adapter", reportsList.toString())
                     for (report in reportsList) {
-                        //arrReport.add(Report("test",bitmap))
                         DataBase().getPhoto(report, resources).observe(viewLifecycleOwner, Observer { bitmap ->
                             if(bitmap !=null){
-                                Log.d("Adapter", bitmap.toString())
-                                arrReport.add(Report(report.creatorID,bitmap))
+                                arrReport.add(Report(report.description,bitmap))
+                                listView.adapter = CustomAdaptor(requireContext(), arrReport)
+
                             }else{
                                 Log.d("Adapter", "Bitmapa Jest nullem")
                             }
                         })
-                        Log.d("Adapter", report.toString())
                     }
-
-                    listView.adapter = CustomAdaptor(requireContext(), arrReport)
                 } else {
                     Log.d("Adapter", "ELSE")
                 }
             })
-
-
-
-
-
+            listView.adapter = CustomAdaptor(requireContext(), arrReport)
         }
+
+        listView.onItemClickListener = AdapterView.OnItemClickListener{
+            parent, view, position, id ->
+            val selectedItemText = parent.getItemAtPosition(position)
+            Log.d("Listener", selectedItemText.toString())
+        }
+
     }
 
-
+//    private fun getAddress(name: String) {
+//        val coder = Geocoder(this.applicationContext)
+//        val address: List<Address>?
+//
+//        try {
+//            address = coder.getFromLocationName(name, 5)
+//            val location: Address = address[0]
+//            boroughEditText.setText("" + location.subAdminArea.toString())
+//            voivodeshipEditText.setText("" + location.adminArea.toString())
+//        } catch (ex: Exception) {
+//            ex.printStackTrace()
+//        }
+//    }
 
 }
