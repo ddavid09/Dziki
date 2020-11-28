@@ -2,15 +2,11 @@ package coddiers.hackyeah.dziki
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import coddiers.hackyeah.dziki.database.DataBase
 import coddiers.hackyeah.dziki.database.Report
-import coddiers.hackyeah.dziki.ui.map.MapFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -24,13 +20,15 @@ import com.google.firebase.firestore.GeoPoint
 import kotlinx.android.synthetic.main.activity_boar_notification_avtivity.*
 
 
-class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMarkerClickListener, GoogleMap.OnMyLocationButtonClickListener {
+class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnCameraMoveListener {
 
     private lateinit var mMap: GoogleMap
-    private lateinit var report: Report;
+    private lateinit var report: Report
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private lateinit var currentLocation: LatLng
     private val database: DataBase = DataBase()
     companion object{ private const val LOCATION_PERMISSION_REQUEST_CODE = 1}
+    private lateinit var marker: Marker
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,14 +38,12 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleM
             subregion = intent.getStringExtra("subregion"),
             locationGeoPoint = GeoPoint(intent.getStringExtra("lat").toDouble(),intent.getStringExtra("lng").toDouble() )
         )
+        currentLocation = LatLng(report.locationGeoPoint.latitude, report.locationGeoPoint.longitude)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment?
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
 
-        topAppBar.setNavigationOnClickListener {
-            finish();
-        }
+        topAppBar.setNavigationOnClickListener {finish();}
 
         topAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
@@ -55,25 +51,28 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleM
                     createReport()
                     true
                 }
-
                 else -> false
             }
         }
     }
 
     private fun createReport()  {
-//        val byteArray = intent.getByteArrayExtra("img")
-//        val bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
-        val location = LatLng(intent.getStringExtra("lat").toDouble(), intent.getStringExtra("lng").toDouble())
-        Log.d("KKKK", intent.getStringExtra("lat"))
-        Log.d("KKKK", intent.getStringExtra("lng"))
-        database.uploadReport(location,
+        database.uploadReport(currentLocation,
                 "super opis kurwo",
                 null, arrayListOf(1,2,3), false, intent.getStringExtra("region").toString().decapitalize(),
                 intent.getStringExtra("subregion").toString(), "waszkowiakowskieborough")
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+        mMap.setOnMarkerClickListener(this)
+        mMap.setOnMyLocationButtonClickListener(this)
+        mMap.setOnCameraMoveListener(this)
+        mMap.uiSettings.isCompassEnabled = true
+        mMap.uiSettings.isMapToolbarEnabled = false
+        mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
+        marker = mMap.addMarker(MarkerOptions().position(currentLocation).title("Tutaj oznacz dzika!"))
+
         if (ActivityCompat.checkSelfPermission(applicationContext,
                 Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
@@ -82,21 +81,10 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleM
             )
             return
         }
-        mMap = googleMap
+
         mMap.isMyLocationEnabled = true
-        mMap.uiSettings.isZoomControlsEnabled = true
-        mMap.setOnMarkerClickListener(this)
-        mMap.setOnMyLocationButtonClickListener(this)
-        // Add a marker in Sydney and move the camera
-        val sydney = LatLng(report.locationGeoPoint.latitude, report.locationGeoPoint.longitude)
-        mMap.addMarker(
-            MarkerOptions()
-                .position(sydney)
-                .title("Marker in Sydney")
-                .draggable(true)
-        )
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, 17f))
+        currentLocation = LatLng(report.locationGeoPoint.latitude, report.locationGeoPoint.longitude)
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 17f))
     }
 
     override fun onMarkerClick(p0: Marker?): Boolean {
@@ -114,17 +102,21 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleM
         }
 
         mMap.isMyLocationEnabled = true
-
         fusedLocationClient.lastLocation.addOnSuccessListener { location ->
             if (location != null) {
                 val currentLatLng = LatLng(location.latitude, location.longitude)
-                mMap.addMarker(
-                    MarkerOptions()
-                        .position(currentLatLng)
-                        .draggable(true)
-                )
+                mMap.addMarker(MarkerOptions().position(currentLatLng).draggable(true))
             }
         }
         return false
+    }
+
+    override fun onCameraMove() {
+        currentLocation = mMap.cameraPosition.target
+        changeMarkerPosition(marker, currentLocation)
+    }
+
+    private fun changeMarkerPosition(marker: Marker, location: LatLng) {
+        marker.position = location
     }
 }
