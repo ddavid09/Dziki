@@ -26,6 +26,22 @@ class DataBase() {
     val TAG = "DataBase"
     val storage: FirebaseStorage = FirebaseStorage.getInstance()
 
+    fun uploadToken(token: String): Task<Void>? {
+        val userToken = UserToken(token)
+        if (user!=null){
+            return db.collection("userTokens").document(user.uid).set(userToken).addOnSuccessListener {
+                Log.d(TAG, "Token added with ID: ${it}")
+            }
+                    .addOnFailureListener { e ->
+                        Log.w(TAG, "Error adding document", e)
+                    }
+        }
+        else{
+            return null
+        }
+
+    }
+
     fun uploadReport(location: LatLng, description: String, bitmap: Bitmap?, wildBoar: ArrayList<Int>, dead: Boolean, region: String, subregion: String, borough: String): Task<Void> {
         val locationGeoPoint = GeoPoint(location.latitude, location.longitude)
         val firebaseRef = db.collection("uploadReports").document()
