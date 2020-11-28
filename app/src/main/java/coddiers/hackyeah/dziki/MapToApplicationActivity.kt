@@ -57,7 +57,7 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback, Google
                 R.id.accept -> {
                     createReport()
                     val intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("tab","lista")
+                    intent.putExtra("tab","map")
                     startActivity(intent)
                     finish()
                     true
