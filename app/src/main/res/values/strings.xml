@@ -43,4 +43,7 @@
     <string name="two">Drugi ekran</string>
     <string name="tree">Trzeci ekran</string>
     <string name="four">Czwarty ekran</string>
+    <string name="description">Opis</string>
+    <string name="alive">Żywy</string>
+    <string name="dead">Martwy</string>
 </resources>
