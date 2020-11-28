@@ -1,0 +1,3218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+<string-array name="powiataleksandrowski" tools:ignore="ExtraTranslation">
+<item>gmina_Aleksandrów_Kujawski</item>
+<item>gmina_Bądkowo</item>
+<item>Ciechocinek</item>
+<item>gmina_Koneck</item>
+<item>Nieszawa</item>
+<item>gmina_Raciążek</item>
+<item>gmina_Waganiec</item>
+<item>gmina_Zakrzewo</item>
+</string-array>
+<string-array name="powiataugustowski" tools:ignore="ExtraTranslation">
+<item>Augustów</item>
+<item>gmina_Augustów</item>
+<item>gmina_Bargłów_Kościelny</item>
+<item>gmina_Lipsk</item>
+<item>gmina_Nowinka</item>
+<item>gmina_Płaska</item>
+<item>gmina_Sztabin</item>
+</string-array>
+<string-array name="powiatbartoszycki" tools:ignore="ExtraTranslation">
+<item>Bartoszyce</item>
+<item>gmina_Bartoszyce</item>
+<item>gmina_Bisztynek</item>
+<item>Górowo_Iławeckie</item>
+<item>gmina_Górowo_Iławeckie</item>
+<item>gmina_Sępopol</item>
+</string-array>
+<string-array name="powiatbełchatowski" tools:ignore="ExtraTranslation">
+<item>Bełchatów</item>
+<item>gmina_Bełchatów</item>
+<item>gmina_Drużbice</item>
+<item>gmina_Kleszczów</item>
+<item>gmina_Kluki</item>
+<item>gmina_Rusiec</item>
+<item>gmina_Szczerców</item>
+<item>gmina_Zelów</item>
+</string-array>
+<string-array name="powiatbędziński" tools:ignore="ExtraTranslation">
+<item>Będzin</item>
+<item>gmina_Bobrowniki</item>
+<item>Czeladź</item>
+<item>gmina_Mierzęcice</item>
+<item>gmina_Psary</item>
+<item>gmina_Siewierz</item>
+<item>Sławków</item>
+<item>Wojkowice</item>
+</string-array>
+<string-array name="powiatbialski" tools:ignore="ExtraTranslation">
+<item>gmina_Biała_Podlaska</item>
+<item>gmina_Drelów</item>
+<item>gmina_Janów_Podlaski</item>
+<item>gmina_Kodeń</item>
+<item>gmina_Konstantynów</item>
+<item>gmina_Leśna_Podlaska</item>
+<item>gmina_Łomazy</item>
+<item>Międzyrzec_Podlaski</item>
+<item>gmina_Międzyrzec_Podlaski</item>
+<item>gmina_Piszczac</item>
+<item>gmina_Rokitno</item>
+<item>gmina_Rossosz</item>
+<item>gmina_Sławatycze</item>
+<item>gmina_Sosnówka</item>
+<item>Terespol</item>
+<item>gmina_Terespol</item>
+<item>gmina_Tuczna</item>
+<item>gmina_Wisznice</item>
+<item>gmina_Zalesie</item>
+</string-array>
+<string-array name="powiatBiała_Podlaska" tools:ignore="ExtraTranslation">
+<item>Biała_Podlaska</item>
+</string-array>
+<string-array name="powiatbiałobrzeski" tools:ignore="ExtraTranslation">
+<item>gmina_Białobrzegi</item>
+<item>gmina_Promna</item>
+<item>gmina_Radzanów</item>
+<item>gmina_Stara_Błotnica</item>
+<item>gmina_Stromiec</item>
+<item>gmina_Wyśmierzyce</item>
+</string-array>
+<string-array name="powiatbiałogardzki" tools:ignore="ExtraTranslation">
+<item>Białogard</item>
+<item>gmina_Białogard</item>
+<item>gmina_Karlino</item>
+<item>gmina_Tychowo</item>
+</string-array>
+<string-array name="powiatbiałostocki" tools:ignore="ExtraTranslation">
+<item>gmina_Choroszcz</item>
+<item>gmina_Czarna_Białostocka</item>
+<item>gmina_Dobrzyniewo_Duże</item>
+<item>gmina_Gródek</item>
+<item>gmina_Juchnowiec_Kościelny</item>
+<item>gmina_Łapy</item>
+<item>gmina_Michałowo</item>
+<item>gmina_Poświętne</item>
+<item>gmina_Supraśl</item>
+<item>gmina_Suraż</item>
+<item>gmina_Turośń_Kościelna</item>
+<item>gmina_Tykocin</item>
+<item>gmina_Wasilków</item>
+<item>gmina_Zabłudów</item>
+<item>gmina_Zawady</item>
+</string-array>
+<string-array name="powiatBiałystok" tools:ignore="ExtraTranslation">
+<item>Białystok</item>
+</string-array>
+<string-array name="powiatbielski" tools:ignore="ExtraTranslation">
+<item>gmina_Bestwina</item>
+<item>Bielsk_Podlaski</item>
+<item>gmina_Bielsk_Podlaski</item>
+<item>gmina_Boćki</item>
+<item>Brańsk</item>
+<item>gmina_Brańsk</item>
+<item>gmina_Buczkowice</item>
+<item>gmina_Czechowice-Dziedzice</item>
+<item>gmina_Jasienica</item>
+<item>gmina_Jaworze</item>
+<item>gmina_Kozy</item>
+<item>gmina_Orla</item>
+<item>gmina_Porąbka</item>
+<item>gmina_Rudka</item>
+<item>Szczyrk</item>
+<item>gmina_Wilamowice</item>
+<item>gmina_Wilkowice</item>
+<item>gmina_Wyszki</item>
+</string-array>
+<string-array name="powiatBielsko_Biała" tools:ignore="ExtraTranslation">
+<item>Bielsko-Biała</item>
+</string-array>
+<string-array name="powiatbieruńsko_lędziński" tools:ignore="ExtraTranslation">
+<item>Bieruń</item>
+<item>gmina_Bojszowy</item>
+<item>gmina_Chełm_Śląski</item>
+<item>Imielin</item>
+<item>Lędziny</item>
+</string-array>
+<string-array name="powiatbieszczadzki" tools:ignore="ExtraTranslation">
+<item>gmina_Czarna</item>
+<item>gmina_Lutowiska</item>
+<item>gmina_Ustrzyki_Dolne</item>
+</string-array>
+<string-array name="powiatbiłgorajski" tools:ignore="ExtraTranslation">
+<item>gmina_Aleksandrów</item>
+<item>Biłgoraj</item>
+<item>gmina_Biłgoraj</item>
+<item>gmina_Biszcza</item>
+<item>gmina_Frampol</item>
+<item>gmina_Goraj</item>
+<item>gmina_Józefów</item>
+<item>gmina_Księżpol</item>
+<item>gmina_Łukowa</item>
+<item>gmina_Obsza</item>
+<item>gmina_Potok_Górny</item>
+<item>gmina_Tarnogród</item>
+<item>gmina_Tereszpol</item>
+<item>gmina_Turobin</item>
+</string-array>
+<string-array name="powiatbocheński" tools:ignore="ExtraTranslation">
+<item>Bochnia</item>
+<item>gmina_Bochnia</item>
+<item>gmina_Drwinia</item>
+<item>gmina_Lipnica_Murowana</item>
+<item>gmina_Łapanów</item>
+<item>gmina_Nowy_Wiśnicz</item>
+<item>gmina_Rzezawa</item>
+<item>gmina_Trzciana</item>
+<item>gmina_Żegocina</item>
+</string-array>
+<string-array name="powiatbolesławiecki" tools:ignore="ExtraTranslation">
+<item>Bolesławiec</item>
+<item>gmina_Bolesławiec</item>
+<item>gmina_Gromadka</item>
+<item>gmina_Nowogrodziec</item>
+<item>gmina_Osiecznica</item>
+<item>gmina_Warta_Bolesławiecka</item>
+</string-array>
+<string-array name="powiatbraniewski" tools:ignore="ExtraTranslation">
+<item>Braniewo</item>
+<item>gmina_Braniewo</item>
+<item>gmina_Frombork</item>
+<item>gmina_Lelkowo</item>
+<item>gmina_Pieniężno</item>
+<item>gmina_Płoskinia</item>
+<item>gmina_Wilczęta</item>
+</string-array>
+<string-array name="powiatbrodnicki" tools:ignore="ExtraTranslation">
+<item>gmina_Bartniczka</item>
+<item>gmina_Bobrowo</item>
+<item>Brodnica</item>
+<item>gmina_Brodnica</item>
+<item>gmina_Brzozie</item>
+<item>gmina_Górzno</item>
+<item>gmina_Jabłonowo_Pomorskie</item>
+<item>gmina_Osiek</item>
+<item>gmina_Świedziebnia</item>
+<item>gmina_Zbiczno</item>
+</string-array>
+<string-array name="powiatbrzeski" tools:ignore="ExtraTranslation">
+<item>gmina_Borzęcin</item>
+<item>Brzeg</item>
+<item>gmina_Brzesko</item>
+<item>gmina_Czchów</item>
+<item>gmina_Dębno</item>
+<item>gmina_Gnojnik</item>
+<item>gmina_Grodków</item>
+<item>gmina_Iwkowa</item>
+<item>gmina_Lewin_Brzeski</item>
+<item>gmina_Lubsza</item>
+<item>gmina_Olszanka</item>
+<item>gmina_Skarbimierz</item>
+<item>gmina_Szczurowa</item>
+</string-array>
+<string-array name="powiatbrzeziński" tools:ignore="ExtraTranslation">
+<item>Brzeziny</item>
+<item>gmina_Brzeziny</item>
+<item>gmina_Dmosin</item>
+<item>gmina_Jeżów</item>
+<item>gmina_Rogów</item>
+</string-array>
+<string-array name="powiatbrzozowski" tools:ignore="ExtraTranslation">
+<item>gmina_Brzozów</item>
+<item>gmina_Domaradz</item>
+<item>gmina_Dydnia</item>
+<item>gmina_Haczów</item>
+<item>gmina_Jasienica_Rosielna</item>
+<item>gmina_Nozdrzec</item>
+</string-array>
+<string-array name="powiatbuski" tools:ignore="ExtraTranslation">
+<item>gmina_Busko-Zdrój</item>
+<item>gmina_Gnojno</item>
+<item>gmina_Nowy_Korczyn</item>
+<item>gmina_Pacanów</item>
+<item>gmina_Solec-Zdrój</item>
+<item>gmina_Stopnica</item>
+<item>gmina_Tuczępy</item>
+<item>gmina_Wiślica</item>
+</string-array>
+<string-array name="powiatbydgoski" tools:ignore="ExtraTranslation">
+<item>gmina_Białe_Błota</item>
+<item>gmina_Dąbrowa_Chełmińska</item>
+<item>gmina_Dobrcz</item>
+<item>gmina_Koronowo</item>
+<item>gmina_Nowa_Wieś_Wielka</item>
+<item>gmina_Osielsko</item>
+<item>gmina_Sicienko</item>
+<item>gmina_Solec_Kujawski</item>
+</string-array>
+<string-array name="powiatBydgoszcz" tools:ignore="ExtraTranslation">
+<item>Bydgoszcz</item>
+</string-array>
+<string-array name="powiatBytom" tools:ignore="ExtraTranslation">
+<item>Bytom</item>
+</string-array>
+<string-array name="powiatbytowski" tools:ignore="ExtraTranslation">
+<item>gmina_Borzytuchom</item>
+<item>gmina_Bytów</item>
+<item>gmina_Czarna_Dąbrówka</item>
+<item>gmina_Kołczygłowy</item>
+<item>gmina_Lipnica</item>
+<item>gmina_Miastko</item>
+<item>gmina_Parchowo</item>
+<item>gmina_Studzienice</item>
+<item>gmina_Trzebielino</item>
+<item>gmina_Tuchomie</item>
+</string-array>
+<string-array name="powiatChełm" tools:ignore="ExtraTranslation">
+<item>Chełm</item>
+</string-array>
+<string-array name="powiatchełmiński" tools:ignore="ExtraTranslation">
+<item>Chełmno</item>
+<item>gmina_Chełmno</item>
+<item>gmina_Kijewo_Królewskie</item>
+<item>gmina_Lisewo</item>
+<item>gmina_Papowo_Biskupie</item>
+<item>gmina_Stolno</item>
+<item>gmina_Unisław</item>
+</string-array>
+<string-array name="powiatchełmski" tools:ignore="ExtraTranslation">
+<item>gmina_Białopole</item>
+<item>gmina_Chełm</item>
+<item>gmina_Dorohusk</item>
+<item>gmina_Dubienka</item>
+<item>gmina_Kamień</item>
+<item>gmina_Leśniowice</item>
+<item>gmina_Rejowiec</item>
+<item>Rejowiec_Fabryczny</item>
+<item>gmina_Rejowiec_Fabryczny</item>
+<item>gmina_Ruda-Huta</item>
+<item>gmina_Sawin</item>
+<item>gmina_Siedliszcze</item>
+<item>gmina_Wierzbica</item>
+<item>gmina_Wojsławice</item>
+<item>gmina_Żmudź</item>
+</string-array>
+<string-array name="powiatchodzieski" tools:ignore="ExtraTranslation">
+<item>gmina_Budzyń</item>
+<item>Chodzież</item>
+<item>gmina_Chodzież</item>
+<item>gmina_Margonin</item>
+<item>gmina_Szamocin</item>
+</string-array>
+<string-array name="powiatchojnicki" tools:ignore="ExtraTranslation">
+<item>gmina_Brusy</item>
+<item>Chojnice</item>
+<item>gmina_Chojnice</item>
+<item>gmina_Czersk</item>
+<item>gmina_Konarzyny</item>
+</string-array>
+<string-array name="powiatChorzów" tools:ignore="ExtraTranslation">
+<item>Chorzów</item>
+</string-array>
+<string-array name="powiatchoszczeński" tools:ignore="ExtraTranslation">
+<item>gmina_Bierzwnik</item>
+<item>gmina_Choszczno</item>
+<item>gmina_Drawno</item>
+<item>gmina_Krzęcin</item>
+<item>gmina_Pełczyce</item>
+<item>gmina_Recz</item>
+</string-array>
+<string-array name="powiatchrzanowski" tools:ignore="ExtraTranslation">
+<item>gmina_Alwernia</item>
+<item>gmina_Babice</item>
+<item>gmina_Chrzanów</item>
+<item>gmina_Libiąż</item>
+<item>gmina_Trzebinia</item>
+</string-array>
+<string-array name="powiatciechanowski" tools:ignore="ExtraTranslation">
+<item>Ciechanów</item>
+<item>gmina_Ciechanów</item>
+<item>gmina_Glinojeck</item>
+<item>gmina_Gołymin-Ośrodek</item>
+<item>gmina_Grudusk</item>
+<item>gmina_Ojrzeń</item>
+<item>gmina_Opinogóra_Górna</item>
+<item>gmina_Regimin</item>
+<item>gmina_Sońsk</item>
+</string-array>
+<string-array name="powiatcieszyński" tools:ignore="ExtraTranslation">
+<item>gmina_Brenna</item>
+<item>gmina_Chybie</item>
+<item>Cieszyn</item>
+<item>gmina_Dębowiec</item>
+<item>gmina_Goleszów</item>
+<item>gmina_Hażlach</item>
+<item>gmina_Istebna</item>
+<item>gmina_Skoczów</item>
+<item>gmina_Strumień</item>
+<item>Ustroń</item>
+<item>Wisła</item>
+<item>gmina_Zebrzydowice</item>
+</string-array>
+<string-array name="powiatczarnkowsko_trzcianecki" tools:ignore="ExtraTranslation">
+<item>Czarnków</item>
+<item>gmina_Czarnków</item>
+<item>gmina_Drawsko</item>
+<item>gmina_Krzyż_Wielkopolski</item>
+<item>gmina_Lubasz</item>
+<item>gmina_Połajewo</item>
+<item>gmina_Trzcianka</item>
+<item>gmina_Wieleń</item>
+</string-array>
+<string-array name="powiatCzęstochowa" tools:ignore="ExtraTranslation">
+<item>Częstochowa</item>
+</string-array>
+<string-array name="powiatczęstochowski" tools:ignore="ExtraTranslation">
+<item>gmina_Blachownia</item>
+<item>gmina_Dąbrowa_Zielona</item>
+<item>gmina_Janów</item>
+<item>gmina_Kamienica_Polska</item>
+<item>gmina_Kłomnice</item>
+<item>gmina_Koniecpol</item>
+<item>gmina_Konopiska</item>
+<item>gmina_Kruszyna</item>
+<item>gmina_Lelów</item>
+<item>gmina_Mstów</item>
+<item>gmina_Mykanów</item>
+<item>gmina_Olsztyn</item>
+<item>gmina_Poczesna</item>
+<item>gmina_Przyrów</item>
+<item>gmina_Rędziny</item>
+<item>gmina_Starcza</item>
+</string-array>
+<string-array name="powiatczłuchowski" tools:ignore="ExtraTranslation">
+<item>gmina_Czarne</item>
+<item>Człuchów</item>
+<item>gmina_Człuchów</item>
+<item>gmina_Debrzno</item>
+<item>gmina_Koczała</item>
+<item>gmina_Przechlewo</item>
+<item>gmina_Rzeczenica</item>
+</string-array>
+<string-array name="powiatDąbrowa_Górnicza" tools:ignore="ExtraTranslation">
+<item>Dąbrowa_Górnicza</item>
+</string-array>
+<string-array name="powiatdąbrowski" tools:ignore="ExtraTranslation">
+<item>gmina_Bolesław</item>
+<item>gmina_Dąbrowa_Tarnowska</item>
+<item>gmina_Gręboszów</item>
+<item>gmina_Mędrzechów</item>
+<item>gmina_Olesno</item>
+<item>gmina_Radgoszcz</item>
+<item>gmina_Szczucin</item>
+</string-array>
+<string-array name="powiatdębicki" tools:ignore="ExtraTranslation">
+<item>gmina_Brzostek</item>
+<item>gmina_Czarna</item>
+<item>Dębica</item>
+<item>gmina_Dębica</item>
+<item>gmina_Jodłowa</item>
+<item>gmina_Pilzno</item>
+<item>gmina_Żyraków</item>
+</string-array>
+<string-array name="powiatdrawski" tools:ignore="ExtraTranslation">
+<item>gmina_Czaplinek</item>
+<item>gmina_Drawsko_Pomorskie</item>
+<item>gmina_Kalisz_Pomorski</item>
+<item>gmina_Ostrowice[a]</item>
+<item>gmina_Wierzchowo</item>
+<item>gmina_Złocieniec</item>
+</string-array>
+<string-array name="powiatdziałdowski" tools:ignore="ExtraTranslation">
+<item>Działdowo</item>
+<item>gmina_Działdowo</item>
+<item>gmina_Iłowo-Osada</item>
+<item>gmina_Lidzbark</item>
+<item>gmina_Płośnica</item>
+<item>gmina_Rybno</item>
+</string-array>
+<string-array name="powiatdzierżoniowski" tools:ignore="ExtraTranslation">
+<item>Bielawa</item>
+<item>Dzierżoniów</item>
+<item>gmina_Dzierżoniów</item>
+<item>gmina_Łagiewniki</item>
+<item>gmina_Niemcza</item>
+<item>gmina_Pieszyce</item>
+<item>Piława_Górna</item>
+</string-array>
+<string-array name="powiatElbląg" tools:ignore="ExtraTranslation">
+<item>Elbląg</item>
+</string-array>
+<string-array name="powiatelbląski" tools:ignore="ExtraTranslation">
+<item>gmina_Elbląg</item>
+<item>gmina_Godkowo</item>
+<item>gmina_Gronowo_Elbląskie</item>
+<item>gmina_Markusy</item>
+<item>gmina_Milejewo</item>
+<item>gmina_Młynary</item>
+<item>gmina_Pasłęk</item>
+<item>gmina_Rychliki</item>
+<item>gmina_Tolkmicko</item>
+</string-array>
+<string-array name="powiatełcki" tools:ignore="ExtraTranslation">
+<item>Ełk</item>
+<item>gmina_Ełk</item>
+<item>gmina_Kalinowo</item>
+<item>gmina_Prostki</item>
+<item>gmina_Stare_Juchy</item>
+</string-array>
+<string-array name="powiatgarwoliński" tools:ignore="ExtraTranslation">
+<item>gmina_Borowie</item>
+<item>Garwolin</item>
+<item>gmina_Garwolin</item>
+<item>gmina_Górzno</item>
+<item>Łaskarzew</item>
+<item>gmina_Łaskarzew</item>
+<item>gmina_Maciejowice</item>
+<item>gmina_Miastków_Kościelny</item>
+<item>gmina_Parysów</item>
+<item>gmina_Pilawa</item>
+<item>gmina_Sobolew</item>
+<item>gmina_Trojanów</item>
+<item>gmina_Wilga</item>
+<item>gmina_Żelechów</item>
+</string-array>
+<string-array name="powiatGdańsk" tools:ignore="ExtraTranslation">
+<item>Gdańsk</item>
+</string-array>
+<string-array name="powiatgdański" tools:ignore="ExtraTranslation">
+<item>gmina_Cedry_Wielkie</item>
+<item>gmina_Kolbudy</item>
+<item>Pruszcz_Gdański</item>
+<item>gmina_Pruszcz_Gdański</item>
+<item>gmina_Przywidz</item>
+<item>gmina_Pszczółki</item>
+<item>gmina_Suchy_Dąb</item>
+<item>gmina_Trąbki_Wielkie</item>
+</string-array>
+<string-array name="powiatGdynia" tools:ignore="ExtraTranslation">
+<item>Gdynia</item>
+</string-array>
+<string-array name="powiatgiżycki" tools:ignore="ExtraTranslation">
+<item>Giżycko</item>
+<item>gmina_Giżycko</item>
+<item>gmina_Kruklanki</item>
+<item>gmina_Miłki</item>
+<item>gmina_Ryn</item>
+<item>gmina_Wydminy</item>
+</string-array>
+<string-array name="powiatGliwice" tools:ignore="ExtraTranslation">
+<item>Gliwice</item>
+</string-array>
+<string-array name="powiatgliwicki" tools:ignore="ExtraTranslation">
+<item>gmina_Gierałtowice</item>
+<item>Knurów</item>
+<item>gmina_Pilchowice</item>
+<item>Pyskowice</item>
+<item>gmina_Rudziniec</item>
+<item>gmina_Sośnicowice</item>
+<item>gmina_Toszek</item>
+<item>gmina_Wielowieś</item>
+</string-array>
+<string-array name="powiatgłogowski" tools:ignore="ExtraTranslation">
+<item>Głogów</item>
+<item>gmina_Głogów</item>
+<item>gmina_Jerzmanowa</item>
+<item>gmina_Kotla</item>
+<item>gmina_Pęcław</item>
+<item>gmina_Żukowice</item>
+</string-array>
+<string-array name="powiatgłubczycki" tools:ignore="ExtraTranslation">
+<item>gmina_Baborów</item>
+<item>gmina_Branice</item>
+<item>gmina_Głubczyce</item>
+<item>gmina_Kietrz</item>
+</string-array>
+<string-array name="powiatgnieźnieński" tools:ignore="ExtraTranslation">
+<item>gmina_Czerniejewo</item>
+<item>Gniezno</item>
+<item>gmina_Gniezno</item>
+<item>gmina_Kiszkowo</item>
+<item>gmina_Kłecko</item>
+<item>gmina_Łubowo</item>
+<item>gmina_Mieleszyn</item>
+<item>gmina_Niechanowo</item>
+<item>gmina_Trzemeszno</item>
+<item>gmina_Witkowo</item>
+</string-array>
+<string-array name="powiatgoleniowski" tools:ignore="ExtraTranslation">
+<item>gmina_Goleniów</item>
+<item>gmina_Maszewo</item>
+<item>gmina_Nowogard</item>
+<item>gmina_Osina</item>
+<item>gmina_Przybiernów</item>
+<item>gmina_Stepnica</item>
+</string-array>
+<string-array name="powiatgolubsko_dobrzyński" tools:ignore="ExtraTranslation">
+<item>gmina_Ciechocin</item>
+<item>Golub-Dobrzyń</item>
+<item>gmina_Golub-Dobrzyń</item>
+<item>gmina_Kowalewo_Pomorskie</item>
+<item>gmina_Radomin</item>
+<item>gmina_Zbójno</item>
+</string-array>
+<string-array name="powiatgołdapski" tools:ignore="ExtraTranslation">
+<item>gmina_Banie_Mazurskie</item>
+<item>gmina_Dubeninki</item>
+<item>gmina_Gołdap</item>
+</string-array>
+<string-array name="powiatgorlicki" tools:ignore="ExtraTranslation">
+<item>gmina_Biecz</item>
+<item>gmina_Bobowa</item>
+<item>Gorlice</item>
+<item>gmina_Gorlice</item>
+<item>gmina_Lipinki</item>
+<item>gmina_Łużna</item>
+<item>gmina_Moszczenica</item>
+<item>gmina_Ropa</item>
+<item>gmina_Sękowa</item>
+<item>gmina_Uście_Gorlickie</item>
+</string-array>
+<string-array name="powiatgorzowski" tools:ignore="ExtraTranslation">
+<item>gmina_Bogdaniec</item>
+<item>gmina_Deszczno</item>
+<item>gmina_Kłodawa</item>
+<item>Kostrzyn_nad_Odrą</item>
+<item>gmina_Lubiszyn</item>
+<item>gmina_Santok</item>
+<item>gmina_Witnica</item>
+</string-array>
+<string-array name="powiatGorzów_Wielkopolski" tools:ignore="ExtraTranslation">
+<item>Gorzów_Wielkopolski</item>
+</string-array>
+<string-array name="powiatgostyniński" tools:ignore="ExtraTranslation">
+<item>Gostynin</item>
+<item>gmina_Gostynin</item>
+<item>gmina_Pacyna</item>
+<item>gmina_Sanniki</item>
+<item>gmina_Szczawin_Kościelny</item>
+</string-array>
+<string-array name="powiatgostyński" tools:ignore="ExtraTranslation">
+<item>gmina_Borek_Wielkopolski</item>
+<item>gmina_Gostyń</item>
+<item>gmina_Krobia</item>
+<item>gmina_Pępowo</item>
+<item>gmina_Piaski</item>
+<item>gmina_Pogorzela</item>
+<item>gmina_Poniec</item>
+</string-array>
+<string-array name="powiatgórowski" tools:ignore="ExtraTranslation">
+<item>gmina_Góra</item>
+<item>gmina_Jemielno</item>
+<item>gmina_Niechlów</item>
+<item>gmina_Wąsosz</item>
+</string-array>
+<string-array name="powiatgrajewski" tools:ignore="ExtraTranslation">
+<item>Grajewo</item>
+<item>gmina_Grajewo</item>
+<item>gmina_Radziłów</item>
+<item>gmina_Rajgród</item>
+<item>gmina_Szczuczyn</item>
+<item>gmina_Wąsosz</item>
+</string-array>
+<string-array name="powiatgrodziski" tools:ignore="ExtraTranslation">
+<item>gmina_Baranów</item>
+<item>gmina_Granowo</item>
+<item>gmina_Grodzisk_Mazowiecki</item>
+<item>gmina_Grodzisk_Wielkopolski</item>
+<item>gmina_Jaktorów</item>
+<item>gmina_Kamieniec</item>
+<item>Milanówek</item>
+<item>Podkowa_Leśna</item>
+<item>gmina_Rakoniewice</item>
+<item>gmina_Wielichowo</item>
+<item>gmina_Żabia_Wola</item>
+</string-array>
+<string-array name="powiatgrójecki" tools:ignore="ExtraTranslation">
+<item>gmina_Belsk_Duży</item>
+<item>gmina_Błędów</item>
+<item>gmina_Chynów</item>
+<item>gmina_Goszczyn</item>
+<item>gmina_Grójec</item>
+<item>gmina_Jasieniec</item>
+<item>gmina_Mogielnica</item>
+<item>gmina_Nowe_Miasto_nad_Pilicą</item>
+<item>gmina_Pniewy</item>
+<item>gmina_Warka</item>
+</string-array>
+<string-array name="powiatGrudziądz" tools:ignore="ExtraTranslation">
+<item>Grudziądz</item>
+</string-array>
+<string-array name="powiatgrudziądzki" tools:ignore="ExtraTranslation">
+<item>gmina_Grudziądz</item>
+<item>gmina_Gruta</item>
+<item>gmina_Łasin</item>
+<item>gmina_Radzyń_Chełmiński</item>
+<item>gmina_Rogóźno</item>
+<item>gmina_Świecie_nad_Osą</item>
+</string-array>
+<string-array name="powiatgryficki" tools:ignore="ExtraTranslation">
+<item>gmina_Brojce</item>
+<item>gmina_Gryfice</item>
+<item>gmina_Karnice</item>
+<item>gmina_Płoty</item>
+<item>gmina_Rewal</item>
+<item>gmina_Trzebiatów</item>
+</string-array>
+<string-array name="powiatgryfiński" tools:ignore="ExtraTranslation">
+<item>gmina_Banie</item>
+<item>gmina_Cedynia</item>
+<item>gmina_Chojna</item>
+<item>gmina_Gryfino</item>
+<item>gmina_Mieszkowice</item>
+<item>gmina_Moryń</item>
+<item>gmina_Stare_Czarnowo</item>
+<item>gmina_Trzcińsko-Zdrój</item>
+<item>gmina_Widuchowa</item>
+</string-array>
+<string-array name="powiathajnowski" tools:ignore="ExtraTranslation">
+<item>gmina_Białowieża</item>
+<item>gmina_Czeremcha</item>
+<item>gmina_Czyże</item>
+<item>gmina_Dubicze_Cerkiewne</item>
+<item>Hajnówka</item>
+<item>gmina_Hajnówka</item>
+<item>gmina_Kleszczele</item>
+<item>gmina_Narew</item>
+<item>gmina_Narewka</item>
+</string-array>
+<string-array name="powiathrubieszowski" tools:ignore="ExtraTranslation">
+<item>gmina_Dołhobyczów</item>
+<item>gmina_Horodło</item>
+<item>Hrubieszów</item>
+<item>gmina_Hrubieszów</item>
+<item>gmina_Mircze</item>
+<item>gmina_Trzeszczany</item>
+<item>gmina_Uchanie</item>
+<item>gmina_Werbkowice</item>
+</string-array>
+<string-array name="powiatiławski" tools:ignore="ExtraTranslation">
+<item>Iława</item>
+<item>gmina_Iława</item>
+<item>gmina_Kisielice</item>
+<item>Lubawa</item>
+<item>gmina_Lubawa</item>
+<item>gmina_Susz</item>
+<item>gmina_Zalewo</item>
+</string-array>
+<string-array name="powiatinowrocławski" tools:ignore="ExtraTranslation">
+<item>gmina_Dąbrowa_Biskupia</item>
+<item>gmina_Gniewkowo</item>
+<item>Inowrocław</item>
+<item>gmina_Inowrocław</item>
+<item>gmina_Janikowo</item>
+<item>gmina_Kruszwica</item>
+<item>gmina_Pakość</item>
+<item>gmina_Rojewo</item>
+<item>gmina_Złotniki_Kujawskie</item>
+</string-array>
+<string-array name="powiatjanowski" tools:ignore="ExtraTranslation">
+<item>gmina_Batorz</item>
+<item>gmina_Chrzanów</item>
+<item>gmina_Dzwola</item>
+<item>gmina_Godziszów</item>
+<item>gmina_Janów_Lubelski</item>
+<item>gmina_Modliborzyce</item>
+<item>gmina_Potok_Wielki</item>
+</string-array>
+<string-array name="powiatjarociński" tools:ignore="ExtraTranslation">
+<item>gmina_Jaraczewo</item>
+<item>gmina_Jarocin</item>
+<item>gmina_Kotlin</item>
+<item>gmina_Żerków</item>
+</string-array>
+<string-array name="powiatjarosławski" tools:ignore="ExtraTranslation">
+<item>gmina_Chłopice</item>
+<item>Jarosław</item>
+<item>gmina_Jarosław</item>
+<item>gmina_Laszki</item>
+<item>gmina_Pawłosiów</item>
+<item>gmina_Pruchnik</item>
+<item>Radymno</item>
+<item>gmina_Radymno</item>
+<item>gmina_Rokietnica</item>
+<item>gmina_Roźwienica</item>
+<item>gmina_Wiązownica</item>
+</string-array>
+<string-array name="powiatjasielski" tools:ignore="ExtraTranslation">
+<item>gmina_Brzyska</item>
+<item>gmina_Dębowiec</item>
+<item>Jasło</item>
+<item>gmina_Jasło</item>
+<item>gmina_Kołaczyce</item>
+<item>gmina_Krempna</item>
+<item>gmina_Nowy_Żmigród</item>
+<item>gmina_Osiek_Jasielski</item>
+<item>gmina_Skołyszyn</item>
+<item>gmina_Tarnowiec</item>
+</string-array>
+<string-array name="powiatJastrzębie_Zdrój" tools:ignore="ExtraTranslation">
+<item>Jastrzębie-Zdrój</item>
+</string-array>
+<string-array name="powiatjaworski" tools:ignore="ExtraTranslation">
+<item>gmina_Bolków</item>
+<item>Jawor</item>
+<item>gmina_Męcinka</item>
+<item>gmina_Mściwojów</item>
+<item>gmina_Paszowice</item>
+<item>gmina_Wądroże_Wielkie</item>
+</string-array>
+<string-array name="powiatJaworzno" tools:ignore="ExtraTranslation">
+<item>Jaworzno</item>
+</string-array>
+<string-array name="powiatJelenia_Góra" tools:ignore="ExtraTranslation">
+<item>Jelenia_Góra</item>
+</string-array>
+<string-array name="powiatjeleniogórski" tools:ignore="ExtraTranslation">
+<item>gmina_Janowice_Wielkie</item>
+<item>gmina_Jeżów_Sudecki</item>
+<item>Karpacz</item>
+<item>Kowary</item>
+<item>gmina_Mysłakowice</item>
+<item>Piechowice</item>
+<item>gmina_Podgórzyn</item>
+<item>gmina_Stara_Kamienica</item>
+<item>Szklarska_Poręba</item>
+</string-array>
+<string-array name="powiatjędrzejowski" tools:ignore="ExtraTranslation">
+<item>gmina_Imielno</item>
+<item>gmina_Jędrzejów</item>
+<item>gmina_Małogoszcz</item>
+<item>gmina_Nagłowice</item>
+<item>gmina_Oksa</item>
+<item>gmina_Sędziszów</item>
+<item>gmina_Słupia</item>
+<item>gmina_Sobków</item>
+<item>gmina_Wodzisław</item>
+</string-array>
+<string-array name="powiatkaliski" tools:ignore="ExtraTranslation">
+<item>gmina_Blizanów</item>
+<item>gmina_Brzeziny</item>
+<item>gmina_Ceków-Kolonia</item>
+<item>gmina_Godziesze_Wielkie</item>
+<item>gmina_Koźminek</item>
+<item>gmina_Lisków</item>
+<item>gmina_Mycielin</item>
+<item>gmina_Opatówek</item>
+<item>gmina_Stawiszyn</item>
+<item>gmina_Szczytniki</item>
+<item>gmina_Żelazków</item>
+</string-array>
+<string-array name="powiatKalisz" tools:ignore="ExtraTranslation">
+<item>Kalisz</item>
+</string-array>
+<string-array name="powiatkamiennogórski" tools:ignore="ExtraTranslation">
+<item>Kamienna_Góra</item>
+<item>gmina_Kamienna_Góra</item>
+<item>gmina_Lubawka</item>
+<item>gmina_Marciszów</item>
+</string-array>
+<string-array name="powiatkamieński" tools:ignore="ExtraTranslation">
+<item>gmina_Dziwnów</item>
+<item>gmina_Golczewo</item>
+<item>gmina_Kamień_Pomorski</item>
+<item>gmina_Międzyzdroje</item>
+<item>gmina_Świerzno</item>
+<item>gmina_Wolin</item>
+</string-array>
+<string-array name="powiatkartuski" tools:ignore="ExtraTranslation">
+<item>gmina_Chmielno</item>
+<item>gmina_Kartuzy</item>
+<item>gmina_Przodkowo</item>
+<item>gmina_Sierakowice</item>
+<item>gmina_Somonino</item>
+<item>gmina_Stężyca</item>
+<item>gmina_Sulęczyno</item>
+<item>gmina_Żukowo</item>
+</string-array>
+<string-array name="powiatKatowice" tools:ignore="ExtraTranslation">
+<item>Katowice</item>
+</string-array>
+<string-array name="powiatkazimierski" tools:ignore="ExtraTranslation">
+<item>gmina_Bejsce</item>
+<item>gmina_Czarnocin</item>
+<item>gmina_Kazimierza_Wielka</item>
+<item>gmina_Opatowiec</item>
+<item>gmina_Skalbmierz</item>
+</string-array>
+<string-array name="powiatkędzierzyńsko_kozielski" tools:ignore="ExtraTranslation">
+<item>gmina_Bierawa</item>
+<item>gmina_Cisek</item>
+<item>Kędzierzyn-Koźle</item>
+<item>gmina_Pawłowiczki</item>
+<item>gmina_Polska_Cerekiew</item>
+<item>gmina_Reńska_Wieś</item>
+</string-array>
+<string-array name="powiatkępiński" tools:ignore="ExtraTranslation">
+<item>gmina_Baranów</item>
+<item>gmina_Bralin</item>
+<item>gmina_Kępno</item>
+<item>gmina_Łęka_Opatowska</item>
+<item>gmina_Perzów</item>
+<item>gmina_Rychtal</item>
+<item>gmina_Trzcinica</item>
+</string-array>
+<string-array name="powiatkętrzyński" tools:ignore="ExtraTranslation">
+<item>gmina_Barciany</item>
+<item>Kętrzyn</item>
+<item>gmina_Kętrzyn</item>
+<item>gmina_Korsze</item>
+<item>gmina_Reszel</item>
+<item>gmina_Srokowo</item>
+</string-array>
+<string-array name="powiatKielce" tools:ignore="ExtraTranslation">
+<item>Kielce</item>
+</string-array>
+<string-array name="powiatkielecki" tools:ignore="ExtraTranslation">
+<item>gmina_Bieliny</item>
+<item>gmina_Bodzentyn</item>
+<item>gmina_Chęciny</item>
+<item>gmina_Chmielnik</item>
+<item>gmina_Daleszyce</item>
+<item>gmina_Górno</item>
+<item>gmina_Łagów</item>
+<item>gmina_Łopuszno</item>
+<item>gmina_Masłów</item>
+<item>gmina_Miedziana_Góra</item>
+<item>gmina_Mniów</item>
+<item>gmina_Morawica</item>
+<item>gmina_Nowa_Słupia</item>
+<item>gmina_Piekoszów</item>
+<item>gmina_Pierzchnica</item>
+<item>gmina_Raków</item>
+<item>gmina_Sitkówka-Nowiny</item>
+<item>gmina_Strawczyn</item>
+<item>gmina_Zagnańsk</item>
+</string-array>
+<string-array name="powiatkluczborski" tools:ignore="ExtraTranslation">
+<item>gmina_Byczyna</item>
+<item>gmina_Kluczbork</item>
+<item>gmina_Lasowice_Wielkie</item>
+<item>gmina_Wołczyn</item>
+</string-array>
+<string-array name="powiatkłobucki" tools:ignore="ExtraTranslation">
+<item>gmina_Kłobuck</item>
+<item>gmina_Krzepice</item>
+<item>gmina_Lipie</item>
+<item>gmina_Miedźno</item>
+<item>gmina_Opatów</item>
+<item>gmina_Panki</item>
+<item>gmina_Popów</item>
+<item>gmina_Przystajń</item>
+<item>gmina_Wręczyca_Wielka</item>
+</string-array>
+<string-array name="powiatkłodzki" tools:ignore="ExtraTranslation">
+<item>gmina_Bystrzyca_Kłodzka</item>
+<item>Duszniki-Zdrój</item>
+<item>Kłodzko</item>
+<item>gmina_Kłodzko</item>
+<item>Kudowa-Zdrój</item>
+<item>gmina_Lądek-Zdrój</item>
+<item>gmina_Lewin_Kłodzki</item>
+<item>gmina_Międzylesie</item>
+<item>Nowa_Ruda</item>
+<item>gmina_Nowa_Ruda</item>
+<item>Polanica-Zdrój</item>
+<item>gmina_Radków</item>
+<item>gmina_Stronie_Śląskie</item>
+<item>gmina_Szczytna</item>
+</string-array>
+<string-array name="powiatkolbuszowski" tools:ignore="ExtraTranslation">
+<item>gmina_Cmolas</item>
+<item>gmina_Dzikowiec</item>
+<item>gmina_Kolbuszowa</item>
+<item>gmina_Majdan_Królewski</item>
+<item>gmina_Niwiska</item>
+<item>gmina_Raniżów</item>
+</string-array>
+<string-array name="powiatkolneński" tools:ignore="ExtraTranslation">
+<item>gmina_Grabowo</item>
+<item>Kolno</item>
+<item>gmina_Kolno</item>
+<item>gmina_Mały_Płock</item>
+<item>gmina_Stawiski</item>
+<item>gmina_Turośl</item>
+</string-array>
+<string-array name="powiatkolski" tools:ignore="ExtraTranslation">
+<item>gmina_Babiak</item>
+<item>gmina_Chodów</item>
+<item>gmina_Dąbie</item>
+<item>gmina_Grzegorzew</item>
+<item>gmina_Kłodawa</item>
+<item>gmina_Koło</item>
+<item>Koło</item>
+<item>gmina_Kościelec</item>
+<item>gmina_Olszówka</item>
+<item>gmina_Osiek_Mały</item>
+<item>gmina_Przedecz</item>
+</string-array>
+<string-array name="powiatkołobrzeski" tools:ignore="ExtraTranslation">
+<item>gmina_Dygowo</item>
+<item>gmina_Gościno</item>
+<item>Kołobrzeg</item>
+<item>gmina_Kołobrzeg</item>
+<item>gmina_Rymań</item>
+<item>gmina_Siemyśl</item>
+<item>gmina_Ustronie_Morskie</item>
+</string-array>
+<string-array name="powiatkonecki" tools:ignore="ExtraTranslation">
+<item>gmina_Fałków</item>
+<item>gmina_Gowarczów</item>
+<item>gmina_Końskie</item>
+<item>gmina_Radoszyce</item>
+<item>gmina_Ruda_Maleniecka</item>
+<item>gmina_Słupia_Konecka</item>
+<item>gmina_Smyków</item>
+<item>gmina_Stąporków</item>
+</string-array>
+<string-array name="powiatKonin" tools:ignore="ExtraTranslation">
+<item>Konin</item>
+</string-array>
+<string-array name="powiatkoniński" tools:ignore="ExtraTranslation">
+<item>gmina_Golina</item>
+<item>gmina_Grodziec</item>
+<item>gmina_Kazimierz_Biskupi</item>
+<item>gmina_Kleczew</item>
+<item>gmina_Kramsk</item>
+<item>gmina_Krzymów</item>
+<item>gmina_Rychwał</item>
+<item>gmina_Rzgów</item>
+<item>gmina_Skulsk</item>
+<item>gmina_Sompolno</item>
+<item>gmina_Stare_Miasto</item>
+<item>gmina_Ślesin</item>
+<item>gmina_Wierzbinek</item>
+<item>gmina_Wilczyn</item>
+</string-array>
+<string-array name="powiatKoszalin" tools:ignore="ExtraTranslation">
+<item>Koszalin</item>
+</string-array>
+<string-array name="powiatkoszaliński" tools:ignore="ExtraTranslation">
+<item>gmina_Będzino</item>
+<item>gmina_Biesiekierz</item>
+<item>gmina_Bobolice</item>
+<item>gmina_Manowo</item>
+<item>gmina_Mielno</item>
+<item>gmina_Polanów</item>
+<item>gmina_Sianów</item>
+<item>gmina_Świeszyno</item>
+</string-array>
+<string-array name="powiatkościański" tools:ignore="ExtraTranslation">
+<item>gmina_Czempiń</item>
+<item>Kościan</item>
+<item>gmina_Kościan</item>
+<item>gmina_Krzywiń</item>
+<item>gmina_Śmigiel</item>
+</string-array>
+<string-array name="powiatkościerski" tools:ignore="ExtraTranslation">
+<item>gmina_Dziemiany</item>
+<item>gmina_Karsin</item>
+<item>Kościerzyna</item>
+<item>gmina_Kościerzyna</item>
+<item>gmina_Liniewo</item>
+<item>gmina_Lipusz</item>
+<item>gmina_Nowa_Karczma</item>
+<item>gmina_Stara_Kiszewa</item>
+</string-array>
+<string-array name="powiatkozienicki" tools:ignore="ExtraTranslation">
+<item>gmina_Garbatka-Letnisko</item>
+<item>gmina_Głowaczów</item>
+<item>gmina_Gniewoszów</item>
+<item>gmina_Grabów_nad_Pilicą</item>
+<item>gmina_Kozienice</item>
+<item>gmina_Magnuszew</item>
+<item>gmina_Sieciechów</item>
+</string-array>
+<string-array name="powiatkrakowski" tools:ignore="ExtraTranslation">
+<item>gmina_Czernichów</item>
+<item>gmina_Igołomia-Wawrzeńczyce</item>
+<item>gmina_Iwanowice</item>
+<item>gmina_Jerzmanowice-Przeginia</item>
+<item>gmina_Kocmyrzów-Luborzyca</item>
+<item>gmina_Krzeszowice</item>
+<item>gmina_Liszki</item>
+<item>gmina_Michałowice</item>
+<item>gmina_Mogilany</item>
+<item>gmina_Skała</item>
+<item>gmina_Skawina</item>
+<item>gmina_Słomniki</item>
+<item>gmina_Sułoszowa</item>
+<item>gmina_Świątniki_Górne</item>
+<item>gmina_Wielka_Wieś</item>
+<item>gmina_Zabierzów</item>
+<item>gmina_Zielonki</item>
+</string-array>
+<string-array name="powiatKraków" tools:ignore="ExtraTranslation">
+<item>Kraków</item>
+</string-array>
+<string-array name="powiatkrapkowicki" tools:ignore="ExtraTranslation">
+<item>gmina_Gogolin</item>
+<item>gmina_Krapkowice</item>
+<item>gmina_Strzeleczki</item>
+<item>gmina_Walce</item>
+<item>gmina_Zdzieszowice</item>
+</string-array>
+<string-array name="powiatkrasnostawski" tools:ignore="ExtraTranslation">
+<item>gmina_Fajsławice</item>
+<item>gmina_Gorzków</item>
+<item>gmina_Izbica</item>
+<item>Krasnystaw</item>
+<item>gmina_Krasnystaw</item>
+<item>gmina_Kraśniczyn</item>
+<item>gmina_Łopiennik_Górny</item>
+<item>gmina_Rudnik</item>
+<item>gmina_Siennica_Różana</item>
+<item>gmina_Żółkiewka</item>
+</string-array>
+<string-array name="powiatkraśnicki" tools:ignore="ExtraTranslation">
+<item>gmina_Annopol</item>
+<item>gmina_Dzierzkowice</item>
+<item>gmina_Gościeradów</item>
+<item>Kraśnik</item>
+<item>gmina_Kraśnik</item>
+<item>gmina_Szastarka</item>
+<item>gmina_Trzydnik_Duży</item>
+<item>gmina_Urzędów</item>
+<item>gmina_Wilkołaz</item>
+<item>gmina_Zakrzówek</item>
+</string-array>
+<string-array name="powiatKrosno" tools:ignore="ExtraTranslation">
+<item>Krosno</item>
+</string-array>
+<string-array name="powiatkrośnieński" tools:ignore="ExtraTranslation">
+<item>gmina_Bobrowice</item>
+<item>gmina_Bytnica</item>
+<item>gmina_Chorkówka</item>
+<item>gmina_Dąbie</item>
+<item>gmina_Dukla</item>
+<item>Gubin</item>
+<item>gmina_Gubin</item>
+<item>gmina_Iwonicz-Zdrój</item>
+<item>gmina_Jaśliska</item>
+<item>gmina_Jedlicze</item>
+<item>gmina_Korczyna</item>
+<item>gmina_Krosno_Odrzańskie</item>
+<item>gmina_Krościenko_Wyżne</item>
+<item>gmina_Maszewo</item>
+<item>gmina_Miejsce_Piastowe</item>
+<item>gmina_Rymanów</item>
+<item>gmina_Wojaszówka</item>
+</string-array>
+<string-array name="powiatkrotoszyński" tools:ignore="ExtraTranslation">
+<item>gmina_Kobylin</item>
+<item>gmina_Koźmin_Wielkopolski</item>
+<item>gmina_Krotoszyn</item>
+<item>gmina_Rozdrażew</item>
+<item>Sulmierzyce</item>
+<item>gmina_Zduny</item>
+</string-array>
+<string-array name="powiatkutnowski" tools:ignore="ExtraTranslation">
+<item>gmina_Bedlno</item>
+<item>gmina_Dąbrowice</item>
+<item>gmina_Krośniewice</item>
+<item>gmina_Krzyżanów</item>
+<item>Kutno</item>
+<item>gmina_Kutno</item>
+<item>gmina_Łanięta</item>
+<item>gmina_Nowe_Ostrowy</item>
+<item>gmina_Oporów</item>
+<item>gmina_Strzelce</item>
+<item>gmina_Żychlin</item>
+</string-array>
+<string-array name="powiatkwidzyński" tools:ignore="ExtraTranslation">
+<item>gmina_Gardeja</item>
+<item>Kwidzyn</item>
+<item>gmina_Kwidzyn</item>
+<item>gmina_Prabuty</item>
+<item>gmina_Ryjewo</item>
+<item>gmina_Sadlinki</item>
+</string-array>
+<string-array name="powiatlegionowski" tools:ignore="ExtraTranslation">
+<item>gmina_Jabłonna</item>
+<item>Legionowo</item>
+<item>gmina_Nieporęt</item>
+<item>gmina_Serock</item>
+<item>gmina_Wieliszew</item>
+</string-array>
+<string-array name="powiatLegnica" tools:ignore="ExtraTranslation">
+<item>Legnica</item>
+</string-array>
+<string-array name="powiatlegnicki" tools:ignore="ExtraTranslation">
+<item>Chojnów</item>
+<item>gmina_Chojnów</item>
+<item>gmina_Krotoszyce</item>
+<item>gmina_Kunice</item>
+<item>gmina_Legnickie_Pole</item>
+<item>gmina_Miłkowice</item>
+<item>gmina_Prochowice</item>
+<item>gmina_Ruja</item>
+</string-array>
+<string-array name="powiatleski" tools:ignore="ExtraTranslation">
+<item>gmina_Baligród</item>
+<item>gmina_Cisna</item>
+<item>gmina_Lesko</item>
+<item>gmina_Olszanica</item>
+<item>gmina_Solina</item>
+</string-array>
+<string-array name="powiatleszczyński" tools:ignore="ExtraTranslation">
+<item>gmina_Krzemieniewo</item>
+<item>gmina_Lipno</item>
+<item>gmina_Osieczna</item>
+<item>gmina_Rydzyna</item>
+<item>gmina_Święciechowa</item>
+<item>gmina_Wijewo</item>
+<item>gmina_Włoszakowice</item>
+</string-array>
+<string-array name="powiatLeszno" tools:ignore="ExtraTranslation">
+<item>Leszno</item>
+</string-array>
+<string-array name="powiatlęborski" tools:ignore="ExtraTranslation">
+<item>gmina_Cewice</item>
+<item>Lębork</item>
+<item>Łeba</item>
+<item>gmina_Nowa_Wieś_Lęborska</item>
+<item>gmina_Wicko</item>
+</string-array>
+<string-array name="powiatleżajski" tools:ignore="ExtraTranslation">
+<item>gmina_Grodzisko_Dolne</item>
+<item>gmina_Kuryłówka</item>
+<item>Leżajsk</item>
+<item>gmina_Leżajsk</item>
+<item>gmina_Nowa_Sarzyna</item>
+</string-array>
+<string-array name="powiatlidzbarski" tools:ignore="ExtraTranslation">
+<item>gmina_Kiwity</item>
+<item>Lidzbark_Warmiński</item>
+<item>gmina_Lidzbark_Warmiński</item>
+<item>gmina_Lubomino</item>
+<item>gmina_Orneta</item>
+</string-array>
+<string-array name="powiatlimanowski" tools:ignore="ExtraTranslation">
+<item>gmina_Dobra</item>
+<item>gmina_Jodłownik</item>
+<item>gmina_Kamienica</item>
+<item>gmina_Laskowa</item>
+<item>Limanowa</item>
+<item>gmina_Limanowa</item>
+<item>gmina_Łukowica</item>
+<item>Mszana_Dolna</item>
+<item>gmina_Mszana_Dolna</item>
+<item>gmina_Niedźwiedź</item>
+<item>gmina_Słopnice</item>
+<item>gmina_Tymbark</item>
+</string-array>
+<string-array name="powiatlipnowski" tools:ignore="ExtraTranslation">
+<item>gmina_Bobrowniki</item>
+<item>gmina_Chrostkowo</item>
+<item>gmina_Dobrzyń_nad_Wisłą</item>
+<item>gmina_Kikół</item>
+<item>Lipno</item>
+<item>gmina_Lipno</item>
+<item>gmina_Skępe</item>
+<item>gmina_Tłuchowo</item>
+<item>gmina_Wielgie</item>
+</string-array>
+<string-array name="powiatlipski" tools:ignore="ExtraTranslation">
+<item>gmina_Chotcza</item>
+<item>gmina_Ciepielów</item>
+<item>gmina_Lipsko</item>
+<item>gmina_Rzeczniów</item>
+<item>gmina_Sienno</item>
+<item>gmina_Solec_nad_Wisłą</item>
+</string-array>
+<string-array name="powiatlubaczowski" tools:ignore="ExtraTranslation">
+<item>gmina_Cieszanów</item>
+<item>gmina_Horyniec-Zdrój</item>
+<item>Lubaczów</item>
+<item>gmina_Lubaczów</item>
+<item>gmina_Narol</item>
+<item>gmina_Oleszyce</item>
+<item>gmina_Stary_Dzików</item>
+<item>gmina_Wielkie_Oczy</item>
+</string-array>
+<string-array name="powiatlubański" tools:ignore="ExtraTranslation">
+<item>gmina_Leśna</item>
+<item>Lubań</item>
+<item>gmina_Lubań</item>
+<item>gmina_Olszyna</item>
+<item>gmina_Platerówka</item>
+<item>gmina_Siekierczyn</item>
+<item>Świeradów-Zdrój</item>
+</string-array>
+<string-array name="powiatlubartowski" tools:ignore="ExtraTranslation">
+<item>gmina_Abramów</item>
+<item>gmina_Firlej</item>
+<item>gmina_Jeziorzany</item>
+<item>gmina_Kamionka</item>
+<item>gmina_Kock</item>
+<item>Lubartów</item>
+<item>gmina_Lubartów</item>
+<item>gmina_Michów</item>
+<item>gmina_Niedźwiada</item>
+<item>gmina_Ostrów_Lubelski</item>
+<item>gmina_Ostrówek</item>
+<item>gmina_Serniki</item>
+<item>gmina_Uścimów</item>
+</string-array>
+<string-array name="powiatlubelski" tools:ignore="ExtraTranslation">
+<item>gmina_Bełżyce</item>
+<item>gmina_Borzechów</item>
+<item>gmina_Bychawa</item>
+<item>gmina_Garbów</item>
+<item>gmina_Głusk</item>
+<item>gmina_Jabłonna</item>
+<item>gmina_Jastków</item>
+<item>gmina_Konopnica</item>
+<item>gmina_Krzczonów</item>
+<item>gmina_Niedrzwica_Duża</item>
+<item>gmina_Niemce</item>
+<item>gmina_Strzyżewice</item>
+<item>gmina_Wojciechów</item>
+<item>gmina_Wólka</item>
+<item>gmina_Wysokie</item>
+<item>gmina_Zakrzew</item>
+</string-array>
+<string-array name="powiatlubiński" tools:ignore="ExtraTranslation">
+<item>Lubin</item>
+<item>gmina_Lubin</item>
+<item>gmina_Rudna</item>
+<item>gmina_Ścinawa</item>
+</string-array>
+<string-array name="powiatLublin" tools:ignore="ExtraTranslation">
+<item>Lublin</item>
+</string-array>
+<string-array name="powiatlubliniecki" tools:ignore="ExtraTranslation">
+<item>gmina_Boronów</item>
+<item>gmina_Ciasna</item>
+<item>gmina_Herby</item>
+<item>gmina_Kochanowice</item>
+<item>gmina_Koszęcin</item>
+<item>Lubliniec</item>
+<item>gmina_Pawonków</item>
+<item>gmina_Woźniki</item>
+</string-array>
+<string-array name="powiatlwówecki" tools:ignore="ExtraTranslation">
+<item>gmina_Gryfów_Śląski</item>
+<item>gmina_Lubomierz</item>
+<item>gmina_Lwówek_Śląski</item>
+<item>gmina_Mirsk</item>
+<item>gmina_Wleń</item>
+</string-array>
+<string-array name="powiatłańcucki" tools:ignore="ExtraTranslation">
+<item>gmina_Białobrzegi</item>
+<item>gmina_Czarna</item>
+<item>Łańcut</item>
+<item>gmina_Łańcut</item>
+<item>gmina_Markowa</item>
+<item>gmina_Rakszawa</item>
+<item>gmina_Żołynia</item>
+</string-array>
+<string-array name="powiatłaski" tools:ignore="ExtraTranslation">
+<item>gmina_Buczek</item>
+<item>gmina_Łask</item>
+<item>gmina_Sędziejowice</item>
+<item>gmina_Widawa</item>
+<item>gmina_Wodzierady</item>
+</string-array>
+<string-array name="powiatłęczycki" tools:ignore="ExtraTranslation">
+<item>gmina_Daszyna</item>
+<item>gmina_Góra_Świętej_Małgorzaty</item>
+<item>gmina_Grabów</item>
+<item>Łęczyca</item>
+<item>gmina_Łęczyca</item>
+<item>gmina_Piątek</item>
+<item>gmina_Świnice_Warckie</item>
+<item>gmina_Witonia</item>
+</string-array>
+<string-array name="powiatłęczyński" tools:ignore="ExtraTranslation">
+<item>gmina_Cyców</item>
+<item>gmina_Ludwin</item>
+<item>gmina_Łęczna</item>
+<item>gmina_Milejów</item>
+<item>gmina_Puchaczów</item>
+<item>gmina_Spiczyn</item>
+</string-array>
+<string-array name="powiatłobeski" tools:ignore="ExtraTranslation">
+<item>gmina_Dobra</item>
+<item>gmina_Łobez</item>
+<item>gmina_Radowo_Małe</item>
+<item>gmina_Resko</item>
+<item>gmina_Węgorzyno</item>
+</string-array>
+<string-array name="powiatŁomża" tools:ignore="ExtraTranslation">
+<item>Łomża</item>
+</string-array>
+<string-array name="powiatłomżyński" tools:ignore="ExtraTranslation">
+<item>gmina_Jedwabne</item>
+<item>gmina_Łomża</item>
+<item>gmina_Miastkowo</item>
+<item>gmina_Nowogród</item>
+<item>gmina_Piątnica</item>
+<item>gmina_Przytuły</item>
+<item>gmina_Śniadowo</item>
+<item>gmina_Wizna</item>
+<item>gmina_Zbójna</item>
+</string-array>
+<string-array name="powiatłosicki" tools:ignore="ExtraTranslation">
+<item>gmina_Huszlew</item>
+<item>gmina_Łosice</item>
+<item>gmina_Olszanka</item>
+<item>gmina_Platerów</item>
+<item>gmina_Sarnaki</item>
+<item>gmina_Stara_Kornica</item>
+</string-array>
+<string-array name="powiatłowicki" tools:ignore="ExtraTranslation">
+<item>gmina_Bielawy</item>
+<item>gmina_Chąśno</item>
+<item>gmina_Domaniewice</item>
+<item>gmina_Kiernozia</item>
+<item>gmina_Kocierzew_Południowy</item>
+<item>Łowicz</item>
+<item>gmina_Łowicz</item>
+<item>gmina_Łyszkowice</item>
+<item>gmina_Nieborów</item>
+<item>gmina_Zduny</item>
+</string-array>
+<string-array name="powiatłódzki_wschodni" tools:ignore="ExtraTranslation">
+<item>gmina_Andrespol</item>
+<item>gmina_Białaczów</item>
+<item>gmina_Brójce</item>
+<item>gmina_Drzewica</item>
+<item>gmina_Koluszki</item>
+<item>gmina_Mniszków</item>
+<item>gmina_Nowosolna</item>
+<item>gmina_Opoczno</item>
+<item>gmina_Paradyż</item>
+<item>gmina_Poświętne</item>
+<item>gmina_Rzgów</item>
+<item>gmina_Sławno</item>
+<item>gmina_Tuszyn</item>
+<item>gmina_Żarnów</item>
+</string-array>
+<string-array name="powiatŁódź" tools:ignore="ExtraTranslation">
+<item>Łódź</item>
+</string-array>
+<string-array name="powiatłukowski" tools:ignore="ExtraTranslation">
+<item>gmina_Adamów</item>
+<item>gmina_Krzywda</item>
+<item>Łuków</item>
+<item>gmina_Łuków</item>
+<item>gmina_Serokomla</item>
+<item>gmina_Stanin</item>
+<item>Stoczek_Łukowski</item>
+<item>gmina_Stoczek_Łukowski</item>
+<item>gmina_Trzebieszów</item>
+<item>gmina_Wojcieszków</item>
+<item>gmina_Wola_Mysłowska</item>
+</string-array>
+<string-array name="powiatmakowski" tools:ignore="ExtraTranslation">
+<item>gmina_Czerwonka</item>
+<item>gmina_Karniewo</item>
+<item>gmina_Krasnosielc</item>
+<item>Maków_Mazowiecki</item>
+<item>gmina_Młynarze</item>
+<item>gmina_Płoniawy-Bramura</item>
+<item>gmina_Różan</item>
+<item>gmina_Rzewnie</item>
+<item>gmina_Sypniewo</item>
+<item>gmina_Szelków</item>
+</string-array>
+<string-array name="powiatmalborski" tools:ignore="ExtraTranslation">
+<item>gmina_Lichnowy</item>
+<item>Malbork</item>
+<item>gmina_Malbork</item>
+<item>gmina_Miłoradz</item>
+<item>gmina_Nowy_Staw</item>
+<item>gmina_Stare_Pole</item>
+</string-array>
+<string-array name="powiatmiechowski" tools:ignore="ExtraTranslation">
+<item>gmina_Charsznica</item>
+<item>gmina_Gołcza</item>
+<item>gmina_Kozłów</item>
+<item>gmina_Książ_Wielki</item>
+<item>gmina_Miechów</item>
+<item>gmina_Racławice</item>
+<item>gmina_Słaboszów</item>
+</string-array>
+<string-array name="powiatmielecki" tools:ignore="ExtraTranslation">
+<item>gmina_Borowa</item>
+<item>gmina_Czermin</item>
+<item>gmina_Gawłuszowice</item>
+<item>Mielec</item>
+<item>gmina_Mielec</item>
+<item>gmina_Padew_Narodowa</item>
+<item>gmina_Przecław</item>
+<item>gmina_Radomyśl_Wielki</item>
+<item>gmina_Tuszów_Narodowy</item>
+<item>gmina_Wadowice_Górne</item>
+</string-array>
+<string-array name="powiatmiędzychodzki" tools:ignore="ExtraTranslation">
+<item>gmina_Chrzypsko_Wielkie</item>
+<item>gmina_Kwilcz</item>
+<item>gmina_Międzychód</item>
+<item>gmina_Sieraków</item>
+</string-array>
+<string-array name="powiatmiędzyrzecki" tools:ignore="ExtraTranslation">
+<item>gmina_Bledzew</item>
+<item>gmina_Międzyrzecz</item>
+<item>gmina_Przytoczna</item>
+<item>gmina_Pszczew</item>
+<item>gmina_Skwierzyna</item>
+<item>gmina_Trzciel</item>
+</string-array>
+<string-array name="powiatmikołowski" tools:ignore="ExtraTranslation">
+<item>Łaziska_Górne</item>
+<item>Mikołów</item>
+<item>gmina_Ornontowice</item>
+<item>Orzesze</item>
+<item>gmina_Wyry</item>
+</string-array>
+<string-array name="powiatmilicki" tools:ignore="ExtraTranslation">
+<item>gmina_Cieszków</item>
+<item>gmina_Krośnice</item>
+<item>gmina_Milicz</item>
+</string-array>
+<string-array name="powiatmiński" tools:ignore="ExtraTranslation">
+<item>gmina_Cegłów</item>
+<item>gmina_Dębe_Wielkie</item>
+<item>gmina_Dobre</item>
+<item>gmina_Halinów</item>
+<item>gmina_Jakubów</item>
+<item>gmina_Kałuszyn</item>
+<item>gmina_Latowicz</item>
+<item>Mińsk_Mazowiecki</item>
+<item>gmina_Mińsk_Mazowiecki</item>
+<item>gmina_Mrozy</item>
+<item>gmina_Siennica</item>
+<item>gmina_Stanisławów</item>
+<item>Sulejówek</item>
+</string-array>
+<string-array name="powiatmławski" tools:ignore="ExtraTranslation">
+<item>gmina_Dzierzgowo</item>
+<item>gmina_Lipowiec_Kościelny</item>
+<item>Mława</item>
+<item>gmina_Radzanów</item>
+<item>gmina_Strzegowo</item>
+<item>gmina_Stupsk</item>
+<item>gmina_Szreńsk</item>
+<item>gmina_Szydłowo</item>
+<item>gmina_Wieczfnia_Kościelna</item>
+<item>gmina_Wiśniewo</item>
+</string-array>
+<string-array name="powiatmogileński" tools:ignore="ExtraTranslation">
+<item>gmina_Dąbrowa</item>
+<item>gmina_Jeziora_Wielkie</item>
+<item>gmina_Mogilno</item>
+<item>gmina_Strzelno</item>
+</string-array>
+<string-array name="powiatmoniecki" tools:ignore="ExtraTranslation">
+<item>gmina_Goniądz</item>
+<item>gmina_Jasionówka</item>
+<item>gmina_Jaświły</item>
+<item>gmina_Knyszyn</item>
+<item>gmina_Krypno</item>
+<item>gmina_Mońki</item>
+<item>gmina_Trzcianne</item>
+</string-array>
+<string-array name="powiatmrągowski" tools:ignore="ExtraTranslation">
+<item>gmina_Mikołajki</item>
+<item>Mrągowo</item>
+<item>gmina_Mrągowo</item>
+<item>gmina_Piecki</item>
+<item>gmina_Sorkwity</item>
+</string-array>
+<string-array name="powiatMysłowice" tools:ignore="ExtraTranslation">
+<item>Mysłowice</item>
+</string-array>
+<string-array name="powiatmyszkowski" tools:ignore="ExtraTranslation">
+<item>gmina_Koziegłowy</item>
+<item>Myszków</item>
+<item>gmina_Niegowa</item>
+<item>gmina_Poraj</item>
+<item>gmina_Żarki</item>
+</string-array>
+<string-array name="powiatmyślenicki" tools:ignore="ExtraTranslation">
+<item>gmina_Dobczyce</item>
+<item>gmina_Lubień</item>
+<item>gmina_Myślenice</item>
+<item>gmina_Pcim</item>
+<item>gmina_Raciechowice</item>
+<item>gmina_Siepraw</item>
+<item>gmina_Sułkowice</item>
+<item>gmina_Tokarnia</item>
+<item>gmina_Wiśniowa</item>
+</string-array>
+<string-array name="powiatmyśliborski" tools:ignore="ExtraTranslation">
+<item>gmina_Barlinek</item>
+<item>gmina_Boleszkowice</item>
+<item>gmina_Dębno</item>
+<item>gmina_Myślibórz</item>
+<item>gmina_Nowogródek_Pomorski</item>
+</string-array>
+<string-array name="powiatnakielski" tools:ignore="ExtraTranslation">
+<item>gmina_Kcynia</item>
+<item>gmina_Mrocza</item>
+<item>gmina_Nakło_nad_Notecią</item>
+<item>gmina_Sadki</item>
+<item>gmina_Szubin</item>
+</string-array>
+<string-array name="powiatnamysłowski" tools:ignore="ExtraTranslation">
+<item>gmina_Domaszowice</item>
+<item>gmina_Namysłów</item>
+<item>gmina_Pokój</item>
+<item>gmina_Świerczów</item>
+<item>gmina_Wilków</item>
+</string-array>
+<string-array name="powiatnidzicki" tools:ignore="ExtraTranslation">
+<item>gmina_Janowiec_Kościelny</item>
+<item>gmina_Janowo</item>
+<item>gmina_Kozłowo</item>
+<item>gmina_Nidzica</item>
+</string-array>
+<string-array name="powiatniżański" tools:ignore="ExtraTranslation">
+<item>gmina_Harasiuki</item>
+<item>gmina_Jarocin</item>
+<item>gmina_Jeżowe</item>
+<item>gmina_Krzeszów</item>
+<item>gmina_Nisko</item>
+<item>gmina_Rudnik_nad_Sanem</item>
+<item>gmina_Ulanów</item>
+</string-array>
+<string-array name="powiatnowodworski" tools:ignore="ExtraTranslation">
+<item>gmina_Czosnów</item>
+<item>Krynica_Morska</item>
+<item>gmina_Leoncin</item>
+<item>gmina_Nasielsk</item>
+<item>gmina_Nowy_Dwór_Gdański</item>
+<item>Nowy_Dwór_Mazowiecki</item>
+<item>gmina_Ostaszewo</item>
+<item>gmina_Pomiechówek</item>
+<item>gmina_Stegna</item>
+<item>gmina_Sztutowo</item>
+<item>gmina_Zakroczym</item>
+</string-array>
+<string-array name="powiatnowomiejski" tools:ignore="ExtraTranslation">
+<item>gmina_Biskupiec</item>
+<item>gmina_Grodziczno</item>
+<item>gmina_Kurzętnik</item>
+<item>Nowe_Miasto_Lubawskie</item>
+<item>gmina_Nowe_Miasto_Lubawskie</item>
+</string-array>
+<string-array name="powiatnowosądecki" tools:ignore="ExtraTranslation">
+<item>gmina_Chełmiec</item>
+<item>gmina_Gródek_nad_Dunajcem</item>
+<item>Grybów</item>
+<item>gmina_Grybów</item>
+<item>gmina_Kamionka_Wielka</item>
+<item>gmina_Korzenna</item>
+<item>gmina_Krynica-Zdrój</item>
+<item>gmina_Łabowa</item>
+<item>gmina_Łącko</item>
+<item>gmina_Łososina_Dolna</item>
+<item>gmina_Muszyna</item>
+<item>gmina_Nawojowa</item>
+<item>gmina_Piwniczna-Zdrój</item>
+<item>gmina_Podegrodzie</item>
+<item>gmina_Rytro</item>
+<item>gmina_Stary_Sącz</item>
+</string-array>
+<string-array name="powiatnowosolski" tools:ignore="ExtraTranslation">
+<item>gmina_Bytom_Odrzański</item>
+<item>gmina_Kolsko</item>
+<item>gmina_Kożuchów</item>
+<item>Nowa_Sól</item>
+<item>gmina_Nowa_Sól</item>
+<item>gmina_Nowe_Miasteczko</item>
+<item>gmina_Otyń</item>
+<item>gmina_Siedlisko</item>
+</string-array>
+<string-array name="powiatnowotarski" tools:ignore="ExtraTranslation">
+<item>gmina_Czarny_Dunajec</item>
+<item>gmina_Czorsztyn</item>
+<item>gmina_Jabłonka</item>
+<item>gmina_Krościenko_nad_Dunajcem</item>
+<item>gmina_Lipnica_Wielka</item>
+<item>gmina_Łapsze_Niżne</item>
+<item>Nowy_Targ</item>
+<item>gmina_Nowy_Targ</item>
+<item>gmina_Ochotnica_Dolna</item>
+<item>gmina_Raba_Wyżna</item>
+<item>gmina_Rabka-Zdrój</item>
+<item>gmina_Spytkowice</item>
+<item>gmina_Szaflary</item>
+<item>gmina_Szczawnica</item>
+</string-array>
+<string-array name="powiatnowotomyski" tools:ignore="ExtraTranslation">
+<item>gmina_Kuślin</item>
+<item>gmina_Lwówek</item>
+<item>gmina_Miedzichowo</item>
+<item>gmina_Nowy_Tomyśl</item>
+<item>gmina_Opalenica</item>
+<item>gmina_Zbąszyń</item>
+</string-array>
+<string-array name="powiatNowy_Sącz" tools:ignore="ExtraTranslation">
+<item>Nowy_Sącz</item>
+</string-array>
+<string-array name="powiatnyski" tools:ignore="ExtraTranslation">
+<item>gmina_Głuchołazy</item>
+<item>gmina_Kamiennik</item>
+<item>gmina_Korfantów</item>
+<item>gmina_Łambinowice</item>
+<item>gmina_Nysa</item>
+<item>gmina_Otmuchów</item>
+<item>gmina_Paczków</item>
+<item>gmina_Pakosławice</item>
+<item>gmina_Skoroszyce</item>
+</string-array>
+<string-array name="powiatobornicki" tools:ignore="ExtraTranslation">
+<item>gmina_Oborniki</item>
+<item>gmina_Rogoźno</item>
+<item>gmina_Ryczywół</item>
+</string-array>
+<string-array name="powiatolecki" tools:ignore="ExtraTranslation">
+<item>gmina_Kowale_Oleckie</item>
+<item>gmina_Olecko</item>
+<item>gmina_Świętajno</item>
+<item>gmina_Wieliczki</item>
+</string-array>
+<string-array name="powiatoleski" tools:ignore="ExtraTranslation">
+<item>gmina_Dobrodzień</item>
+<item>gmina_Gorzów_Śląski</item>
+<item>gmina_Olesno</item>
+<item>gmina_Praszka</item>
+<item>gmina_Radłów</item>
+<item>gmina_Rudniki</item>
+<item>gmina_Zębowice</item>
+</string-array>
+<string-array name="powiatoleśnicki" tools:ignore="ExtraTranslation">
+<item>gmina_Bierutów</item>
+<item>gmina_Dobroszyce</item>
+<item>gmina_Dziadowa_Kłoda</item>
+<item>gmina_Międzybórz</item>
+<item>Oleśnica</item>
+<item>gmina_Oleśnica</item>
+<item>gmina_Syców</item>
+<item>gmina_Twardogóra</item>
+</string-array>
+<string-array name="powiatolkuski" tools:ignore="ExtraTranslation">
+<item>gmina_Bolesław</item>
+<item>Bukowno</item>
+<item>gmina_Klucze</item>
+<item>gmina_Olkusz</item>
+<item>gmina_Trzyciąż</item>
+<item>gmina_Wolbrom</item>
+</string-array>
+<string-array name="powiatOlsztyn" tools:ignore="ExtraTranslation">
+<item>Olsztyn</item>
+</string-array>
+<string-array name="powiatolsztyński" tools:ignore="ExtraTranslation">
+<item>gmina_Barczewo</item>
+<item>gmina_Biskupiec</item>
+<item>gmina_Dobre_Miasto</item>
+<item>gmina_Dywity</item>
+<item>gmina_Gietrzwałd</item>
+<item>gmina_Jeziorany</item>
+<item>gmina_Jonkowo</item>
+<item>gmina_Kolno</item>
+<item>gmina_Olsztynek</item>
+<item>gmina_Purda</item>
+<item>gmina_Stawiguda</item>
+<item>gmina_Świątki</item>
+</string-array>
+<string-array name="powiatoławski" tools:ignore="ExtraTranslation">
+<item>gmina_Domaniów</item>
+<item>gmina_Jelcz-Laskowice</item>
+<item>Oława</item>
+<item>gmina_Oława</item>
+</string-array>
+<string-array name="powiatopatowski" tools:ignore="ExtraTranslation">
+<item>gmina_Baćkowice</item>
+<item>gmina_Iwaniska</item>
+<item>gmina_Lipnik</item>
+<item>gmina_Opatów</item>
+<item>gmina_Ożarów</item>
+<item>gmina_Sadowie</item>
+<item>gmina_Tarłów</item>
+<item>gmina_Wojciechowice</item>
+</string-array>
+<string-array name="powiatOpole" tools:ignore="ExtraTranslation">
+<item>Opole</item>
+</string-array>
+<string-array name="powiatopolski" tools:ignore="ExtraTranslation">
+<item>gmina_Chodel</item>
+<item>gmina_Chrząstowice</item>
+<item>gmina_Dąbrowa</item>
+<item>gmina_Dobrzeń_Wielki</item>
+<item>gmina_Józefów_nad_Wisłą</item>
+<item>gmina_Karczmiska</item>
+<item>gmina_Komprachcice</item>
+<item>gmina_Łaziska</item>
+<item>gmina_Łubniany</item>
+<item>gmina_Murów</item>
+<item>gmina_Niemodlin</item>
+<item>gmina_Opole_Lubelskie</item>
+<item>gmina_Ozimek</item>
+<item>gmina_Poniatowa</item>
+<item>gmina_Popielów</item>
+<item>gmina_Prószków</item>
+<item>gmina_Tarnów_Opolski</item>
+<item>gmina_Tułowice</item>
+<item>gmina_Turawa</item>
+<item>gmina_Wilków</item>
+</string-array>
+<string-array name="powiatostrołęcki" tools:ignore="ExtraTranslation">
+<item>gmina_Baranowo</item>
+<item>gmina_Czarnia</item>
+<item>gmina_Czerwin</item>
+<item>gmina_Goworowo</item>
+<item>gmina_Kadzidło</item>
+<item>gmina_Lelis</item>
+<item>gmina_Łyse</item>
+<item>gmina_Myszyniec</item>
+<item>gmina_Olszewo-Borki</item>
+<item>gmina_Rzekuń</item>
+<item>gmina_Troszyn</item>
+</string-array>
+<string-array name="powiatOstrołęka" tools:ignore="ExtraTranslation">
+<item>Ostrołęka</item>
+</string-array>
+<string-array name="powiatostrowiecki" tools:ignore="ExtraTranslation">
+<item>gmina_Bałtów</item>
+<item>gmina_Bodzechów</item>
+<item>gmina_Ćmielów</item>
+<item>gmina_Kunów</item>
+<item>Ostrowiec_Świętokrzyski</item>
+<item>gmina_Waśniów</item>
+</string-array>
+<string-array name="powiatostrowski" tools:ignore="ExtraTranslation">
+<item>gmina_Andrzejewo</item>
+<item>gmina_Boguty-Pianki</item>
+<item>gmina_Brok</item>
+<item>gmina_Małkinia_Górna</item>
+<item>gmina_Nowe_Skalmierzyce</item>
+<item>gmina_Nur</item>
+<item>gmina_Odolanów</item>
+<item>Ostrów_Mazowiecka</item>
+<item>gmina_Ostrów_Mazowiecka</item>
+<item>Ostrów_Wielkopolski</item>
+<item>gmina_Ostrów_Wielkopolski</item>
+<item>gmina_Przygodzice</item>
+<item>gmina_Raszków</item>
+<item>gmina_Sieroszewice</item>
+<item>gmina_Sośnie</item>
+<item>gmina_Stary_Lubotyń</item>
+<item>gmina_Szulborze_Wielkie</item>
+<item>gmina_Wąsewo</item>
+<item>gmina_Zaręby_Kościelne</item>
+</string-array>
+<string-array name="powiatostródzki" tools:ignore="ExtraTranslation">
+<item>gmina_Dąbrówno</item>
+<item>gmina_Grunwald</item>
+<item>gmina_Łukta</item>
+<item>gmina_Małdyty</item>
+<item>gmina_Miłakowo</item>
+<item>gmina_Miłomłyn</item>
+<item>gmina_Morąg</item>
+<item>Ostróda</item>
+<item>gmina_Ostróda</item>
+</string-array>
+<string-array name="powiatostrzeszowski" tools:ignore="ExtraTranslation">
+<item>gmina_Czajków</item>
+<item>gmina_Doruchów</item>
+<item>gmina_Grabów_nad_Prosną</item>
+<item>gmina_Kobyla_Góra</item>
+<item>gmina_Kraszewice</item>
+<item>gmina_Mikstat</item>
+<item>gmina_Ostrzeszów</item>
+</string-array>
+<string-array name="powiatoświęcimski" tools:ignore="ExtraTranslation">
+<item>gmina_Brzeszcze</item>
+<item>gmina_Chełmek</item>
+<item>gmina_Kęty</item>
+<item>gmina_Osiek</item>
+<item>Oświęcim</item>
+<item>gmina_Oświęcim</item>
+<item>gmina_Polanka_Wielka</item>
+<item>gmina_Przeciszów</item>
+<item>gmina_Zator</item>
+</string-array>
+<string-array name="powiatotwocki" tools:ignore="ExtraTranslation">
+<item>gmina_Celestynów</item>
+<item>Józefów</item>
+<item>gmina_Karczew</item>
+<item>gmina_Kołbiel</item>
+<item>gmina_Osieck</item>
+<item>Otwock</item>
+<item>gmina_Sobienie-Jeziory</item>
+<item>gmina_Wiązowna</item>
+</string-array>
+<string-array name="powiatpabianicki" tools:ignore="ExtraTranslation">
+<item>gmina_Dłutów</item>
+<item>gmina_Dobroń</item>
+<item>Konstantynów_Łódzki</item>
+<item>gmina_Ksawerów</item>
+<item>gmina_Lutomiersk</item>
+<item>Pabianice</item>
+<item>gmina_Pabianice</item>
+</string-array>
+<string-array name="powiatpajęczański" tools:ignore="ExtraTranslation">
+<item>gmina_Działoszyn</item>
+<item>gmina_Kiełczygłów</item>
+<item>gmina_Nowa_Brzeźnica</item>
+<item>gmina_Pajęczno</item>
+<item>gmina_Rząśnia</item>
+<item>gmina_Siemkowice</item>
+<item>gmina_Strzelce_Wielkie</item>
+<item>gmina_Sulmierzyce</item>
+</string-array>
+<string-array name="powiatparczewski" tools:ignore="ExtraTranslation">
+<item>gmina_Dębowa_Kłoda</item>
+<item>gmina_Jabłoń</item>
+<item>gmina_Milanów</item>
+<item>gmina_Parczew</item>
+<item>gmina_Podedwórze</item>
+<item>gmina_Siemień</item>
+<item>gmina_Sosnowica</item>
+</string-array>
+<string-array name="powiatpiaseczyński" tools:ignore="ExtraTranslation">
+<item>gmina_Góra_Kalwaria</item>
+<item>gmina_Konstancin-Jeziorna</item>
+<item>gmina_Lesznowola</item>
+<item>gmina_Piaseczno</item>
+<item>gmina_Prażmów</item>
+<item>gmina_Tarczyn</item>
+</string-array>
+<string-array name="powiatPiekary_Śląskie" tools:ignore="ExtraTranslation">
+<item>Piekary_Śląskie</item>
+</string-array>
+<string-array name="powiatpilski" tools:ignore="ExtraTranslation">
+<item>gmina_Białośliwie</item>
+<item>gmina_Kaczory</item>
+<item>gmina_Łobżenica</item>
+<item>gmina_Miasteczko_Krajeńskie</item>
+<item>Piła</item>
+<item>gmina_Szydłowo</item>
+<item>gmina_Ujście</item>
+<item>gmina_Wyrzysk</item>
+<item>gmina_Wysoka</item>
+</string-array>
+<string-array name="powiatpińczowski" tools:ignore="ExtraTranslation">
+<item>gmina_Działoszyce</item>
+<item>gmina_Kije</item>
+<item>gmina_Michałów</item>
+<item>gmina_Pińczów</item>
+<item>gmina_Złota</item>
+</string-array>
+<string-array name="powiatpiotrkowski" tools:ignore="ExtraTranslation">
+<item>gmina_Aleksandrów</item>
+<item>gmina_Czarnocin</item>
+<item>gmina_Gorzkowice</item>
+<item>gmina_Grabica</item>
+<item>gmina_Łęki_Szlacheckie</item>
+<item>gmina_Moszczenica</item>
+<item>gmina_Ręczno</item>
+<item>gmina_Rozprza</item>
+<item>gmina_Sulejów</item>
+<item>gmina_Wola_Krzysztoporska</item>
+<item>gmina_Wolbórz</item>
+</string-array>
+<string-array name="powiatPiotrków_Trybunalski" tools:ignore="ExtraTranslation">
+<item>Piotrków_Trybunalski</item>
+</string-array>
+<string-array name="powiatpiski" tools:ignore="ExtraTranslation">
+<item>gmina_Biała_Piska</item>
+<item>gmina_Orzysz</item>
+<item>gmina_Pisz</item>
+<item>gmina_Ruciane-Nida</item>
+</string-array>
+<string-array name="powiatpleszewski" tools:ignore="ExtraTranslation">
+<item>gmina_Chocz</item>
+<item>gmina_Czermin</item>
+<item>gmina_Dobrzyca</item>
+<item>gmina_Gizałki</item>
+<item>gmina_Gołuchów</item>
+<item>gmina_Pleszew</item>
+</string-array>
+<string-array name="powiatPłock" tools:ignore="ExtraTranslation">
+<item>Płock</item>
+</string-array>
+<string-array name="powiatpłocki" tools:ignore="ExtraTranslation">
+<item>gmina_Bielsk</item>
+<item>gmina_Bodzanów</item>
+<item>gmina_Brudzeń_Duży</item>
+<item>gmina_Bulkowo</item>
+<item>gmina_Drobin</item>
+<item>gmina_Gąbin</item>
+<item>gmina_Łąck</item>
+<item>gmina_Mała_Wieś</item>
+<item>gmina_Nowy_Duninów</item>
+<item>gmina_Radzanowo</item>
+<item>gmina_Słubice</item>
+<item>gmina_Słupno</item>
+<item>gmina_Stara_Biała</item>
+<item>gmina_Staroźreby</item>
+<item>gmina_Wyszogród</item>
+</string-array>
+<string-array name="powiatpłoński" tools:ignore="ExtraTranslation">
+<item>gmina_Baboszewo</item>
+<item>gmina_Czerwińsk_nad_Wisłą</item>
+<item>gmina_Dzierzążnia</item>
+<item>gmina_Joniec</item>
+<item>gmina_Naruszewo</item>
+<item>gmina_Nowe_Miasto</item>
+<item>Płońsk</item>
+<item>gmina_Płońsk</item>
+<item>Raciąż</item>
+<item>gmina_Raciąż</item>
+<item>gmina_Sochocin</item>
+<item>gmina_Załuski</item>
+</string-array>
+<string-array name="powiatpoddębicki" tools:ignore="ExtraTranslation">
+<item>gmina_Dalików</item>
+<item>gmina_Pęczniew</item>
+<item>gmina_Poddębice</item>
+<item>gmina_Uniejów</item>
+<item>gmina_Wartkowice</item>
+<item>gmina_Zadzim</item>
+</string-array>
+<string-array name="powiatpolicki" tools:ignore="ExtraTranslation">
+<item>gmina_Dobra_(Szczecińska)</item>
+<item>gmina_Kołbaskowo</item>
+<item>gmina_Nowe_Warpno</item>
+<item>gmina_Police</item>
+</string-array>
+<string-array name="powiatpolkowicki" tools:ignore="ExtraTranslation">
+<item>gmina_Chocianów</item>
+<item>gmina_Gaworzyce</item>
+<item>gmina_Grębocice</item>
+<item>gmina_Polkowice</item>
+<item>gmina_Przemków</item>
+<item>gmina_Radwanice</item>
+</string-array>
+<string-array name="powiatPoznań" tools:ignore="ExtraTranslation">
+<item>Poznań</item>
+</string-array>
+<string-array name="powiatpoznański" tools:ignore="ExtraTranslation">
+<item>gmina_Buk</item>
+<item>gmina_Czerwonak</item>
+<item>gmina_Dopiewo</item>
+<item>gmina_Kleszczewo</item>
+<item>gmina_Komorniki</item>
+<item>gmina_Kostrzyn</item>
+<item>gmina_Kórnik</item>
+<item>Luboń</item>
+<item>gmina_Mosina</item>
+<item>gmina_Murowana_Goślina</item>
+<item>gmina_Pobiedziska</item>
+<item>Puszczykowo</item>
+<item>gmina_Rokietnica</item>
+<item>gmina_Stęszew</item>
+<item>gmina_Suchy_Las</item>
+<item>gmina_Swarzędz</item>
+<item>gmina_Tarnowo_Podgórne</item>
+</string-array>
+<string-array name="powiatproszowicki" tools:ignore="ExtraTranslation">
+<item>gmina_Koniusza</item>
+<item>gmina_Koszyce</item>
+<item>gmina_Nowe_Brzesko</item>
+<item>gmina_Pałecznica</item>
+<item>gmina_Proszowice</item>
+<item>gmina_Radziemice</item>
+</string-array>
+<string-array name="powiatprudnicki" tools:ignore="ExtraTranslation">
+<item>gmina_Biała</item>
+<item>gmina_Głogówek</item>
+<item>gmina_Lubrza</item>
+<item>gmina_Prudnik</item>
+</string-array>
+<string-array name="powiatpruszkowski" tools:ignore="ExtraTranslation">
+<item>gmina_Brwinów</item>
+<item>gmina_Michałowice</item>
+<item>gmina_Nadarzyn</item>
+<item>Piastów</item>
+<item>Pruszków</item>
+<item>gmina_Raszyn</item>
+</string-array>
+<string-array name="powiatprzasnyski" tools:ignore="ExtraTranslation">
+<item>gmina_Chorzele</item>
+<item>gmina_Czernice_Borowe</item>
+<item>gmina_Jednorożec</item>
+<item>gmina_Krasne</item>
+<item>gmina_Krzynowłoga_Mała</item>
+<item>Przasnysz</item>
+<item>gmina_Przasnysz</item>
+</string-array>
+<string-array name="powiatprzemyski" tools:ignore="ExtraTranslation">
+<item>gmina_Bircza</item>
+<item>gmina_Dubiecko</item>
+<item>gmina_Fredropol</item>
+<item>gmina_Krasiczyn</item>
+<item>gmina_Krzywcza</item>
+<item>gmina_Medyka</item>
+<item>gmina_Orły</item>
+<item>gmina_Przemyśl</item>
+<item>gmina_Stubno</item>
+<item>gmina_Żurawica</item>
+</string-array>
+<string-array name="powiatPrzemyśl" tools:ignore="ExtraTranslation">
+<item>Przemyśl</item>
+</string-array>
+<string-array name="powiatprzeworski" tools:ignore="ExtraTranslation">
+<item>gmina_Adamówka</item>
+<item>gmina_Gać</item>
+<item>gmina_Jawornik_Polski</item>
+<item>gmina_Kańczuga</item>
+<item>Przeworsk</item>
+<item>gmina_Przeworsk</item>
+<item>gmina_Sieniawa</item>
+<item>gmina_Tryńcza</item>
+<item>gmina_Zarzecze</item>
+</string-array>
+<string-array name="powiatprzysuski" tools:ignore="ExtraTranslation">
+<item>gmina_Borkowice</item>
+<item>gmina_Gielniów</item>
+<item>gmina_Klwów</item>
+<item>gmina_Odrzywół</item>
+<item>gmina_Potworów</item>
+<item>gmina_Przysucha</item>
+<item>gmina_Rusinów</item>
+<item>gmina_Wieniawa</item>
+</string-array>
+<string-array name="powiatpszczyński" tools:ignore="ExtraTranslation">
+<item>gmina_Goczałkowice-Zdrój</item>
+<item>gmina_Kobiór</item>
+<item>gmina_Miedźna</item>
+<item>gmina_Pawłowice</item>
+<item>gmina_Pszczyna</item>
+<item>gmina_Suszec</item>
+</string-array>
+<string-array name="powiatpucki" tools:ignore="ExtraTranslation">
+<item>Hel</item>
+<item>gmina_Jastarnia</item>
+<item>gmina_Kosakowo</item>
+<item>gmina_Krokowa</item>
+<item>Puck</item>
+<item>gmina_Puck</item>
+<item>Władysławowo</item>
+</string-array>
+<string-array name="powiatpuławski" tools:ignore="ExtraTranslation">
+<item>gmina_Baranów</item>
+<item>gmina_Janowiec</item>
+<item>gmina_Kazimierz_Dolny</item>
+<item>gmina_Końskowola</item>
+<item>gmina_Kurów</item>
+<item>gmina_Markuszów</item>
+<item>gmina_Nałęczów</item>
+<item>Puławy</item>
+<item>gmina_Puławy</item>
+<item>gmina_Wąwolnica</item>
+<item>gmina_Żyrzyn</item>
+</string-array>
+<string-array name="powiatpułtuski" tools:ignore="ExtraTranslation">
+<item>gmina_Gzy</item>
+<item>gmina_Obryte</item>
+<item>gmina_Pokrzywnica</item>
+<item>gmina_Pułtusk</item>
+<item>gmina_Świercze</item>
+<item>gmina_Winnica</item>
+<item>gmina_Zatory</item>
+</string-array>
+<string-array name="powiatpyrzycki" tools:ignore="ExtraTranslation">
+<item>gmina_Bielice</item>
+<item>gmina_Kozielice</item>
+<item>gmina_Lipiany</item>
+<item>gmina_Przelewice</item>
+<item>gmina_Pyrzyce</item>
+<item>gmina_Warnice</item>
+</string-array>
+<string-array name="powiatraciborski" tools:ignore="ExtraTranslation">
+<item>gmina_Kornowac</item>
+<item>gmina_Krzanowice</item>
+<item>gmina_Krzyżanowice</item>
+<item>gmina_Kuźnia_Raciborska</item>
+<item>gmina_Nędza</item>
+<item>gmina_Pietrowice_Wielkie</item>
+<item>Racibórz</item>
+<item>gmina_Rudnik</item>
+</string-array>
+<string-array name="powiatRadom" tools:ignore="ExtraTranslation">
+<item>Radom</item>
+</string-array>
+<string-array name="powiatradomski" tools:ignore="ExtraTranslation">
+<item>gmina_Gózd</item>
+<item>gmina_Iłża</item>
+<item>gmina_Jastrzębia</item>
+<item>gmina_Jedlińsk</item>
+<item>gmina_Jedlnia-Letnisko</item>
+<item>gmina_Kowala</item>
+<item>Pionki</item>
+<item>gmina_Pionki</item>
+<item>gmina_Przytyk</item>
+<item>gmina_Skaryszew</item>
+<item>gmina_Wierzbica</item>
+<item>gmina_Wolanów</item>
+<item>gmina_Zakrzew</item>
+</string-array>
+<string-array name="powiatradomszczański" tools:ignore="ExtraTranslation">
+<item>gmina_Dobryszyce</item>
+<item>gmina_Gidle</item>
+<item>gmina_Gomunice</item>
+<item>gmina_Kamieńsk</item>
+<item>gmina_Kobiele_Wielkie</item>
+<item>gmina_Kodrąb</item>
+<item>gmina_Lgota_Wielka</item>
+<item>gmina_Ładzice</item>
+<item>gmina_Masłowice</item>
+<item>gmina_Przedbórz</item>
+<item>Radomsko</item>
+<item>gmina_Radomsko</item>
+<item>gmina_Wielgomłyny</item>
+<item>gmina_Żytno</item>
+</string-array>
+<string-array name="powiatradziejowski" tools:ignore="ExtraTranslation">
+<item>gmina_Bytoń</item>
+<item>gmina_Dobre</item>
+<item>gmina_Osięciny</item>
+<item>gmina_Piotrków_Kujawski</item>
+<item>Radziejów</item>
+<item>gmina_Radziejów</item>
+<item>gmina_Topólka</item>
+</string-array>
+<string-array name="powiatradzyński" tools:ignore="ExtraTranslation">
+<item>gmina_Borki</item>
+<item>gmina_Czemierniki</item>
+<item>gmina_Kąkolewnica</item>
+<item>gmina_Komarówka_Podlaska</item>
+<item>Radzyń_Podlaski</item>
+<item>gmina_Radzyń_Podlaski</item>
+<item>gmina_Ulan-Majorat</item>
+<item>gmina_Wohyń</item>
+</string-array>
+<string-array name="powiatrawicki" tools:ignore="ExtraTranslation">
+<item>gmina_Bojanowo</item>
+<item>gmina_Jutrosin</item>
+<item>gmina_Miejska_Górka</item>
+<item>gmina_Pakosław</item>
+<item>gmina_Rawicz</item>
+</string-array>
+<string-array name="powiatrawski" tools:ignore="ExtraTranslation">
+<item>gmina_Biała_Rawska</item>
+<item>gmina_Cielądz</item>
+<item>Rawa_Mazowiecka</item>
+<item>gmina_Rawa_Mazowiecka</item>
+<item>gmina_Regnów</item>
+<item>gmina_Sadkowice</item>
+</string-array>
+<string-array name="powiatropczycko_sędziszowski" tools:ignore="ExtraTranslation">
+<item>gmina_Iwierzyce</item>
+<item>gmina_Ostrów</item>
+<item>gmina_Ropczyce</item>
+<item>gmina_Sędziszów_Małopolski</item>
+<item>gmina_Wielopole_Skrzyńskie</item>
+</string-array>
+<string-array name="powiatRuda_Śląska" tools:ignore="ExtraTranslation">
+<item>Ruda_Śląska</item>
+</string-array>
+<string-array name="powiatrybnicki" tools:ignore="ExtraTranslation">
+<item>gmina_Czerwionka-Leszczyny</item>
+<item>gmina_Gaszowice</item>
+<item>gmina_Jejkowice</item>
+<item>gmina_Lyski</item>
+<item>gmina_Świerklany</item>
+</string-array>
+<string-array name="powiatRybnik" tools:ignore="ExtraTranslation">
+<item>Rybnik</item>
+</string-array>
+<string-array name="powiatrycki" tools:ignore="ExtraTranslation">
+<item>Dęblin</item>
+<item>gmina_Kłoczew</item>
+<item>gmina_Nowodwór</item>
+<item>gmina_Ryki</item>
+<item>gmina_Stężyca</item>
+<item>gmina_Ułęż</item>
+</string-array>
+<string-array name="powiatrypiński" tools:ignore="ExtraTranslation">
+<item>gmina_Brzuze</item>
+<item>gmina_Rogowo</item>
+<item>Rypin</item>
+<item>gmina_Rypin</item>
+<item>gmina_Skrwilno</item>
+<item>gmina_Wąpielsk</item>
+</string-array>
+<string-array name="powiatrzeszowski" tools:ignore="ExtraTranslation">
+<item>gmina_Błażowa</item>
+<item>gmina_Boguchwała</item>
+<item>gmina_Chmielnik</item>
+<item>Dynów</item>
+<item>gmina_Dynów</item>
+<item>gmina_Głogów_Małopolski</item>
+<item>gmina_Hyżne</item>
+<item>gmina_Kamień</item>
+<item>gmina_Krasne</item>
+<item>gmina_Lubenia</item>
+<item>gmina_Sokołów_Małopolski</item>
+<item>gmina_Świlcza</item>
+<item>gmina_Trzebownisko</item>
+<item>gmina_Tyczyn</item>
+</string-array>
+<string-array name="powiatRzeszów" tools:ignore="ExtraTranslation">
+<item>Rzeszów</item>
+</string-array>
+<string-array name="powiatsandomierski" tools:ignore="ExtraTranslation">
+<item>gmina_Dwikozy</item>
+<item>gmina_Klimontów</item>
+<item>gmina_Koprzywnica</item>
+<item>gmina_Łoniów</item>
+<item>gmina_Obrazów</item>
+<item>gmina_Samborzec</item>
+<item>Sandomierz</item>
+<item>gmina_Wilczyce</item>
+<item>gmina_Zawichost</item>
+</string-array>
+<string-array name="powiatsanocki" tools:ignore="ExtraTranslation">
+<item>gmina_Besko</item>
+<item>gmina_Bukowsko</item>
+<item>gmina_Komańcza</item>
+<item>Sanok</item>
+<item>gmina_Sanok</item>
+<item>gmina_Tyrawa_Wołoska</item>
+<item>gmina_Zagórz</item>
+<item>gmina_Zarszyn</item>
+</string-array>
+<string-array name="powiatsejneński" tools:ignore="ExtraTranslation">
+<item>gmina_Giby</item>
+<item>gmina_Krasnopol</item>
+<item>gmina_Puńsk</item>
+<item>Sejny</item>
+<item>gmina_Sejny</item>
+</string-array>
+<string-array name="powiatsępoleński" tools:ignore="ExtraTranslation">
+<item>gmina_Kamień_Krajeński</item>
+<item>gmina_Sępólno_Krajeńskie</item>
+<item>gmina_Sośno</item>
+<item>gmina_Więcbork</item>
+</string-array>
+<string-array name="powiatSiedlce" tools:ignore="ExtraTranslation">
+<item>Siedlce</item>
+</string-array>
+<string-array name="powiatsiedlecki" tools:ignore="ExtraTranslation">
+<item>gmina_Domanice</item>
+<item>gmina_Korczew</item>
+<item>gmina_Kotuń</item>
+<item>gmina_Mokobody</item>
+<item>gmina_Mordy</item>
+<item>gmina_Paprotnia</item>
+<item>gmina_Przesmyki</item>
+<item>gmina_Siedlce</item>
+<item>gmina_Skórzec</item>
+<item>gmina_Suchożebry</item>
+<item>gmina_Wiśniew</item>
+<item>gmina_Wodynie</item>
+<item>gmina_Zbuczyn</item>
+</string-array>
+<string-array name="powiatSiemianowice_Śląskie" tools:ignore="ExtraTranslation">
+<item>Siemianowice_Śląskie</item>
+</string-array>
+<string-array name="powiatsiemiatycki" tools:ignore="ExtraTranslation">
+<item>gmina_Drohiczyn</item>
+<item>gmina_Dziadkowice</item>
+<item>gmina_Grodzisk</item>
+<item>gmina_Mielnik</item>
+<item>gmina_Milejczyce</item>
+<item>gmina_Nurzec-Stacja</item>
+<item>gmina_Perlejewo</item>
+<item>Siemiatycze</item>
+<item>gmina_Siemiatycze</item>
+</string-array>
+<string-array name="powiatsieradzki" tools:ignore="ExtraTranslation">
+<item>gmina_Błaszki</item>
+<item>gmina_Brąszewice</item>
+<item>gmina_Brzeźnio</item>
+<item>gmina_Burzenin</item>
+<item>gmina_Goszczanów</item>
+<item>gmina_Klonowa</item>
+<item>Sieradz</item>
+<item>gmina_Sieradz</item>
+<item>gmina_Warta</item>
+<item>gmina_Wróblew</item>
+<item>gmina_Złoczew</item>
+</string-array>
+<string-array name="powiatsierpecki" tools:ignore="ExtraTranslation">
+<item>gmina_Gozdowo</item>
+<item>gmina_Mochowo</item>
+<item>gmina_Rościszewo</item>
+<item>Sierpc</item>
+<item>gmina_Sierpc</item>
+<item>gmina_Szczutowo</item>
+<item>gmina_Zawidz</item>
+</string-array>
+<string-array name="powiatskarżyski" tools:ignore="ExtraTranslation">
+<item>gmina_Bliżyn</item>
+<item>gmina_Łączna</item>
+<item>gmina_Skarżysko_Kościelne</item>
+<item>Skarżysko-Kamienna</item>
+<item>gmina_Suchedniów</item>
+</string-array>
+<string-array name="powiatSkierniewice" tools:ignore="ExtraTranslation">
+<item>Skierniewice</item>
+</string-array>
+<string-array name="powiatskierniewicki" tools:ignore="ExtraTranslation">
+<item>gmina_Bolimów</item>
+<item>gmina_Głuchów</item>
+<item>gmina_Godzianów</item>
+<item>gmina_Kowiesy</item>
+<item>gmina_Lipce_Reymontowskie</item>
+<item>gmina_Maków</item>
+<item>gmina_Nowy_Kawęczyn</item>
+<item>gmina_Skierniewice</item>
+<item>gmina_Słupia</item>
+</string-array>
+<string-array name="powiatsławieński" tools:ignore="ExtraTranslation">
+<item>Darłowo</item>
+<item>gmina_Darłowo</item>
+<item>gmina_Malechowo</item>
+<item>gmina_Postomino</item>
+<item>Sławno</item>
+<item>gmina_Sławno</item>
+</string-array>
+<string-array name="powiatsłubicki" tools:ignore="ExtraTranslation">
+<item>gmina_Cybinka</item>
+<item>gmina_Górzyca</item>
+<item>gmina_Ośno_Lubuskie</item>
+<item>gmina_Rzepin</item>
+<item>gmina_Słubice</item>
+</string-array>
+<string-array name="powiatsłupecki" tools:ignore="ExtraTranslation">
+<item>gmina_Lądek</item>
+<item>gmina_Orchowo</item>
+<item>gmina_Ostrowite</item>
+<item>gmina_Powidz</item>
+<item>Słupca</item>
+<item>gmina_Słupca</item>
+<item>gmina_Strzałkowo</item>
+<item>gmina_Zagórów</item>
+</string-array>
+<string-array name="powiatSłupsk" tools:ignore="ExtraTranslation">
+<item>Słupsk</item>
+</string-array>
+<string-array name="powiatsłupski" tools:ignore="ExtraTranslation">
+<item>gmina_Damnica</item>
+<item>gmina_Dębnica_Kaszubska</item>
+<item>gmina_Główczyce</item>
+<item>gmina_Kępice</item>
+<item>gmina_Kobylnica</item>
+<item>gmina_Potęgowo</item>
+<item>gmina_Słupsk</item>
+<item>gmina_Smołdzino</item>
+<item>Ustka</item>
+<item>gmina_Ustka</item>
+</string-array>
+<string-array name="powiatsochaczewski" tools:ignore="ExtraTranslation">
+<item>gmina_Brochów</item>
+<item>gmina_Iłów</item>
+<item>gmina_Młodzieszyn</item>
+<item>gmina_Nowa_Sucha</item>
+<item>gmina_Rybno</item>
+<item>Sochaczew</item>
+<item>gmina_Sochaczew</item>
+<item>gmina_Teresin</item>
+</string-array>
+<string-array name="powiatsokołowski" tools:ignore="ExtraTranslation">
+<item>gmina_Bielany</item>
+<item>gmina_Ceranów</item>
+<item>gmina_Jabłonna_Lacka</item>
+<item>gmina_Kosów_Lacki</item>
+<item>gmina_Repki</item>
+<item>gmina_Sabnie</item>
+<item>Sokołów_Podlaski</item>
+<item>gmina_Sokołów_Podlaski</item>
+<item>gmina_Sterdyń</item>
+</string-array>
+<string-array name="powiatsokólski" tools:ignore="ExtraTranslation">
+<item>gmina_Dąbrowa_Białostocka</item>
+<item>gmina_Janów</item>
+<item>gmina_Korycin</item>
+<item>gmina_Krynki</item>
+<item>gmina_Kuźnica</item>
+<item>gmina_Nowy_Dwór</item>
+<item>gmina_Sidra</item>
+<item>gmina_Sokółka</item>
+<item>gmina_Suchowola</item>
+<item>gmina_Szudziałowo</item>
+</string-array>
+<string-array name="powiatSopot" tools:ignore="ExtraTranslation">
+<item>Sopot</item>
+</string-array>
+<string-array name="powiatSosnowiec" tools:ignore="ExtraTranslation">
+<item>Sosnowiec</item>
+</string-array>
+<string-array name="powiatstalowowolski" tools:ignore="ExtraTranslation">
+<item>gmina_Bojanów</item>
+<item>gmina_Pysznica</item>
+<item>gmina_Radomyśl_nad_Sanem</item>
+<item>Stalowa_Wola</item>
+<item>gmina_Zaklików</item>
+<item>gmina_Zaleszany</item>
+</string-array>
+<string-array name="powiatstarachowicki" tools:ignore="ExtraTranslation">
+<item>gmina_Brody</item>
+<item>gmina_Mirzec</item>
+<item>gmina_Pawłów</item>
+<item>Starachowice</item>
+<item>gmina_Wąchock</item>
+</string-array>
+<string-array name="powiatstargardzki" tools:ignore="ExtraTranslation">
+<item>gmina_Chociwel</item>
+<item>gmina_Dobrzany</item>
+<item>gmina_Dolice</item>
+<item>gmina_Ińsko</item>
+<item>gmina_Kobylanka</item>
+<item>gmina_Marianowo</item>
+<item>gmina_Stara_Dąbrowa</item>
+<item>Stargard</item>
+<item>gmina_Stargard</item>
+<item>gmina_Suchań</item>
+</string-array>
+<string-array name="powiatstarogardzki" tools:ignore="ExtraTranslation">
+<item>gmina_Bobowo</item>
+<item>gmina_Czarna_Woda</item>
+<item>gmina_Kaliska</item>
+<item>gmina_Lubichowo</item>
+<item>gmina_Osieczna</item>
+<item>gmina_Osiek</item>
+<item>gmina_Skarszewy</item>
+<item>Skórcz</item>
+<item>gmina_Skórcz</item>
+<item>gmina_Smętowo_Graniczne</item>
+<item>Starogard_Gdański</item>
+<item>gmina_Starogard_Gdański</item>
+<item>gmina_Zblewo</item>
+</string-array>
+<string-array name="powiatstaszowski" tools:ignore="ExtraTranslation">
+<item>gmina_Bogoria</item>
+<item>gmina_Łubnice</item>
+<item>gmina_Oleśnica</item>
+<item>gmina_Osiek</item>
+<item>gmina_Połaniec</item>
+<item>gmina_Rytwiany</item>
+<item>gmina_Staszów</item>
+<item>gmina_Szydłów</item>
+</string-array>
+<string-array name="powiatstrzelecki" tools:ignore="ExtraTranslation">
+<item>gmina_Izbicko</item>
+<item>gmina_Jemielnica</item>
+<item>gmina_Kolonowskie</item>
+<item>gmina_Leśnica</item>
+<item>gmina_Strzelce_Opolskie</item>
+<item>gmina_Ujazd</item>
+<item>gmina_Zawadzkie</item>
+</string-array>
+<string-array name="powiatstrzelecko_drezdenecki" tools:ignore="ExtraTranslation">
+<item>gmina_Dobiegniew</item>
+<item>gmina_Drezdenko</item>
+<item>gmina_Stare_Kurowo</item>
+<item>gmina_Strzelce_Krajeńskie</item>
+<item>gmina_Zwierzyn</item>
+</string-array>
+<string-array name="powiatstrzeliński" tools:ignore="ExtraTranslation">
+<item>gmina_Borów</item>
+<item>gmina_Kondratowice</item>
+<item>gmina_Przeworno</item>
+<item>gmina_Strzelin</item>
+<item>gmina_Wiązów</item>
+</string-array>
+<string-array name="powiatstrzyżowski" tools:ignore="ExtraTranslation">
+<item>gmina_Czudec</item>
+<item>gmina_Frysztak</item>
+<item>gmina_Niebylec</item>
+<item>gmina_Strzyżów</item>
+<item>gmina_Wiśniowa</item>
+</string-array>
+<string-array name="powiatsulęciński" tools:ignore="ExtraTranslation">
+<item>gmina_Krzeszyce</item>
+<item>gmina_Lubniewice</item>
+<item>gmina_Słońsk</item>
+<item>gmina_Sulęcin</item>
+<item>gmina_Torzym</item>
+</string-array>
+<string-array name="powiatsuski" tools:ignore="ExtraTranslation">
+<item>gmina_Budzów</item>
+<item>gmina_Bystra-Sidzina</item>
+<item>Jordanów</item>
+<item>gmina_Jordanów</item>
+<item>gmina_Maków_Podhalański</item>
+<item>gmina_Stryszawa</item>
+<item>Sucha_Beskidzka</item>
+<item>gmina_Zawoja</item>
+<item>gmina_Zembrzyce</item>
+</string-array>
+<string-array name="powiatsuwalski" tools:ignore="ExtraTranslation">
+<item>gmina_Bakałarzewo</item>
+<item>gmina_Filipów</item>
+<item>gmina_Jeleniewo</item>
+<item>gmina_Przerośl</item>
+<item>gmina_Raczki</item>
+<item>gmina_Rutka-Tartak</item>
+<item>gmina_Suwałki</item>
+<item>gmina_Szypliszki</item>
+<item>gmina_Wiżajny</item>
+</string-array>
+<string-array name="powiatSuwałki" tools:ignore="ExtraTranslation">
+<item>Suwałki</item>
+</string-array>
+<string-array name="powiatszamotulski" tools:ignore="ExtraTranslation">
+<item>gmina_Duszniki</item>
+<item>gmina_Kaźmierz</item>
+<item>Obrzycko</item>
+<item>gmina_Obrzycko</item>
+<item>gmina_Ostroróg</item>
+<item>gmina_Pniewy</item>
+<item>gmina_Szamotuły</item>
+<item>gmina_Wronki</item>
+</string-array>
+<string-array name="powiatSzczecin" tools:ignore="ExtraTranslation">
+<item>Szczecin</item>
+</string-array>
+<string-array name="powiatszczecinecki" tools:ignore="ExtraTranslation">
+<item>gmina_Barwice</item>
+<item>gmina_Biały_Bór</item>
+<item>gmina_Borne_Sulinowo</item>
+<item>gmina_Grzmiąca</item>
+<item>Szczecinek</item>
+<item>gmina_Szczecinek</item>
+</string-array>
+<string-array name="powiatszczycieński" tools:ignore="ExtraTranslation">
+<item>gmina_Dźwierzuty</item>
+<item>gmina_Jedwabno</item>
+<item>gmina_Pasym</item>
+<item>gmina_Rozogi</item>
+<item>Szczytno</item>
+<item>gmina_Szczytno</item>
+<item>gmina_Świętajno</item>
+<item>gmina_Wielbark</item>
+</string-array>
+<string-array name="powiatsztumski" tools:ignore="ExtraTranslation">
+<item>gmina_Dzierzgoń</item>
+<item>gmina_Mikołajki_Pomorskie</item>
+<item>gmina_Stary_Dzierzgoń</item>
+<item>gmina_Stary_Targ</item>
+<item>gmina_Sztum</item>
+</string-array>
+<string-array name="powiatszydłowiecki" tools:ignore="ExtraTranslation">
+<item>gmina_Chlewiska</item>
+<item>gmina_Jastrząb</item>
+<item>gmina_Mirów</item>
+<item>gmina_Orońsko</item>
+<item>gmina_Szydłowiec</item>
+</string-array>
+<string-array name="powiatśredzki" tools:ignore="ExtraTranslation">
+<item>gmina_Dominowo</item>
+<item>gmina_Kostomłoty</item>
+<item>gmina_Krzykosy</item>
+<item>gmina_Malczyce</item>
+<item>gmina_Miękinia</item>
+<item>gmina_Nowe_Miasto_nad_Wartą</item>
+<item>gmina_Środa_Śląska</item>
+<item>gmina_Środa_Wielkopolska</item>
+<item>gmina_Udanin</item>
+<item>gmina_Zaniemyśl</item>
+</string-array>
+<string-array name="powiatśremski" tools:ignore="ExtraTranslation">
+<item>gmina_Brodnica</item>
+<item>gmina_Dolsk</item>
+<item>gmina_Książ_Wielkopolski</item>
+<item>gmina_Śrem</item>
+</string-array>
+<string-array name="powiatświdnicki" tools:ignore="ExtraTranslation">
+<item>gmina_Dobromierz</item>
+<item>gmina_Jaworzyna_Śląska</item>
+<item>gmina_Marcinowice</item>
+<item>gmina_Mełgiew</item>
+<item>gmina_Piaski</item>
+<item>gmina_Rybczewice</item>
+<item>gmina_Strzegom</item>
+<item>Świdnica</item>
+<item>gmina_Świdnica</item>
+<item>Świdnik</item>
+<item>Świebodzice</item>
+<item>gmina_Trawniki</item>
+<item>gmina_Żarów</item>
+</string-array>
+<string-array name="powiatświdwiński" tools:ignore="ExtraTranslation">
+<item>gmina_Brzeżno</item>
+<item>gmina_Połczyn-Zdrój</item>
+<item>gmina_Rąbino</item>
+<item>gmina_Sławoborze</item>
+<item>Świdwin</item>
+<item>gmina_Świdwin</item>
+</string-array>
+<string-array name="powiatświebodziński" tools:ignore="ExtraTranslation">
+<item>gmina_Lubrza</item>
+<item>gmina_Łagów</item>
+<item>gmina_Skąpe</item>
+<item>gmina_Szczaniec</item>
+<item>gmina_Świebodzin</item>
+<item>gmina_Zbąszynek</item>
+</string-array>
+<string-array name="powiatświecki" tools:ignore="ExtraTranslation">
+<item>gmina_Bukowiec</item>
+<item>gmina_Dragacz</item>
+<item>gmina_Drzycim</item>
+<item>gmina_Jeżewo</item>
+<item>gmina_Lniano</item>
+<item>gmina_Nowe</item>
+<item>gmina_Osie</item>
+<item>gmina_Pruszcz</item>
+<item>gmina_Świecie</item>
+<item>gmina_Świekatowo</item>
+<item>gmina_Warlubie</item>
+</string-array>
+<string-array name="powiatŚwiętochłowice" tools:ignore="ExtraTranslation">
+<item>Świętochłowice</item>
+</string-array>
+<string-array name="powiatŚwinoujście" tools:ignore="ExtraTranslation">
+<item>Świnoujście</item>
+</string-array>
+<string-array name="powiatTarnobrzeg" tools:ignore="ExtraTranslation">
+<item>Tarnobrzeg</item>
+</string-array>
+<string-array name="powiattarnobrzeski" tools:ignore="ExtraTranslation">
+<item>gmina_Baranów_Sandomierski</item>
+<item>gmina_Gorzyce</item>
+<item>gmina_Grębów</item>
+<item>gmina_Nowa_Dęba</item>
+</string-array>
+<string-array name="powiattarnogórski" tools:ignore="ExtraTranslation">
+<item>Kalety</item>
+<item>gmina_Krupski_Młyn</item>
+<item>Miasteczko_Śląskie</item>
+<item>gmina_Ożarowice</item>
+<item>Radzionków</item>
+<item>gmina_Świerklaniec</item>
+<item>Tarnowskie_Góry</item>
+<item>gmina_Tworóg</item>
+<item>gmina_Zbrosławice</item>
+</string-array>
+<string-array name="powiattarnowski" tools:ignore="ExtraTranslation">
+<item>gmina_Ciężkowice</item>
+<item>gmina_Gromnik</item>
+<item>gmina_Lisia_Góra</item>
+<item>gmina_Pleśna</item>
+<item>gmina_Radłów</item>
+<item>gmina_Ryglice</item>
+<item>gmina_Rzepiennik_Strzyżewski</item>
+<item>gmina_Skrzyszów</item>
+<item>gmina_Szerzyny</item>
+<item>gmina_Tarnów</item>
+<item>gmina_Tuchów</item>
+<item>gmina_Wierzchosławice</item>
+<item>gmina_Wietrzychowice</item>
+<item>gmina_Wojnicz</item>
+<item>gmina_Zakliczyn</item>
+<item>gmina_Żabno</item>
+</string-array>
+<string-array name="powiatTarnów" tools:ignore="ExtraTranslation">
+<item>Tarnów</item>
+</string-array>
+<string-array name="powiattatrzański" tools:ignore="ExtraTranslation">
+<item>gmina_Biały_Dunajec</item>
+<item>gmina_Bukowina_Tatrzańska</item>
+<item>gmina_Kościelisko</item>
+<item>gmina_Poronin</item>
+<item>Zakopane</item>
+</string-array>
+<string-array name="powiattczewski" tools:ignore="ExtraTranslation">
+<item>gmina_Gniew</item>
+<item>gmina_Morzeszczyn</item>
+<item>gmina_Pelplin</item>
+<item>gmina_Subkowy</item>
+<item>Tczew</item>
+<item>gmina_Tczew</item>
+</string-array>
+<string-array name="powiattomaszowski" tools:ignore="ExtraTranslation">
+<item>gmina_Bełżec</item>
+<item>gmina_Będków</item>
+<item>gmina_Budziszewice</item>
+<item>gmina_Czerniewice</item>
+<item>gmina_Inowłódz</item>
+<item>gmina_Jarczów</item>
+<item>gmina_Krynice</item>
+<item>gmina_Lubochnia</item>
+<item>gmina_Lubycza_Królewska</item>
+<item>gmina_Łaszczów</item>
+<item>gmina_Rachanie</item>
+<item>gmina_Rokiciny</item>
+<item>gmina_Rzeczyca</item>
+<item>gmina_Susiec</item>
+<item>gmina_Tarnawatka</item>
+<item>gmina_Telatyn</item>
+<item>Tomaszów_Lubelski</item>
+<item>gmina_Tomaszów_Lubelski</item>
+<item>Tomaszów_Mazowiecki</item>
+<item>gmina_Tomaszów_Mazowiecki</item>
+<item>gmina_Tyszowce</item>
+<item>gmina_Ujazd</item>
+<item>gmina_Ulhówek</item>
+<item>gmina_Żelechlinek</item>
+</string-array>
+<string-array name="powiatToruń" tools:ignore="ExtraTranslation">
+<item>Toruń</item>
+</string-array>
+<string-array name="powiattoruński" tools:ignore="ExtraTranslation">
+<item>Chełmża</item>
+<item>gmina_Chełmża</item>
+<item>gmina_Czernikowo</item>
+<item>gmina_Lubicz</item>
+<item>gmina_Łubianka</item>
+<item>gmina_Łysomice</item>
+<item>gmina_Obrowo</item>
+<item>gmina_Wielka_Nieszawka</item>
+<item>gmina_Zławieś_Wielka</item>
+</string-array>
+<string-array name="powiattrzebnicki" tools:ignore="ExtraTranslation">
+<item>gmina_Oborniki_Śląskie</item>
+<item>gmina_Prusice</item>
+<item>gmina_Trzebnica</item>
+<item>gmina_Wisznia_Mała</item>
+<item>gmina_Zawonia</item>
+<item>gmina_Żmigród</item>
+</string-array>
+<string-array name="powiattucholski" tools:ignore="ExtraTranslation">
+<item>gmina_Cekcyn</item>
+<item>gmina_Gostycyn</item>
+<item>gmina_Kęsowo</item>
+<item>gmina_Lubiewo</item>
+<item>gmina_Śliwice</item>
+<item>gmina_Tuchola</item>
+</string-array>
+<string-array name="powiatturecki" tools:ignore="ExtraTranslation">
+<item>gmina_Brudzew</item>
+<item>gmina_Dobra</item>
+<item>gmina_Kawęczyn</item>
+<item>gmina_Malanów</item>
+<item>gmina_Przykona</item>
+<item>gmina_Tuliszków</item>
+<item>Turek</item>
+<item>gmina_Turek</item>
+<item>gmina_Władysławów</item>
+</string-array>
+<string-array name="powiatTychy" tools:ignore="ExtraTranslation">
+<item>Tychy</item>
+</string-array>
+<string-array name="powiatwadowicki" tools:ignore="ExtraTranslation">
+<item>gmina_Andrychów</item>
+<item>gmina_Brzeźnica</item>
+<item>gmina_Kalwaria_Zebrzydowska</item>
+<item>gmina_Lanckorona</item>
+<item>gmina_Mucharz</item>
+<item>gmina_Spytkowice</item>
+<item>gmina_Stryszów</item>
+<item>gmina_Tomice</item>
+<item>gmina_Wadowice</item>
+<item>gmina_Wieprz</item>
+</string-array>
+<string-array name="powiatWałbrzych" tools:ignore="ExtraTranslation">
+<item>Wałbrzych</item>
+</string-array>
+<string-array name="powiatwałbrzyski" tools:ignore="ExtraTranslation">
+<item>Boguszów-Gorce</item>
+<item>gmina_Czarny_Bór</item>
+<item>gmina_Głuszyca</item>
+<item>Jedlina-Zdrój</item>
+<item>gmina_Mieroszów</item>
+<item>gmina_Stare_Bogaczowice</item>
+<item>Szczawno-Zdrój</item>
+<item>gmina_Walim</item>
+</string-array>
+<string-array name="powiatwałecki" tools:ignore="ExtraTranslation">
+<item>gmina_Człopa</item>
+<item>gmina_Mirosławiec</item>
+<item>gmina_Tuczno</item>
+<item>Wałcz</item>
+<item>gmina_Wałcz</item>
+</string-array>
+<string-array name="powiatWarszawa" tools:ignore="ExtraTranslation">
+<item>Warszawa</item>
+</string-array>
+<string-array name="powiatwarszawski_zachodni" tools:ignore="ExtraTranslation">
+<item>gmina_Błonie</item>
+<item>gmina_Izabelin</item>
+<item>gmina_Kampinos</item>
+<item>gmina_Leszno</item>
+<item>gmina_Łomianki</item>
+<item>gmina_Ożarów_Mazowiecki</item>
+<item>gmina_Stare_Babice</item>
+</string-array>
+<string-array name="powiatwąbrzeski" tools:ignore="ExtraTranslation">
+<item>gmina_Dębowa_Łąka</item>
+<item>gmina_Książki</item>
+<item>gmina_Płużnica</item>
+<item>gmina_Ryńsk</item>
+<item>Wąbrzeźno</item>
+</string-array>
+<string-array name="powiatwągrowiecki" tools:ignore="ExtraTranslation">
+<item>gmina_Damasławek</item>
+<item>gmina_Gołańcz</item>
+<item>gmina_Mieścisko</item>
+<item>gmina_Skoki</item>
+<item>gmina_Wapno</item>
+<item>Wągrowiec</item>
+<item>gmina_Wągrowiec</item>
+</string-array>
+<string-array name="powiatwejherowski" tools:ignore="ExtraTranslation">
+<item>gmina_Choczewo</item>
+<item>gmina_Gniewino</item>
+<item>gmina_Linia</item>
+<item>gmina_Luzino</item>
+<item>gmina_Łęczyce</item>
+<item>Reda</item>
+<item>Rumia</item>
+<item>gmina_Szemud</item>
+<item>Wejherowo</item>
+<item>gmina_Wejherowo</item>
+</string-array>
+<string-array name="powiatwęgorzewski" tools:ignore="ExtraTranslation">
+<item>gmina_Budry</item>
+<item>gmina_Pozezdrze</item>
+<item>gmina_Węgorzewo</item>
+</string-array>
+<string-array name="powiatwęgrowski" tools:ignore="ExtraTranslation">
+<item>gmina_Grębków</item>
+<item>gmina_Korytnica</item>
+<item>gmina_Liw</item>
+<item>gmina_Łochów</item>
+<item>gmina_Miedzna</item>
+<item>gmina_Sadowne</item>
+<item>gmina_Stoczek</item>
+<item>Węgrów</item>
+<item>gmina_Wierzbno</item>
+</string-array>
+<string-array name="powiatwielicki" tools:ignore="ExtraTranslation">
+<item>gmina_Biskupice</item>
+<item>gmina_Gdów</item>
+<item>gmina_Kłaj</item>
+<item>gmina_Niepołomice</item>
+<item>gmina_Wieliczka</item>
+</string-array>
+<string-array name="powiatwieluński" tools:ignore="ExtraTranslation">
+<item>gmina_Biała</item>
+<item>gmina_Czarnożyły</item>
+<item>gmina_Konopnica</item>
+<item>gmina_Mokrsko</item>
+<item>gmina_Osjaków</item>
+<item>gmina_Ostrówek</item>
+<item>gmina_Pątnów</item>
+<item>gmina_Skomlin</item>
+<item>gmina_Wieluń</item>
+<item>gmina_Wierzchlas</item>
+</string-array>
+<string-array name="powiatwieruszowski" tools:ignore="ExtraTranslation">
+<item>gmina_Bolesławiec</item>
+<item>gmina_Czastary</item>
+<item>gmina_Galewice</item>
+<item>gmina_Lututów</item>
+<item>gmina_Łubnice</item>
+<item>gmina_Sokolniki</item>
+<item>gmina_Wieruszów</item>
+</string-array>
+<string-array name="powiatWłocławek" tools:ignore="ExtraTranslation">
+<item>Włocławek</item>
+</string-array>
+<string-array name="powiatwłocławski" tools:ignore="ExtraTranslation">
+<item>gmina_Baruchowo</item>
+<item>gmina_Boniewo</item>
+<item>gmina_Brześć_Kujawski</item>
+<item>gmina_Choceń</item>
+<item>gmina_Chodecz</item>
+<item>gmina_Fabianki</item>
+<item>gmina_Izbica_Kujawska</item>
+<item>gmina_Kowal</item>
+<item>Kowal</item>
+<item>gmina_Lubanie</item>
+<item>gmina_Lubień_Kujawski</item>
+<item>gmina_Lubraniec</item>
+<item>gmina_Włocławek</item>
+</string-array>
+<string-array name="powiatwłodawski" tools:ignore="ExtraTranslation">
+<item>gmina_Hanna</item>
+<item>gmina_Hańsk</item>
+<item>gmina_Stary_Brus</item>
+<item>gmina_Urszulin</item>
+<item>Włodawa</item>
+<item>gmina_Włodawa</item>
+<item>gmina_Wola_Uhruska</item>
+<item>gmina_Wyryki</item>
+</string-array>
+<string-array name="powiatwłoszczowski" tools:ignore="ExtraTranslation">
+<item>gmina_Kluczewsko</item>
+<item>gmina_Krasocin</item>
+<item>gmina_Moskorzew</item>
+<item>gmina_Radków</item>
+<item>gmina_Secemin</item>
+<item>gmina_Włoszczowa</item>
+</string-array>
+<string-array name="powiatwodzisławski" tools:ignore="ExtraTranslation">
+<item>gmina_Godów</item>
+<item>gmina_Gorzyce</item>
+<item>gmina_Lubomia</item>
+<item>gmina_Marklowice</item>
+<item>gmina_Mszana</item>
+<item>Pszów</item>
+<item>Radlin</item>
+<item>Rydułtowy</item>
+<item>Wodzisław_Śląski</item>
+</string-array>
+<string-array name="powiatwolsztyński" tools:ignore="ExtraTranslation">
+<item>gmina_Przemęt</item>
+<item>gmina_Siedlec</item>
+<item>gmina_Wolsztyn</item>
+</string-array>
+<string-array name="powiatwołomiński" tools:ignore="ExtraTranslation">
+<item>gmina_Dąbrówka</item>
+<item>gmina_Jadów</item>
+<item>gmina_Klembów</item>
+<item>Kobyłka</item>
+<item>Marki</item>
+<item>gmina_Poświętne</item>
+<item>gmina_Radzymin</item>
+<item>gmina_Strachówka</item>
+<item>gmina_Tłuszcz</item>
+<item>gmina_Wołomin</item>
+<item>Ząbki</item>
+<item>Zielonka</item>
+</string-array>
+<string-array name="powiatwołowski" tools:ignore="ExtraTranslation">
+<item>gmina_Brzeg_Dolny</item>
+<item>gmina_Wińsko</item>
+<item>gmina_Wołów</item>
+</string-array>
+<string-array name="powiatWrocław" tools:ignore="ExtraTranslation">
+<item>Wrocław</item>
+</string-array>
+<string-array name="powiatwrocławski" tools:ignore="ExtraTranslation">
+<item>gmina_Czernica</item>
+<item>gmina_Długołęka</item>
+<item>gmina_Jordanów_Śląski</item>
+<item>gmina_Kąty_Wrocławskie</item>
+<item>gmina_Kobierzyce</item>
+<item>gmina_Mietków</item>
+<item>gmina_Siechnice</item>
+<item>gmina_Sobótka</item>
+<item>gmina_Żórawina</item>
+</string-array>
+<string-array name="powiatwrzesiński" tools:ignore="ExtraTranslation">
+<item>gmina_Kołaczkowo</item>
+<item>gmina_Miłosław</item>
+<item>gmina_Nekla</item>
+<item>gmina_Pyzdry</item>
+<item>gmina_Września</item>
+</string-array>
+<string-array name="powiatwschowski" tools:ignore="ExtraTranslation">
+<item>gmina_Sława</item>
+<item>gmina_Szlichtyngowa</item>
+<item>gmina_Wschowa</item>
+</string-array>
+<string-array name="powiatwysokomazowiecki" tools:ignore="ExtraTranslation">
+<item>gmina_Ciechanowiec</item>
+<item>gmina_Czyżew</item>
+<item>gmina_Klukowo</item>
+<item>gmina_Kobylin-Borzymy</item>
+<item>gmina_Kulesze_Kościelne</item>
+<item>gmina_Nowe_Piekuty</item>
+<item>gmina_Sokoły</item>
+<item>gmina_Szepietowo</item>
+<item>Wysokie_Mazowieckie</item>
+<item>gmina_Wysokie_Mazowieckie</item>
+</string-array>
+<string-array name="powiatwyszkowski" tools:ignore="ExtraTranslation">
+<item>gmina_Brańszczyk</item>
+<item>gmina_Długosiodło</item>
+<item>gmina_Rząśnik</item>
+<item>gmina_Somianka</item>
+<item>gmina_Wyszków</item>
+<item>gmina_Zabrodzie</item>
+</string-array>
+<string-array name="powiatZabrze" tools:ignore="ExtraTranslation">
+<item>Zabrze</item>
+</string-array>
+<string-array name="powiatzambrowski" tools:ignore="ExtraTranslation">
+<item>gmina_Kołaki_Kościelne</item>
+<item>gmina_Rutki</item>
+<item>gmina_Szumowo</item>
+<item>Zambrów</item>
+<item>gmina_Zambrów</item>
+</string-array>
+<string-array name="powiatzamojski" tools:ignore="ExtraTranslation">
+<item>gmina_Adamów</item>
+<item>gmina_Grabowiec</item>
+<item>gmina_Komarów-Osada</item>
+<item>gmina_Krasnobród</item>
+<item>gmina_Łabunie</item>
+<item>gmina_Miączyn</item>
+<item>gmina_Nielisz</item>
+<item>gmina_Radecznica</item>
+<item>gmina_Sitno</item>
+<item>gmina_Skierbieszów</item>
+<item>gmina_Stary_Zamość</item>
+<item>gmina_Sułów</item>
+<item>gmina_Szczebrzeszyn</item>
+<item>Zamość</item>
+<item>gmina_Zwierzyniec</item>
+</string-array>
+<string-array name="powiatZamość" tools:ignore="ExtraTranslation">
+<item>gmina_Zamość</item>
+</string-array>
+<string-array name="powiatzawierciański" tools:ignore="ExtraTranslation">
+<item>gmina_Irządze</item>
+<item>gmina_Kroczyce</item>
+<item>gmina_Łazy</item>
+<item>gmina_Ogrodzieniec</item>
+<item>gmina_Pilica</item>
+<item>Poręba</item>
+<item>gmina_Szczekociny</item>
+<item>gmina_Włodowice</item>
+<item>Zawiercie</item>
+<item>gmina_Żarnowiec</item>
+</string-array>
+<string-array name="powiatząbkowicki" tools:ignore="ExtraTranslation">
+<item>gmina_Bardo</item>
+<item>gmina_Ciepłowody</item>
+<item>gmina_Kamieniec_Ząbkowicki</item>
+<item>gmina_Stoszowice</item>
+<item>gmina_Ząbkowice_Śląskie</item>
+<item>gmina_Ziębice</item>
+<item>gmina_Złoty_Stok</item>
+</string-array>
+<string-array name="powiatzduńskowolski" tools:ignore="ExtraTranslation">
+<item>gmina_Szadek</item>
+<item>gmina_Zapolice</item>
+<item>Zduńska_Wola</item>
+<item>gmina_Zduńska_Wola</item>
+</string-array>
+<string-array name="powiatzgierski" tools:ignore="ExtraTranslation">
+<item>gmina_Aleksandrów_Łódzki</item>
+<item>Głowno</item>
+<item>gmina_Głowno</item>
+<item>Ozorków</item>
+<item>gmina_Ozorków</item>
+<item>gmina_Parzęczew</item>
+<item>gmina_Stryków</item>
+<item>Zgierz</item>
+<item>gmina_Zgierz</item>
+</string-array>
+<string-array name="powiatzgorzelecki" tools:ignore="ExtraTranslation">
+<item>gmina_Bogatynia</item>
+<item>gmina_Pieńsk</item>
+<item>gmina_Sulików</item>
+<item>gmina_Węgliniec</item>
+<item>Zawidów</item>
+<item>Zgorzelec</item>
+<item>gmina_Zgorzelec</item>
+</string-array>
+<string-array name="powiatZielona_Góra" tools:ignore="ExtraTranslation">
+<item>Zielona_Góra</item>
+</string-array>
+<string-array name="powiatzielonogórski" tools:ignore="ExtraTranslation">
+<item>gmina_Babimost</item>
+<item>gmina_Bojadła</item>
+<item>gmina_Czerwieńsk</item>
+<item>gmina_Kargowa</item>
+<item>gmina_Nowogród_Bobrzański</item>
+<item>gmina_Sulechów</item>
+<item>gmina_Świdnica</item>
+<item>gmina_Trzebiechów</item>
+<item>gmina_Zabór</item>
+</string-array>
+<string-array name="powiatzłotoryjski" tools:ignore="ExtraTranslation">
+<item>gmina_Pielgrzymka</item>
+<item>gmina_Świerzawa</item>
+<item>Wojcieszów</item>
+<item>gmina_Zagrodno</item>
+<item>Złotoryja</item>
+<item>gmina_Złotoryja</item>
+</string-array>
+<string-array name="powiatzłotowski" tools:ignore="ExtraTranslation">
+<item>gmina_Jastrowie</item>
+<item>gmina_Krajenka</item>
+<item>gmina_Lipka</item>
+<item>gmina_Okonek</item>
+<item>gmina_Tarnówka</item>
+<item>gmina_Zakrzewo</item>
+<item>Złotów</item>
+<item>gmina_Złotów</item>
+</string-array>
+<string-array name="powiatzwoleński" tools:ignore="ExtraTranslation">
+<item>gmina_Kazanów</item>
+<item>gmina_Policzna</item>
+<item>gmina_Przyłęk</item>
+<item>gmina_Tczów</item>
+<item>gmina_Zwoleń</item>
+</string-array>
+<string-array name="powiatżagański" tools:ignore="ExtraTranslation">
+<item>gmina_Brzeźnica</item>
+<item>Gozdnica</item>
+<item>gmina_Iłowa</item>
+<item>gmina_Małomice</item>
+<item>gmina_Niegosławice</item>
+<item>gmina_Szprotawa</item>
+<item>gmina_Wymiarki</item>
+<item>Żagań</item>
+<item>gmina_Żagań</item>
+</string-array>
+<string-array name="powiatżarski" tools:ignore="ExtraTranslation">
+<item>gmina_Brody</item>
+<item>gmina_Jasień</item>
+<item>gmina_Lipinki_Łużyckie</item>
+<item>gmina_Lubsko</item>
+<item>Łęknica</item>
+<item>gmina_Przewóz</item>
+<item>gmina_Trzebiel</item>
+<item>gmina_Tuplice</item>
+<item>Żary</item>
+<item>gmina_Żary</item>
+</string-array>
+<string-array name="powiatżniński" tools:ignore="ExtraTranslation">
+<item>gmina_Barcin</item>
+<item>gmina_Gąsawa</item>
+<item>gmina_Janowiec_Wielkopolski</item>
+<item>gmina_Łabiszyn</item>
+<item>gmina_Rogowo</item>
+<item>gmina_Żnin</item>
+</string-array>
+<string-array name="powiatŻory" tools:ignore="ExtraTranslation">
+<item>Żory</item>
+</string-array>
+<string-array name="powiatżuromiński" tools:ignore="ExtraTranslation">
+<item>gmina_Bieżuń</item>
+<item>gmina_Kuczbork-Osada</item>
+<item>gmina_Lubowidz</item>
+<item>gmina_Lutocin</item>
+<item>gmina_Siemiątkowo</item>
+<item>gmina_Żuromin</item>
+</string-array>
+<string-array name="powiatżyrardowski" tools:ignore="ExtraTranslation">
+<item>gmina_Mszczonów</item>
+<item>gmina_Puszcza_Mariańska</item>
+<item>gmina_Radziejowice</item>
+<item>gmina_Wiskitki</item>
+<item>Żyrardów</item>
+</string-array>
+<string-array name="powiatżywiecki" tools:ignore="ExtraTranslation">
+<item>gmina_Czernichów</item>
+<item>gmina_Gilowice</item>
+<item>gmina_Jeleśnia</item>
+<item>gmina_Koszarawa</item>
+<item>gmina_Lipowa</item>
+<item>gmina_Łękawica</item>
+<item>gmina_Łodygowice</item>
+<item>gmina_Milówka</item>
+<item>gmina_Radziechowy-Wieprz</item>
+<item>gmina_Rajcza</item>
+<item>gmina_Ślemień</item>
+<item>gmina_Świnna</item>
+<item>gmina_Ujsoły</item>
+<item>gmina_Węgierska_Górka</item>
+<item>Żywiec</item>
+</string-array>
+    </resources>
