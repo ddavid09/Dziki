@@ -130,7 +130,7 @@ class DataBase() {
             val storageRef = storage.reference
             val pictureRef = storageRef.child("photos/" + firebaseRef.id + ".jpg")
             val baos = ByteArrayOutputStream()
-            bitmap?.compress(Bitmap.CompressFormat.JPEG, 25, baos)
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 0, baos)
             val data = baos.toByteArray()
             return pictureRef.putBytes(data)
                     .addOnSuccessListener {
