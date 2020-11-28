@@ -1,14 +1,26 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:orientation="vertical"
-    android:layout_gravity="center_vertical"
-    android:gravity="center">
+    android:layout_height="match_parent">
 
+<com.google.android.material.appbar.AppBarLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
 
-    <EditText
+<com.google.android.material.appbar.MaterialToolbar
+    android:id="@+id/topAppBar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    app:title="@string/add_boar"
+    app:menu="@menu/top_app_bar"
+    app:navigationIcon="@drawable/ic_arrow_back_24"
+    style="@style/Widget.MaterialComponents.Toolbar.Primary"
+    />
+
+</com.google.android.material.appbar.AppBarLayout>
+
+            <EditText
         android:hint="@string/city"
         android:layout_width="match_parent"
         android:textSize="18sp"
@@ -81,4 +93,31 @@
 
 
 
-</LinearLayout>
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+<!--    topAppBar.setNavigationOnClickListener {-->
+<!--    // Handle navigation icon press-->
+<!--    }-->
+
+<!--    topAppBar.setOnMenuItemClickListener { menuItem ->-->
+<!--    when (menuItem.itemId) {-->
+<!--    R.id.favorite -> {-->
+<!--    // Handle favorite icon press-->
+<!--    true-->
+<!--    }-->
+<!--    R.id.search -> {-->
+<!--    // Handle search icon press-->
+<!--    true-->
+<!--    }-->
+<!--    R.id.more -> {-->
+<!--    // Handle more item (inside overflow menu) press-->
+<!--    true-->
+<!--    }-->
+<!--    else -> false-->
+<!--    }-->
+<!--    }-->
+
+

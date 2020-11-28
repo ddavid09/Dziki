@@ -30,6 +30,10 @@
 
 
         <activity android:name=".ui.notifications.DetailsActivity"></activity>
+        <activity android:name=".ui.dashboard.MapToApplicationActivity" />
+        <activity android:name=".BoarNotificationAvtivity"
+            android:theme="@style/Theme.Dziki.NO_FUCKING_ACTION_BAR"></activity>
+        <activity android:name=".ui.notifications.DetailsActivity" />
         <activity android:name=".MapToApplicationActivity" />
         <activity android:name=".BoarNotificationAvtivity"></activity>
         <activity android:name=".LoginActivity">

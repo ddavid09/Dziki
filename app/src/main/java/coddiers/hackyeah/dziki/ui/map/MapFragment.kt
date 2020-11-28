@@ -15,6 +15,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import coddiers.hackyeah.dziki.MainActivity
 import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.DataBase
 import coddiers.hackyeah.dziki.database.Report
@@ -52,6 +53,7 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        MainActivity.btn.visibility = View.VISIBLE;
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
         return inflater.inflate(R.layout.fragment_map, container, false)
     }
