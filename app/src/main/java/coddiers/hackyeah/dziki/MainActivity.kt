@@ -22,18 +22,12 @@ class ItemViewModel : ViewModel() {
     private val currentLocation = MutableLiveData<LatLng>()
     val selectedItem: LiveData<LatLng> get() = currentLocation
 
-    fun selectItem(item: LatLng) {
-        currentLocation.value = item
-    }
-
     fun getCurrentLocation(): LatLng? {
-        Log.w("Passing", "1: ${currentLocation.value}")
         return currentLocation.value
     }
 
     fun setCurrentLocation(location: LatLng){
         currentLocation.value = location
-        Log.w("Passing", "2: ${currentLocation.value}")
     }
 }
 

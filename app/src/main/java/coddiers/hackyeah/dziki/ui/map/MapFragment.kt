@@ -8,18 +8,15 @@ import android.graphics.Canvas
 import android.location.Location
 import android.location.LocationListener
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import coddiers.hackyeah.dziki.MainActivity
-import androidx.lifecycle.ViewModelProvider
 import coddiers.hackyeah.dziki.ItemViewModel
 import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.DataBase
@@ -76,10 +73,12 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
         if (ActivityCompat.checkSelfPermission(
                 requireContext(),
                 Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED) {
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
             ActivityCompat.requestPermissions(
                 requireActivity(),
-                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                LOCATION_PERMISSION_REQUEST_CODE
             )
             return
         }
@@ -132,9 +131,7 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
     }
 
     override fun onCameraMove() {
-        val currentLocation = map.cameraPosition.target
         if(!creating) viewModel.setCurrentLocation(map.cameraPosition.target)
-        Log.w("Location", "${currentLocation.latitude},${currentLocation.longitude}")
     }
 
     override fun onLocationChanged(location: Location?) {
