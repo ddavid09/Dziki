@@ -17,20 +17,20 @@
     <string name="voivodeship">Województwo</string>
     <string name="title_info">Info</string>
     <string-array name="voivodeships">
-        <item>dolnośląskie</item>
-        <item>kujawsko-pomorskie</item>
+        <item>dolnoslaskie</item>
+        <item>kujawskopomorskie</item>
         <item>lubelskie</item>
         <item>lubuskie</item>
-        <item>łódzkie</item>
-        <item>małopolskie</item>
+        <item>lodzkie</item>
+        <item>malopolskie</item>
         <item>mazowieckie</item>
         <item>opolskie</item>
         <item>podkarpackie</item>
         <item>podlaskie</item>
         <item>pomorskie</item>
-        <item>śląskie</item>
-        <item>świętokrzyskie</item>
-        <item>warmińsko-mazurskie</item>
+        <item>slaskie</item>
+        <item>swietokrzyskie</item>
+        <item>warminskomazurskie</item>
         <item>wielkopolskie</item>
         <item>zachodniopomorskie</item>
     </string-array>
