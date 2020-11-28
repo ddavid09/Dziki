@@ -13,6 +13,10 @@ import androidx.navigation.ui.setupWithNavController
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        lateinit var btn: Button
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,8 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         }
         val navController = findNavController(R.id.nav_host_fragment)
-        val button : Button = findViewById(R.id.extended_fab_add_new_boar)
-        button.setOnClickListener{
+        btn = findViewById(R.id.extended_fab_add_new_boar)
+        btn.setOnClickListener{
             startActivity(intentToMap)
         }
         // Passing each menu ID as a set of Ids because each

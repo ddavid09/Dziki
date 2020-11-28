@@ -15,6 +15,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import coddiers.hackyeah.dziki.MainActivity
 import coddiers.hackyeah.dziki.MapToApplicationActivity
 import coddiers.hackyeah.dziki.R
 
@@ -25,6 +26,7 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        MainActivity.btn.visibility = View.VISIBLE;
         val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
         return root
     }
