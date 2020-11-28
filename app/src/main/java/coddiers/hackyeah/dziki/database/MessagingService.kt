@@ -1,16 +1,19 @@
 package coddiers.hackyeah.dziki.database
 
 
+import android.R
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.media.RingtoneManager
 import android.os.Build
-import android.provider.ContactsContract
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
+import android.widget.Toast
 import androidx.core.app.NotificationCompat
+import coddiers.hackyeah.dziki.MainActivity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
@@ -54,6 +57,9 @@ class MessagingService : FirebaseMessagingService() {
         // Check if message contains a notification payload.
         remoteMessage.notification?.let {
             Log.d(TAG, "Message Notification Body: ${it.body}")
+            Handler(Looper.getMainLooper()).post {
+                Toast.makeText(getApplicationContext(), "Dziękujemy! ${it.body}", Toast.LENGTH_SHORT).show()
+            }
         }
 
         // Also if you intend on generating your own notifications as a result of a received FCM
