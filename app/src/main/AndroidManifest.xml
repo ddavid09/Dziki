@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dziki">
-        <activity android:name=".ui.dashboard.MapToApplicationActivity"></activity>
+        <activity android:name=".ui.notifications.DetailsActivity"></activity>
+        <activity android:name=".ui.dashboard.MapToApplicationActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
