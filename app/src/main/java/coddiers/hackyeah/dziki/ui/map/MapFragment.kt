@@ -8,6 +8,7 @@ import android.graphics.Canvas
 import android.location.Location
 import android.location.LocationListener
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,18 +27,19 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 
-
-class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnCameraMoveListener {
     private lateinit var map: GoogleMap
     private lateinit var lastLocation: Location
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private var currentLocation: DoubleArray = doubleArrayOf(0.0, 0.0)
 
-    companion object{ private const val LOCATION_PERMISSION_REQUEST_CODE = 1}
+    companion object{private const val LOCATION_PERMISSION_REQUEST_CODE = 1}
 
     private val callback = OnMapReadyCallback { googleMap ->
         map = googleMap
 
         map.setOnMarkerClickListener(this)
+        map.setOnCameraMoveListener(this)
         map.mapType = GoogleMap.MAP_TYPE_HYBRID
         map.uiSettings.isMapToolbarEnabled = false
         map.uiSettings.isCompassEnabled = true
@@ -78,7 +80,7 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
             if (location != null) {
                 lastLocation = location
                 val currentLatLng = LatLng(location.latitude, location.longitude)
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 17f))
+                map.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 17f))
             }
         }
     }
@@ -115,6 +117,11 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
     override fun onMarkerClick(p0: Marker?): Boolean {
         map.animateCamera(CameraUpdateFactory.newLatLngZoom(p0?.position, 17f))
         return false
+    }
+
+    override fun onCameraMove() {
+        currentLocation = doubleArrayOf(map.cameraPosition.target.latitude, map.cameraPosition.target.longitude)
+        Log.w("Location", "${currentLocation[0]},${currentLocation[1]}")
     }
 
     override fun onLocationChanged(location: Location?) {
