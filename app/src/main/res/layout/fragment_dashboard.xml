@@ -40,6 +40,28 @@
         android:maxLines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="@string/voivodeship"
+        android:id="@+id/lng"
+        android:textSize="18sp"
+        android:inputType="text"
+        android:layout_margin="10dp"
+        android:imeOptions="actionNone"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="@string/voivodeship"
+        android:id="@+id/lat"
+        android:textSize="18sp"
+        android:inputType="text"
+        android:layout_margin="10dp"
+        android:imeOptions="actionNone"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
