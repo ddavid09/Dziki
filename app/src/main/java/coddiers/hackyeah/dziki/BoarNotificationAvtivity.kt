@@ -10,6 +10,7 @@ import android.graphics.Bitmap
 import android.location.*
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -140,10 +141,11 @@ class BoarNotificationAvtivity : AppCompatActivity() {
             val location: Address = address[0]
             intentToMap.putExtra("lat", location.latitude.toString())
              intentToMap.putExtra("lng", location.longitude.toString())
-            intentToMap.putExtra("region", location.adminArea)
-            intentToMap.putExtra("subregion", location.subAdminArea)
-            boroughEditText.setText("" + location.subAdminArea.toString())
-            voivodeshipEditText.setText("" + location.adminArea.toString())
+            intentToMap.putExtra("region", location.adminArea.toLowerCase())
+            intentToMap.putExtra("subregion", location.subAdminArea.toLowerCase())
+            boroughEditText.setText("" + location.subAdminArea.toString().toLowerCase())
+            voivodeshipEditText.setText("" + location.adminArea.toString().toLowerCase())
+            Log.d("letter", location.adminArea.toLowerCase())
         } catch (ex: Exception) {
             ex.printStackTrace()
         }

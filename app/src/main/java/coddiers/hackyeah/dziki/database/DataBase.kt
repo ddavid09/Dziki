@@ -22,31 +22,34 @@ import java.io.File
 
 class DataBase() {
     val db = Firebase.firestore
-    val user = FirebaseAuth.getInstance().currentUser
     val TAG = "DataBase"
     val storage: FirebaseStorage = FirebaseStorage.getInstance()
 
     fun uploadToken(token: String): Task<Void>? {
         val userToken = UserToken(token)
+        val user = FirebaseAuth.getInstance().currentUser
         if (user!=null){
             return db.collection("userTokens").document(user.uid).set(userToken).addOnSuccessListener {
                 Log.d(TAG, "Token added with ID: ${it}")
             }
-                    .addOnFailureListener { e ->
-                        Log.w(TAG, "Error adding document", e)
-                    }
+            .addOnFailureListener { e ->
+                Log.w(TAG, "Error adding document", e)
+            }
         }
         else{
+            Log.w(TAG, "User null")
             return null
         }
     }
 
     fun uploadReport(location: LatLng, description: String, bitmap: Bitmap?, wildBoar: ArrayList<Int>, dead: Boolean, region: String, subregion: String, borough: String): Task<Void> {
         val locationGeoPoint = GeoPoint(location.latitude, location.longitude)
-        val firebaseRef = db.collection("uploadReports").document()
-
+        val firebaseRef = db.collection("pendingReports").document()
+        val user = FirebaseAuth.getInstance().currentUser
+        Log.d("User", user?.uid.toString())
 
         if (bitmap == null) {
+
             val report = Report(
                     firebaseRef.id,
                     user!!.uid,
@@ -84,7 +87,7 @@ class DataBase() {
             val storageRef = storage.reference
             val pictureRef = storageRef.child("photos/" + firebaseRef.id + ".jpg")
             val baos = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 25, baos)
+            bitmap?.compress(Bitmap.CompressFormat.JPEG, 25, baos)
             val data = baos.toByteArray()
             return pictureRef.putBytes(data)
                     .addOnSuccessListener {

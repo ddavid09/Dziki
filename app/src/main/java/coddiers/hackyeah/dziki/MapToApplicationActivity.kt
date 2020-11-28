@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import coddiers.hackyeah.dziki.database.DataBase
@@ -51,7 +52,7 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleM
         topAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.accept -> {
-                    //TUTAJ button handler <------------------------------------------------------------------------------------------TUTAJ PIOTREK TU
+                    createReport()
                     true
                 }
 
@@ -61,13 +62,15 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleM
     }
 
     private fun createReport()  {
-        val byteArray = intent.getByteArrayExtra("img")
-        val bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
+//        val byteArray = intent.getByteArrayExtra("img")
+//        val bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
         val location = LatLng(intent.getStringExtra("lat").toDouble(), intent.getStringExtra("lng").toDouble())
+        Log.d("KKKK", intent.getStringExtra("lat"))
+        Log.d("KKKK", intent.getStringExtra("lng"))
         database.uploadReport(location,
                 "super opis kurwo",
-                bmp, ArrayList(), false, intent.getStringExtra("region"),
-                intent.getStringExtra("subregion"), "waszkowiakowskieborough")
+                null, arrayListOf(1,2,3), false, intent.getStringExtra("region").toString().decapitalize(),
+                intent.getStringExtra("subregion").toString(), "waszkowiakowskieborough")
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
