@@ -4,8 +4,8 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_map">Mapa</string>
-    <string name="title_dashboard">List</string>
-    <string name="title_notifications">Moje</string>
+    <string name="title_dashboard">Zgłoszenia</string>
+    <string name="title_notifications">Przesłane</string>
     <string name="title_activity_login_activiy">Info</string>
     <!--
     This string is used for square devices and overridden by hello_world in
@@ -34,4 +34,6 @@
         <item>wielkopolskie</item>
         <item>zachodniopomorskie</item>
     </string-array>
+    <string name="fab_content_desc">Przycisk dodawania zgloszenia</string>
+    <string name="extended_fab_label">Dodaj zgłoszenie</string>
 </resources>
