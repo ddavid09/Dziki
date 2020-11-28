@@ -1,73 +1,122 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:orientation="vertical"
-    android:layout_gravity="center_vertical"
-    android:gravity="center">
+    android:layout_height="match_parent">
+
+<com.google.android.material.appbar.AppBarLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+
+<com.google.android.material.appbar.MaterialToolbar
+    android:id="@+id/topAppBar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    app:title="@string/add_boar"
+    app:menu="@menu/top_app_bar"
+    app:navigationIcon="@drawable/ic_arrow_back_24"
+    style="@style/Widget.MaterialComponents.Toolbar.Primary"
+    />
+
+</com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:gravity="center">
 
 
-    <EditText
-        android:hint="@string/city"
-        android:layout_width="match_parent"
-        android:textSize="18sp"
-        android:id="@+id/city_text_view"
-        android:imeOptions="actionNone"
-        android:maxLines="1"
-        android:inputType="text"
-        android:layout_margin="10dp"
-        android:layout_height="wrap_content" />
+            <EditText
+                android:hint="@string/city"
+                android:layout_width="match_parent"
+                android:textSize="18sp"
+                android:id="@+id/city_text_view"
+                android:imeOptions="actionNone"
+                android:maxLines="1"
+                android:inputType="text"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content" />
 
-    <EditText
-        android:hint="@string/borough"
-        android:id="@+id/borough_text_view"
-        android:textSize="18sp"
-        android:inputType="text"
-        android:layout_margin="10dp"
-        android:imeOptions="actionNone"
-        android:maxLines="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <EditText
+                android:hint="@string/borough"
+                android:id="@+id/borough_text_view"
+                android:textSize="18sp"
+                android:inputType="text"
+                android:layout_margin="10dp"
+                android:imeOptions="actionNone"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-    <EditText
-        android:hint="@string/voivodeship"
-        android:id="@+id/voivodeship_text_view"
-        android:textSize="18sp"
-        android:inputType="text"
-        android:layout_margin="10dp"
-        android:imeOptions="actionNone"
-        android:maxLines="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <EditText
+                android:hint="@string/voivodeship"
+                android:id="@+id/voivodeship_text_view"
+                android:textSize="18sp"
+                android:inputType="text"
+                android:layout_margin="10dp"
+                android:imeOptions="actionNone"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-    <EditText
-        android:hint="@string/voivodeship"
-        android:id="@+id/lng"
-        android:textSize="18sp"
-        android:inputType="text"
-        android:layout_margin="10dp"
-        android:imeOptions="actionNone"
-        android:maxLines="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <EditText
+                android:hint="@string/voivodeship"
+                android:id="@+id/lng"
+                android:textSize="18sp"
+                android:inputType="text"
+                android:layout_margin="10dp"
+                android:imeOptions="actionNone"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-    <EditText
-        android:hint="@string/voivodeship"
-        android:id="@+id/lat"
-        android:textSize="18sp"
-        android:inputType="text"
-        android:layout_margin="10dp"
-        android:imeOptions="actionNone"
-        android:maxLines="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SUBMIT AS FUCK"
-        android:id="@+id/go_to_map_button"/>
+            <EditText
+                android:hint="@string/voivodeship"
+                android:id="@+id/lat"
+                android:textSize="18sp"
+                android:inputType="text"
+                android:layout_margin="10dp"
+                android:imeOptions="actionNone"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SUBMIT AS FUCK"
+                android:id="@+id/go_to_map_button"/>
 
 
 
-</LinearLayout>
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+<!--    topAppBar.setNavigationOnClickListener {-->
+<!--    // Handle navigation icon press-->
+<!--    }-->
+
+<!--    topAppBar.setOnMenuItemClickListener { menuItem ->-->
+<!--    when (menuItem.itemId) {-->
+<!--    R.id.favorite -> {-->
+<!--    // Handle favorite icon press-->
+<!--    true-->
+<!--    }-->
+<!--    R.id.search -> {-->
+<!--    // Handle search icon press-->
+<!--    true-->
+<!--    }-->
+<!--    R.id.more -> {-->
+<!--    // Handle more item (inside overflow menu) press-->
+<!--    true-->
+<!--    }-->
+<!--    else -> false-->
+<!--    }-->
+<!--    }-->
+
+
