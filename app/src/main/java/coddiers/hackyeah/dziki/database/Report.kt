@@ -15,6 +15,7 @@ data class Report(
     var subregion: String = "null",
     var borough: String = "null",
     var description: String = "null",
-    var timestamp: Timestamp = Timestamp.now()
+    var timestamp: Timestamp = Timestamp.now(),
+    var photoID: String = "null"
 )
 
