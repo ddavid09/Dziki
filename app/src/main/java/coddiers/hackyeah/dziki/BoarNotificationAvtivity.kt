@@ -25,9 +25,10 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 
 class BoarNotificationAvtivity : AppCompatActivity() {
-    private lateinit var cityEditText: EditText;
-    private lateinit var boroughEditText: EditText;
-    private lateinit var voivodeshipEditText: EditText;
+    private lateinit var cityEditText: EditText
+    private lateinit var boroughEditText: EditText
+    private lateinit var voivodeshipEditText: EditText
+    private lateinit var descritpionEditText: EditText
     private lateinit var intentToMap: Intent
     private lateinit var makeAPhotoButton: Button
     private lateinit var mLocationManager: LocationManager
@@ -67,6 +68,7 @@ class BoarNotificationAvtivity : AppCompatActivity() {
         boroughEditText = findViewById(R.id.borough_text_view)
         voivodeshipEditText = findViewById(R.id.voivodeship_text_view)
         sweetPhotoOfPiggy = findViewById(R.id.sweetPhotoOfPiggy)
+        descritpionEditText = findViewById(R.id.description_text_view)
 
         mLocationManager =getSystemService(LOCATION_SERVICE) as LocationManager;
 
@@ -109,6 +111,7 @@ class BoarNotificationAvtivity : AppCompatActivity() {
         topAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.accept -> {
+                    intentToMap.putExtra("description", " " + descritpionEditText.text.toString())
                     startActivity(intentToMap)
                     true
                 }
