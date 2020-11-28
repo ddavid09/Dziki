@@ -3,7 +3,10 @@ package coddiers.hackyeah.dziki
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import coddiers.hackyeah.dziki.database.DataBase
@@ -19,6 +22,7 @@ import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.firestore.GeoPoint
 import kotlinx.android.synthetic.main.activity_boar_notification_avtivity.*
+import java.io.File
 
 
 class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnCameraMoveListener {
@@ -66,8 +70,21 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback, Google
     private fun createReport()  {
         database.uploadReport(currentLocation,
                 "super opis kurwo",
-                null, arrayListOf(1,2,3), false, intent.getStringExtra("region").toString().decapitalize(),
-                intent.getStringExtra("subregion").toString(), "waszkowiakowskieborough")
+                getImageFromPath(intent.getStringExtra("img")),
+                arrayListOf(1,0,0), intent.getBooleanExtra("deathStatus", false),
+                intent.getStringExtra("region").toString().decapitalize(),
+                intent.getStringExtra("subregion").toString(),
+                "waszkowiakowskieborough")
+    }
+
+    private fun getImageFromPath(path: String) : Bitmap? {
+        val imgFile = File(path)
+        var bitmap: Bitmap? = null
+        if(imgFile.exists()){
+            bitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+        }
+        Log.d("IMAGE", bitmap.toString())
+        return bitmap
     }
 
     override fun onMapReady(googleMap: GoogleMap) {

@@ -16,10 +16,7 @@ import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
@@ -36,6 +33,7 @@ class BoarNotificationAvtivity : AppCompatActivity() {
     private lateinit var mLocationManager: LocationManager
     private lateinit var sweetPhotoOfPiggy: ImageView
     private lateinit var phtotByteArray: ByteArrayOutputStream
+    private var deathStatus: Boolean = false;
     private val FILE_NAME = "photo.jpg"
     private val REQUEST_CODE = 42
     private lateinit var photoFile: File
@@ -125,6 +123,7 @@ class BoarNotificationAvtivity : AppCompatActivity() {
 //            val takenImage = data?.extras?.get("data") as Bitmap
             val takenImage = BitmapFactory.decodeFile(photoFile.absolutePath)
             sweetPhotoOfPiggy.setImageBitmap(takenImage)
+            intentToMap.putExtra("img", photoFile.absolutePath)
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
@@ -137,25 +136,24 @@ class BoarNotificationAvtivity : AppCompatActivity() {
         return File.createTempFile(fileName, ".jpg", storageDirectory)
     }
 
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE && data != null){
-//            val bmp: Bitmap  = data?.extras?.get("data") as Bitmap
-//            sweetPhotoOfPiggy.setImageBitmap(data.extras?.get("data") as Bitmap)
-//            phtotByteArray = ByteArrayOutputStream()
-//            bmp.compress(Bitmap.CompressFormat.PNG, 100, phtotByteArray)
-//            var byteArrayp = phtotByteArray.toByteArray()
-//            intentToMap.putExtra("img", byteArrayp)
-//        }
-//    }
+    fun onRadioButtonClicked(view: View) {
+        if (view is RadioButton) {
+            // Is the button now checked?
+            val checked = view.isChecked
 
-    fun capturePhoto() {
-
-        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(cameraIntent, REQUEST_CODE)
+            // Check which radio button was clicked
+            when (view.getId()) {
+                R.id.alive ->
+                    if (checked) {
+                        deathStatus = false
+                    }
+                R.id.dead ->
+                    if (checked) {
+                        deathStatus = true
+                    }
+            }
+        }
     }
-
-
 
     private fun hideKeyboard(activity: Activity?) {
         val imm = activity?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -175,9 +173,10 @@ class BoarNotificationAvtivity : AppCompatActivity() {
             address = coder.getFromLocationName(name, 5)
             val location: Address = address[0]
             intentToMap.putExtra("lat", location.latitude.toString())
-             intentToMap.putExtra("lng", location.longitude.toString())
+            intentToMap.putExtra("lng", location.longitude.toString())
             intentToMap.putExtra("region", location.adminArea.toLowerCase())
             intentToMap.putExtra("subregion", location.subAdminArea.toLowerCase())
+            intentToMap.putExtra("deathStatus", deathStatus)
             boroughEditText.setText("" + location.subAdminArea.toString().toLowerCase())
             voivodeshipEditText.setText("" + location.adminArea.toString().toLowerCase())
             Log.d("letter", location.adminArea.toLowerCase())
