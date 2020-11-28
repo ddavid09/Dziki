@@ -42,6 +42,32 @@ class DataBase() {
         }
     }
 
+    fun getUserReports(): MutableLiveData<ArrayList<Report>> {
+        val user = FirebaseAuth.getInstance().currentUser
+        val MLreports: MutableLiveData<ArrayList<Report>> = MutableLiveData<ArrayList<Report>>()
+        if (user!=null){
+            db.collection("reports")
+                    .orderBy("timestamp", Query.Direction.DESCENDING)
+                    .whereEqualTo("creatorID", user.uid)
+                    .addSnapshotListener { value, e ->
+                        if (e != null) {
+                            Log.w(TAG, "Listen failed.", e)
+                            return@addSnapshotListener
+                        }
+                        val reportList = ArrayList<Report>()
+                        if (value != null) {
+                            for (doc in value) {
+                                doc.toObject(Report::class.java).let {
+                                    reportList.add(it)
+                                }
+                            }
+                        }
+                        MLreports.value = reportList
+                    }
+        }
+        return MLreports
+    }
+
     fun uploadReport(location: LatLng, description: String, bitmap: Bitmap?, wildBoar: ArrayList<Int>, dead: Boolean, region: String, subregion: String, borough: String): Task<Void> {
         val locationGeoPoint = GeoPoint(location.latitude, location.longitude)
         val firebaseRef = db.collection("pendingReports").document()
