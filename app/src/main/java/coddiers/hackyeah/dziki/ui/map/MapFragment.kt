@@ -8,14 +8,19 @@ import android.graphics.Canvas
 import android.location.Location
 import android.location.LocationListener
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import coddiers.hackyeah.dziki.MainActivity
+import androidx.lifecycle.ViewModelProvider
+import coddiers.hackyeah.dziki.ItemViewModel
 import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.DataBase
 import coddiers.hackyeah.dziki.database.Report
@@ -27,18 +32,20 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 
-
-class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnCameraMoveListener {
     private lateinit var map: GoogleMap
     private lateinit var lastLocation: Location
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private var creating: Boolean = true
 
-    companion object{ private const val LOCATION_PERMISSION_REQUEST_CODE = 1}
+    companion object{private const val LOCATION_PERMISSION_REQUEST_CODE = 1}
 
+    private val viewModel: ItemViewModel by activityViewModels()
     private val callback = OnMapReadyCallback { googleMap ->
         map = googleMap
 
         map.setOnMarkerClickListener(this)
+        map.setOnCameraMoveListener(this)
         map.mapType = GoogleMap.MAP_TYPE_HYBRID
         map.uiSettings.isMapToolbarEnabled = false
         map.uiSettings.isCompassEnabled = true
@@ -46,6 +53,7 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
                 .getReports(null, "mazowieckie", "Warszawa", "Bemowo")
                 .observe(this, Observer { arrayListOfReports -> setMarkers(arrayListOfReports) })
         setUpMap()
+        creating = false
     }
 
     override fun onCreateView(
@@ -77,10 +85,14 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
         }
         map.isMyLocationEnabled = true
         fusedLocationClient.lastLocation.addOnSuccessListener { location ->
-            if (location != null) {
-                lastLocation = location
-                val currentLatLng = LatLng(location.latitude, location.longitude)
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 17f))
+            if(viewModel.getCurrentLocation() != null)
+                map.moveCamera(CameraUpdateFactory.newLatLngZoom(viewModel.getCurrentLocation(), 17f))
+            else {
+                if (location != null) {
+                    lastLocation = location
+                    val currentLatLng = LatLng(location.latitude, location.longitude)
+                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 17f))
+                }
             }
         }
     }
@@ -117,6 +129,12 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
     override fun onMarkerClick(p0: Marker?): Boolean {
         map.animateCamera(CameraUpdateFactory.newLatLngZoom(p0?.position, 17f))
         return false
+    }
+
+    override fun onCameraMove() {
+        val currentLocation = map.cameraPosition.target
+        if(!creating) viewModel.setCurrentLocation(map.cameraPosition.target)
+        Log.w("Location", "${currentLocation.latitude},${currentLocation.longitude}")
     }
 
     override fun onLocationChanged(location: Location?) {
