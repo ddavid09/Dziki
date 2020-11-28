@@ -20,6 +20,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.firestore.GeoPoint
+import kotlinx.android.synthetic.main.activity_boar_notification_avtivity.*
 
 
 class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMarkerClickListener, GoogleMap.OnMyLocationButtonClickListener {
@@ -42,6 +43,21 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleM
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
+
+        topAppBar.setNavigationOnClickListener {
+            finish();
+        }
+
+        topAppBar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.accept -> {
+                    //TUTAJ button handler <------------------------------------------------------------------------------------------TUTAJ PIOTREK TU
+                    true
+                }
+
+                else -> false
+            }
+        }
     }
 
     private fun createReport()  {

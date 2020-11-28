@@ -19,15 +19,13 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import kotlinx.android.synthetic.main.activity_boar_notification_avtivity.*
 import java.io.ByteArrayOutputStream
 
 class BoarNotificationAvtivity : AppCompatActivity() {
     private lateinit var cityEditText: EditText;
     private lateinit var boroughEditText: EditText;
     private lateinit var voivodeshipEditText: EditText;
-    private lateinit var lat: EditText;
-    private lateinit var lng: EditText;
-    private lateinit var goToMapButton: Button
     private lateinit var intentToMap: Intent
     private lateinit var makeAPhotoButton: Button
     private lateinit var mLocationManager: LocationManager
@@ -64,8 +62,6 @@ class BoarNotificationAvtivity : AppCompatActivity() {
         boroughEditText = findViewById(R.id.borough_text_view)
         voivodeshipEditText = findViewById(R.id.voivodeship_text_view)
         sweetPhotoOfPiggy = findViewById(R.id.sweetPhotoOfPiggy)
-        lat = findViewById(R.id.lat)
-        lng = findViewById(R.id.lng)
 
         mLocationManager =getSystemService(LOCATION_SERVICE) as LocationManager;
 
@@ -78,11 +74,7 @@ class BoarNotificationAvtivity : AppCompatActivity() {
         makeAPhotoButton.setOnClickListener {
             capturePhoto()
         }
-        goToMapButton = findViewById(R.id.go_to_map_button)
         intentToMap = Intent(this, MapToApplicationActivity::class.java)
-        goToMapButton.setOnClickListener{
-            startActivity(intentToMap)
-        }
 
         cityEditText.setOnKeyListener(View.OnKeyListener { _, keyCode, keyevent ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && keyevent.action == KeyEvent.ACTION_UP) {
@@ -92,6 +84,21 @@ class BoarNotificationAvtivity : AppCompatActivity() {
             }
             false
         })
+
+        topAppBar.setNavigationOnClickListener {
+            finish();
+        }
+
+        topAppBar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.accept -> {
+                    startActivity(intentToMap)
+                    true
+                }
+
+                else -> false
+            }
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -132,9 +139,7 @@ class BoarNotificationAvtivity : AppCompatActivity() {
             address = coder.getFromLocationName(name, 5)
             val location: Address = address[0]
             intentToMap.putExtra("lat", location.latitude.toString())
-            lat.setText("" + location.latitude.toString())
-            lng.setText("" + location.longitude.toString())
-            intentToMap.putExtra("lng", location.longitude.toString())
+             intentToMap.putExtra("lng", location.longitude.toString())
             intentToMap.putExtra("region", location.adminArea)
             intentToMap.putExtra("subregion", location.subAdminArea)
             boroughEditText.setText("" + location.subAdminArea.toString())
@@ -162,4 +167,6 @@ class BoarNotificationAvtivity : AppCompatActivity() {
             Toast.makeText(this, "Nie udało się pobrac lokalizacji uzupełnij formularz ręcznie", Toast.LENGTH_LONG).show()
         }
     }
+
+
 }

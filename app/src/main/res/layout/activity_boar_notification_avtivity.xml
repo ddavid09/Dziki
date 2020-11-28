@@ -62,32 +62,12 @@ android:layout_height="wrap_content">
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <EditText
-        android:hint="@string/voivodeship"
-        android:id="@+id/lng"
-        android:textSize="18sp"
-        android:inputType="text"
-        android:layout_margin="10dp"
-        android:imeOptions="actionNone"
-        android:maxLines="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
-    <EditText
-        android:hint="@string/voivodeship"
-        android:id="@+id/lat"
-        android:textSize="18sp"
-        android:inputType="text"
-        android:layout_margin="10dp"
-        android:imeOptions="actionNone"
-        android:maxLines="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SUBMIT AS FUCK"
-        android:id="@+id/go_to_map_button"/>
+<!--    <Button-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="SUBMIT AS FUCK"-->
+<!--        android:id="@+id/go_to_map_button"/>-->
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -107,26 +87,6 @@ android:layout_height="wrap_content">
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
-<!--    topAppBar.setNavigationOnClickListener {-->
-<!--    // Handle navigation icon press-->
-<!--    }-->
 
-<!--    topAppBar.setOnMenuItemClickListener { menuItem ->-->
-<!--    when (menuItem.itemId) {-->
-<!--    R.id.favorite -> {-->
-<!--    // Handle favorite icon press-->
-<!--    true-->
-<!--    }-->
-<!--    R.id.search -> {-->
-<!--    // Handle search icon press-->
-<!--    true-->
-<!--    }-->
-<!--    R.id.more -> {-->
-<!--    // Handle more item (inside overflow menu) press-->
-<!--    true-->
-<!--    }-->
-<!--    else -> false-->
-<!--    }-->
-<!--    }-->
 
 
