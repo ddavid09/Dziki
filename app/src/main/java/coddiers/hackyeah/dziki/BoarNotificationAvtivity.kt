@@ -1,18 +1,20 @@
 package coddiers.hackyeah.dziki
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
-import android.location.Address
-import android.location.Geocoder
-import androidx.appcompat.app.AppCompatActivity
+import android.content.pm.PackageManager
+import android.location.*
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
-import androidx.fragment.app.FragmentActivity
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 
 class BoarNotificationAvtivity : AppCompatActivity() {
     private lateinit var cityEditText: EditText;
@@ -22,6 +24,27 @@ class BoarNotificationAvtivity : AppCompatActivity() {
     private lateinit var lng: EditText;
     private lateinit var goToMapButton: Button;
     private lateinit var intentToMap: Intent;
+    private lateinit var mLocationManager: LocationManager
+    var LOCATION_REFRESH_DISTANCE = 1f
+    var LOCATION_REFRESH_TIME: Long = 100
+
+    private val mLocationListener: LocationListener = object : LocationListener {
+        override fun onLocationChanged(location: Location?) {
+            getAddressFromLocation(location)
+        }
+
+        override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {
+            TODO("Not yet implemented")
+        }
+
+        override fun onProviderEnabled(p0: String?) {
+            TODO("Not yet implemented")
+        }
+
+        override fun onProviderDisabled(p0: String?) {
+            Toast.makeText(applicationContext, "Nie udało się pobrać lokalizacji. Uzupełnij formularz ręcznie.", Toast.LENGTH_LONG).show()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +54,13 @@ class BoarNotificationAvtivity : AppCompatActivity() {
         voivodeshipEditText = findViewById(R.id.voivodeship_text_view)
         lat = findViewById(R.id.lat)
         lng = findViewById(R.id.lng)
+        mLocationManager =getSystemService(LOCATION_SERVICE) as LocationManager;
 
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return
+        }
+        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, LOCATION_REFRESH_TIME,
+                LOCATION_REFRESH_DISTANCE, mLocationListener);
         goToMapButton = findViewById(R.id.go_to_map_button)
         intentToMap = Intent(this, MapToApplicationActivity::class.java)
         goToMapButton.setOnClickListener{
@@ -47,6 +76,8 @@ class BoarNotificationAvtivity : AppCompatActivity() {
             false
         })
     }
+
+
 
     private fun hideKeyboard(activity: Activity?) {
         val imm = activity?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -75,6 +106,25 @@ class BoarNotificationAvtivity : AppCompatActivity() {
             voivodeshipEditText.setText("" + location.adminArea.toString())
         } catch (ex: Exception) {
             ex.printStackTrace()
+        }
+    }
+
+    private fun getAddressFromLocation(location: Location?) {
+        val coder = Geocoder(this.applicationContext)
+        val address: List<Address>?
+
+        try{
+            address = coder.getFromLocation(location!!.latitude, location.longitude, 1)
+            cityEditText.setText("" + address[0].locality)
+            boroughEditText.setText("" + address[0].subAdminArea)
+            voivodeshipEditText.setText(address[0].adminArea)
+            intentToMap.putExtra("lng", location.longitude.toString())
+            intentToMap.putExtra("region", address[0].adminArea.toString())
+            intentToMap.putExtra("subregion", address[0].subAdminArea.toString())
+            intentToMap.putExtra("lat", location.latitude.toString())
+        }
+        catch (exp: java.lang.Exception){
+            Toast.makeText(this, "Nie udało się pobrac lokalizacji uzupełnij formularz ręcznie", Toast.LENGTH_LONG).show()
         }
     }
 }
