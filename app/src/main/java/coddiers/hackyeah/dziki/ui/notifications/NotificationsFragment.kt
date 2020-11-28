@@ -8,15 +8,14 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
 import coddiers.hackyeah.dziki.R
+import coddiers.hackyeah.dziki.database.DataBase
 import kotlinx.android.synthetic.main.fragment_notifications.*
 
 
 class NotificationsFragment : Fragment() {
 
-    val types = arrayOf("simple User", "Admin")
-
-    lateinit var oprion : Spinner
-    lateinit var result : TextView
+    var voivodeship = "dolnoslaskie"
+    var district    = "bolesławiecki"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,16 +23,21 @@ class NotificationsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_notifications, container, false)
+
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         val voivodeships = resources.getStringArray(R.array.voivodeships)
+        var districts = resources.getStringArray(R.array.dolnoslaskie)
 
         val arrayAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, voivodeships)
         voivodeshipSpinner.adapter = arrayAdapter
+
+
 
         voivodeshipSpinner.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
@@ -43,14 +47,66 @@ class NotificationsFragment : Fragment() {
                 position: Int,
                 id: Long
             ) {
-                button2.text = voivodeships[position]
+                var voivodeship = voivodeships[position]
+
+                when (voivodeship){
+                    "dolnoslaskie" -> districts = resources.getStringArray(R.array.dolnoslaskie)
+                    "kujawskopomorskie" -> districts = resources.getStringArray(R.array.kujawskopomorskie)
+                    "lubelskie" -> districts = resources.getStringArray(R.array.lubelskie)
+                    "lubuskie" -> districts = resources.getStringArray(R.array.lubuskie)
+                    "lodzkie" -> districts = resources.getStringArray(R.array.lodzkie)
+                    "malopolskie" -> districts = resources.getStringArray(R.array.malopolskie)
+                    "mazowieckie" -> districts = resources.getStringArray(R.array.mazowieckie)
+                    "opolskie" -> districts = resources.getStringArray(R.array.opolskie)
+                    "podkarpackie" -> districts = resources.getStringArray(R.array.podkarpackie)
+                    "podlaskie" -> districts = resources.getStringArray(R.array.podlaskie)
+                    "pomorskie" -> districts = resources.getStringArray(R.array.pomorskie)
+                    "slaskie" -> districts = resources.getStringArray(R.array.slaskie)
+                    "swietokszyskie" -> districts = resources.getStringArray(R.array.swietokszyskie)
+                    "warminskomazurskie" -> districts = resources.getStringArray(R.array.warminskomazurskie)
+                    "wielkopolskie" -> districts = resources.getStringArray(R.array.wielkopolskie)
+                    "zachodniopomorskie" -> districts = resources.getStringArray(R.array.zachodniopomorskie)
+
+                }
+                val arrayAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, districts)
+                districtSpinner.adapter = arrayAdapter
+
+                districtSpinner.onItemSelectedListener = object :
+
+                    AdapterView.OnItemSelectedListener{
+                    override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        var district = districts[position]
+                    }
+
+                    override fun onNothingSelected(parent: AdapterView<*>?) {
+                        TODO("Not yet implemented")
+                    }
+
+                }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 TODO("Not yet implemented")
             }
+            
 
+        }
+        
+        searchButton.setOnClickListener {
+            var id: Int = radiogroup.checkedRadioButtonId
+            var dead: Boolean? = null
+            when(id){
+                0 -> dead = null
+                1 -> dead = false
+                2 -> dead = true
+            }
 
+            DataBase().getReports(dead, voivodeship, district, "")
         }
     }
 
