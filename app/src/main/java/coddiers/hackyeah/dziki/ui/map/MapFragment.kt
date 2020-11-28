@@ -41,7 +41,7 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
         map.setOnMarkerClickListener(this)
         map.mapType = GoogleMap.MAP_TYPE_HYBRID
         DataBase()
-                .getReports(true, "Mazowieckie", "Warszawa", "Bemowo")
+                .getReports(null, "Mazowieckie", "Warszawa", "Bemowo")
                 .observe(this, Observer { arrayListOfReports -> setMarkers(arrayListOfReports)})
         setUpMap()
     }
@@ -106,7 +106,7 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
     }
 
     override fun onMarkerClick(p0: Marker?): Boolean {
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(p0?.position, 12f))
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(p0?.position, 17f))
         return false
     }
 }
