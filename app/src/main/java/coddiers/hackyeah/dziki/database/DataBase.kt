@@ -1,9 +1,12 @@
 package coddiers.hackyeah.dziki.database
 
+import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import coddiers.hackyeah.dziki.R
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.tasks.Task
 import com.google.firebase.Timestamp
@@ -23,23 +26,25 @@ class DataBase() {
     val TAG = "DataBase"
     val storage: FirebaseStorage = FirebaseStorage.getInstance()
 
-    fun uploadReport(location: LatLng, description: String, bitmap: Bitmap?, wildBoar: ArrayList<Int>, dead:Boolean, region:String, subregion:String, borough:String): Task<Void> {
+    fun uploadReport(location: LatLng, description: String, bitmap: Bitmap?, wildBoar: ArrayList<Int>, dead: Boolean, region: String, subregion: String, borough: String): Task<Void> {
         val locationGeoPoint = GeoPoint(location.latitude, location.longitude)
         val firebaseRef = db.collection("uploadReports").document()
-        val report = Report(
-            firebaseRef.id,
-            user!!.uid,
-            wildBoar,
-            dead,
-            locationGeoPoint,
-            region,
-            subregion,
-            borough,
-            description,
-            Timestamp.now()
-        )
+
 
         if(bitmap == null){
+            val report = Report(
+                    firebaseRef.id,
+                    user!!.uid,
+                    wildBoar,
+                    dead,
+                    locationGeoPoint,
+                    region,
+                    subregion,
+                    borough,
+                    description,
+                    Timestamp.now(),
+                    "brak"
+            )
             return firebaseRef.set(report)
                 .addOnSuccessListener {
                     Log.d(TAG, "DocumentSnapshot added with ID: ${firebaseRef.id}")
@@ -49,6 +54,19 @@ class DataBase() {
                 }
         }
         else{
+            val report = Report(
+                    firebaseRef.id,
+                    user!!.uid,
+                    wildBoar,
+                    dead,
+                    locationGeoPoint,
+                    region,
+                    subregion,
+                    borough,
+                    description,
+                    Timestamp.now(),
+                    firebaseRef.id
+            )
             val storageRef = storage.reference
             val pictureRef = storageRef.child("photos/" + firebaseRef.id + ".jpg")
             val baos = ByteArrayOutputStream()
@@ -56,7 +74,7 @@ class DataBase() {
             val data = baos.toByteArray()
             return pictureRef.putBytes(data)
                 .addOnSuccessListener {
-                    Log.d(TAG, "Picture send id:"+firebaseRef.id)
+                    Log.d(TAG, "Picture send id:" + firebaseRef.id)
                 }.addOnFailureListener { e ->
                     Log.w(TAG, "Error sending picture", e)
                 }.continueWithTask{
@@ -72,7 +90,7 @@ class DataBase() {
         }
     }
 
-    fun getReports(dead:Boolean?, region:String, subregion:String, commune:String): MutableLiveData<ArrayList<Report>> {
+    fun getReports(dead: Boolean?, region: String, subregion: String, commune: String): MutableLiveData<ArrayList<Report>> {
         //borough:String
         val MLreports :MutableLiveData<ArrayList<Report>> = MutableLiveData<ArrayList<Report>>()
 
@@ -99,7 +117,7 @@ class DataBase() {
         else {
             db.collection("reports")
                 .orderBy("timestamp", Query.Direction.DESCENDING).whereEqualTo("region", region)
-                .whereEqualTo("subregion", subregion).whereEqualTo("dead",dead)
+                .whereEqualTo("subregion", subregion).whereEqualTo("dead", dead)
                 .addSnapshotListener { value, e ->
                     if (e != null) {
                         Log.w(TAG, "Listen failed.", e)
@@ -120,20 +138,27 @@ class DataBase() {
 
     }
 
-    fun getPhoto(report: Report): MutableLiveData<Bitmap>{
+    fun getPhoto(report: Report, resources: Resources): MutableLiveData<Bitmap>{
         val liveBitmap: MutableLiveData<Bitmap> = MutableLiveData()
-        val storageRef = storage.reference
+        liveBitmap.value = BitmapFactory.decodeResource(resources,R.drawable.dzik);
+        Log.w(TAG, "bitmap: "+liveBitmap.value.toString())
+        if(report.photoID!="null"){
+            val storageRef = storage.reference
 
-        var pictureRef = storageRef.child("photos/"+ report.ID + ".jpg")
+            var pictureRef = storageRef.child("photos/" + report.ID + ".jpg")
 
-        val localFile = File.createTempFile("image_"+report.ID, "jpg")
+            val localFile = File.createTempFile("image_" + report.ID, "jpg")
 
-        pictureRef.getFile(localFile).addOnSuccessListener {
-            liveBitmap.value = BitmapFactory.decodeFile(localFile.absolutePath)
-            // Local temp file has been created
-        }.addOnFailureListener {
-            // Handle any errors
+            pictureRef.getFile(localFile).addOnSuccessListener {
+                liveBitmap.value = BitmapFactory.decodeFile(localFile.absolutePath)
+                Log.w(TAG, "Photo getting success.")
+                // Local temp file has been created
+            }.addOnFailureListener {
+                Log.w(TAG, "Photo getting failed.")
+                // Handle any errors
+            }
         }
+
         return liveBitmap
     }
 
