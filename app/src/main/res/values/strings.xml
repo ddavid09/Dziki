@@ -46,4 +46,5 @@
     <string name="description">Opis</string>
     <string name="alive">Żywy</string>
     <string name="dead">Martwy</string>
+    <string name="title_activity_choose_marker_details">ChooseMarkerDetailsActivity</string>
 </resources>
