@@ -15,30 +15,11 @@ import androidx.lifecycle.Observer
 import coddiers.hackyeah.dziki.MainActivity
 import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.DataBase
-import coddiers.hackyeah.dziki.database.Report
 import coddiers.hackyeah.dziki.ui.notifications.NotificationsFragment
-import com.google.firebase.Timestamp
-import com.google.firebase.firestore.GeoPoint
 import kotlinx.android.synthetic.main.fragment_dashboard.*
-import kotlinx.android.synthetic.main.fragment_notifications.*
 
 
 class DashboardFragment : Fragment() {
-    data class ReportData(
-        var id: String,
-        var timeStamp: Timestamp,
-        var dead: Boolean,
-        var location: GeoPoint,
-        var description: String,
-        var region: String,
-        var subRegion: String,
-        var borough: String,
-        var creatorId: String,
-        var photoId: String,
-        var boarsList: ArrayList<Int>
-        )
-
-    private lateinit var dataList: ArrayList<ReportData>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,11 +32,9 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        DataBase().getUserReports().observe( viewLifecycleOwner, Observer { arrayListOfUserReports ->  logAllUserReports(arrayListOfUserReports)})
 
-
-        var listView = reportsUserListView as ListView
-        var arrReport: ArrayList<NotificationsFragment.Report> = ArrayList()
+        val listView = reportsUserListView as ListView
+        val arrReport: ArrayList<NotificationsFragment.Report> = ArrayList()
         listView.adapter = CustomAdaptor(requireContext(), arrReport)
 
         val userReports = DataBase().getUserReports()
@@ -67,15 +46,15 @@ class DashboardFragment : Fragment() {
                         viewLifecycleOwner,
                         Observer { bitmap ->
                             if (bitmap != null) {
-                                var exist:Boolean = false;
+                                var exist = false
                                 var elementToRemove: NotificationsFragment.Report? = null
                                 for(reportItem in arrReport){
                                     if(reportItem.name==report.ID){
-                                        exist=true;
+                                        exist=true
                                         elementToRemove = reportItem
                                     }
                                 }
-                                if(exist==false){
+                                if(!exist){
                                     arrReport.add(NotificationsFragment.Report(report.ID, bitmap))
                                 }else{
                                     arrReport.remove(elementToRemove )
@@ -95,19 +74,12 @@ class DashboardFragment : Fragment() {
             }
         })
         listView.adapter = CustomAdaptor(requireContext(), arrReport)
-
     }
 
-    class CustomAdaptor(var context: Context, var report: ArrayList<NotificationsFragment.Report>) : BaseAdapter() {
-
+    class CustomAdaptor(var context: Context, private var report: ArrayList<NotificationsFragment.Report>) : BaseAdapter() {
         private inner class ViewHolder(row: View?){
-            var txtName: TextView
-            var ivImgae: ImageView
-
-            init {
-                this.txtName = row?.findViewById(R.id.textName) as TextView
-                this.ivImgae = row?.findViewById(R.id.iveImgae) as ImageView
-            }
+            var txtName: TextView = row?.findViewById(R.id.textName) as TextView
+            var ivImage: ImageView = row?.findViewById(R.id.iveImgae) as ImageView
         }
 
         override fun getCount(): Int {
@@ -115,7 +87,7 @@ class DashboardFragment : Fragment() {
         }
 
         override fun getItem(position: Int): Any {
-            return report.get(position)
+            return report[position]
 
         }
 
@@ -124,10 +96,10 @@ class DashboardFragment : Fragment() {
         }
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            var view: View?
-            var viewHolder: ViewHolder
+            val view: View?
+            val viewHolder: ViewHolder
             if (convertView == null){
-                var layout = LayoutInflater.from(context)
+                val layout = LayoutInflater.from(context)
                 view = layout.inflate(R.layout.report_item, parent, false)
                 viewHolder = ViewHolder(view)
                 view.tag = viewHolder
@@ -136,36 +108,12 @@ class DashboardFragment : Fragment() {
                 viewHolder = view.tag as ViewHolder
             }
 
-            var report: NotificationsFragment.Report = getItem(position) as NotificationsFragment.Report
+            val report: NotificationsFragment.Report = getItem(position) as NotificationsFragment.Report
             viewHolder.txtName.text = report.name
-            viewHolder.ivImgae.setImageBitmap(report.image)
+            viewHolder.ivImage.setImageBitmap(report.image)
 
             return view as View
         }
-    }
-
-    private fun logAllUserReports(list: ArrayList<Report>){
-        dataList = reportsListToReportDataList(list)
-    }
-
-    private fun reportsListToReportDataList(reports: ArrayList<Report>): ArrayList<ReportData>{
-        val dataList: ArrayList<ReportData> = arrayListOf()
-        for (report in reports){
-            val reportData = ReportData(
-                report.ID,
-                report.timestamp,
-                report.dead,
-                report.locationGeoPoint,
-                report.description,
-                report.region,
-                report.subregion,
-                report.borough,
-                report.creatorID,
-                report.photoID,
-                report.wildBoar)
-            dataList.add(reportData)
-        }
-        return dataList
     }
 }
 
