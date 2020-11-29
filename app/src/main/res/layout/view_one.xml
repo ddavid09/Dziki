@@ -3,37 +3,55 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:background="@android:color/holo_blue_dark" android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Second View"
-        android:layout_gravity="center_horizontal"
-        android:textSize="28sp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textView" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Czym jest ASF?"
+                android:layout_gravity="center_horizontal"
+                android:textSize="40sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:minLines="1"
+                android:id="@+id/textView2"
+                android:padding="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:text="Afrykański pomór świń (ASF) to szybko szerząca się, zakaźna choroba wirusowa świń i dzików. ASF powoduje wysoką śmiertelność wśród zakażonych dzików i świń, sięgającą nawet do 100%.
+Na tę chorobę nie ma obecnie szczepionki ani lekarstwa.
+Celem aplikacji jest zgłaszanie występowania martwych i żywych dzików, w celu eliminacji padliny i kontorli populacji.
+Choroba nie jest groźna dla ludzi – jest niebezpieczna tylko dla zwierząt"
+                android:textColor="@android:color/black"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Swipe left to\nFirst View"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20sp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:minLines="2"
-        android:id="@+id/textView2"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Swipe right to\nThird View"
+        android:text="Przesuń w prawo"
         android:layout_gravity="center_horizontal"
         android:textSize="20sp"
         android:textColor="@android:color/black"
@@ -41,7 +59,6 @@
         android:padding="@dimen/activity_horizontal_margin"
         android:minLines="2"
         android:id="@+id/textView3"
-        android:layout_alignTop="@+id/textView2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 

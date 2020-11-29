@@ -283,10 +283,13 @@ class NotificationsFragment : Fragment() {
                 "array",
                 context?.packageName
             )
-
-            districts = resources.getStringArray(resourcesID)
+            if(resourcesID!=0){
+                districts = resources.getStringArray(resourcesID)
+            }
             Log.d("Listenerres", resourcesID.toString())
             Log.d("Listenerdistr", districts.toString())
+
+
 
             val districtsAdapter = ArrayAdapter(
                 requireContext(),

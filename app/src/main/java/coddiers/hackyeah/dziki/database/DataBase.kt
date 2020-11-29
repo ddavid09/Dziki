@@ -224,7 +224,7 @@ class DataBase() {
             val localFile = File.createTempFile("image_" + report.ID, "jpg")
 
             pictureRef.getFile(localFile).addOnSuccessListener {
-                liveBitmap.value = getResizedBitmap(BitmapFactory.decodeFile(localFile.absolutePath),50)
+                liveBitmap.value = getResizedBitmap(BitmapFactory.decodeFile(localFile.absolutePath),500)
 
                 Log.w(TAG, "Photo getting success.")
                 // Local temp file has been created

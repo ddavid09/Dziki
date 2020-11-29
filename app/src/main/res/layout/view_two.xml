@@ -3,37 +3,52 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:background="@android:color/holo_orange_dark" android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Second View"
-        android:layout_gravity="center_horizontal"
-        android:textSize="28sp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textView" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Co zrobić gdy spotkamy dzika?"
+                android:layout_gravity="center_horizontal"
+                android:textSize="40sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:minLines="1"
+                android:id="@+id/textView2"
+                android:padding="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:text="Najważniejsze jest bezpieczeństwo człowieka, stąd nie należy panikować, krzyczeć, przepędzać czy straszyć zwierzęcia. W przypadku spotkania dzika należy spokojnie i po cichu się wycofać, nie krzyczeć, nie wykonywać gwałtownych ruchów i nie próbować go przegonić. Ważne, aby nie przestraszyć dzika. Dziki nie atakują człowieka „same z siebie”. Zwykle zbliżają się do człowieka chcąc wymusić jedzenie. Dziki nie są agresywne, natomiast mogą zaatakować, gdy czują się zagrożone, sprowokowane lub są ranne. W przypadku spotkania dzika w mieście należy poinformować o tym fakcie straż miejską lub gminę."
+                android:textColor="@android:color/black"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Swipe left to\nFirst View"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20sp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:minLines="2"
-        android:id="@+id/textView2"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Swipe right to\nThird View"
+        android:text="Przesuń w prawo"
         android:layout_gravity="center_horizontal"
         android:textSize="20sp"
         android:textColor="@android:color/black"
@@ -41,7 +56,6 @@
         android:padding="@dimen/activity_horizontal_margin"
         android:minLines="2"
         android:id="@+id/textView3"
-        android:layout_alignTop="@+id/textView2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
