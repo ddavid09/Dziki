@@ -7,10 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.ListView
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import coddiers.hackyeah.dziki.MainActivity
@@ -61,8 +58,7 @@ class DashboardFragment : Fragment() {
                                 if(!exist){
                                     arrReport.add(Report(report.description, status, report.ID ,bitmap ))
                                 }else{
-                                    arrReport.remove(elementToRemove )
-                                    arrReport.add(Report(report.description, status,report.ID ,bitmap ))
+                                    arrReport[arrReport.indexOf(elementToRemove)]=Report(report.description, status,report.ID ,bitmap )
                                 }
                                 Log.d("bitmapa",arrReport.toString())
                                 listView.adapter = CustomAdaptor(requireContext(), arrReport)
