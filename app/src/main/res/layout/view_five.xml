@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="30dp"
-            android:paddingTop="70dp"
+            android:paddingTop="80dp"
             android:paddingRight="30dp"
             android:paddingBottom="30dp">
 
@@ -55,22 +55,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="10sp"
-                android:text="Odyniec"
+                android:text="Warchlak"
                 android:textColor="#000000"
                 android:textSize="35sp"
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageView4"
                 android:layout_width="match_parent"
-                android:layout_height="279dp"
-                app:srcCompat="@drawable/boar" />
+                android:layout_height="257dp"
+                app:srcCompat="@drawable/little_boar" />
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Samiec dorosłego dzika. Duży ssak o krępej budowie, z silnie rozwiniętą przednią częścią ciała i wyraźnie niższym zadem. Przeciętnie osiąga 1,1–1,5 m, a największe osobniki do 2 m długości ciała bez ogona. "
+                android:text="W łowiectwie to młody dzik, w wieku od narodzin do 31 marca roku następnego – zgodnie z definicją z rozporządzenia ministra środowiska w sprawie określenia okresów polowań na zwierzęta łowne. Charakteryzuje się paskami wzdłóż ciała."
                 android:textColor="#000000"
                 android:textSize="20sp" />
 

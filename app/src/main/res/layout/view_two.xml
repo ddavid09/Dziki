@@ -1,33 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:background="@android:color/holo_orange_dark" android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="#000000">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:minLines="2"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Przesuń w lewo"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:minLines="2"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Przesuń w prawo"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="30dp"
-        >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:paddingLeft="30dp"
+            android:paddingTop="70dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="30dp">
 
             <TextView
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Co zrobić gdy spotkamy dzika?"
-                android:layout_gravity="center_horizontal"
-                android:textSize="40sp"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:minLines="1"
-                android:id="@+id/textView2"
-                android:padding="40dp"
-                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center_horizontal"
+                android:minLines="1"
+                android:paddingBottom="10sp"
+                android:text="Co zrobić gdy spotkamy dzika?"
+                android:textColor="#000000"
+                android:textSize="35sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView"
@@ -37,26 +73,11 @@
                 android:layout_centerVertical="true"
                 android:layout_gravity="center_horizontal"
                 android:text="Najważniejsze jest bezpieczeństwo człowieka, stąd nie należy panikować, krzyczeć, przepędzać czy straszyć zwierzęcia. W przypadku spotkania dzika należy spokojnie i po cichu się wycofać, nie krzyczeć, nie wykonywać gwałtownych ruchów i nie próbować go przegonić. Ważne, aby nie przestraszyć dzika. Dziki nie atakują człowieka „same z siebie”. Zwykle zbliżają się do człowieka chcąc wymusić jedzenie. Dziki nie są agresywne, natomiast mogą zaatakować, gdy czują się zagrożone, sprowokowane lub są ranne. W przypadku spotkania dzika w mieście należy poinformować o tym fakcie straż miejską lub gminę."
-                android:textColor="@android:color/black"
-                android:textSize="28sp"
+                android:textColor="#000000"
+                android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Przesuń w prawo"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20sp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:minLines="2"
-        android:id="@+id/textView3"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
