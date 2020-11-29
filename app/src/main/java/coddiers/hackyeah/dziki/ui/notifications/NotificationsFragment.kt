@@ -19,6 +19,7 @@ import androidx.lifecycle.Observer
 import coddiers.hackyeah.dziki.MainActivity
 import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.DataBase
+import coddiers.hackyeah.dziki.ui.dashboard.DashboardFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import kotlinx.android.synthetic.main.fragment_notifications.*
@@ -198,8 +199,7 @@ class NotificationsFragment : Fragment() {
                                     if(!exist){
                                         arrReport.add(Report(report.description, status, report.ID ,bitmap ))
                                     }else{
-                                        arrReport.remove(elementToRemove )
-                                        arrReport.add(Report(report.description, status, report.ID ,bitmap ))
+                                        arrReport[arrReport.indexOf(elementToRemove)]= Report(report.description, status, report.ID, bitmap)
                                     }
                                     Log.d("bitmapa",arrReport.toString())
                                     listView.adapter = CustomAdaptor(requireContext(), arrReport)
