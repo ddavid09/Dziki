@@ -48,4 +48,5 @@
     <string name="alive">Żywy</string>
     <string name="dead">Martwy</string>
     <string name="title_activity_choose_marker_details">ChooseMarkerDetailsActivity</string>
+    <string name="ASF_text">Afrykański pomór świń (ASF) to szybko szerząca się, zakaźna choroba wirusowa świń i dzików. ASF powoduje wysoką śmiertelność wśród zakażonych dzików i świń, sięgającą nawet do 100%. Na tę chorobę nie ma obecnie szczepionki ani lekarstwa. Celem aplikacji jest zgłaszanie występowania martwych i żywych dzików, w celu eliminacji padliny i kontorli populacji. Choroba nie jest groźna dla ludzi – jest niebezpieczna tylko dla zwierząt.</string>
 </resources>
