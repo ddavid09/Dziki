@@ -12,18 +12,6 @@
         android:background="#000000">
 
         <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:minLines="2"
-            android:padding="@dimen/activity_horizontal_margin"
-            android:text="Przesuń w lewo"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,12 +47,6 @@
                 android:textColor="#000000"
                 android:textSize="35sp"
                 android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="279dp"
-                app:srcCompat="@drawable/boar" />
 
             <TextView
                 android:id="@+id/textView6"
