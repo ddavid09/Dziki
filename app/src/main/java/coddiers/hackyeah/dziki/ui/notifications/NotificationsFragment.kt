@@ -231,7 +231,8 @@ class NotificationsFragment : Fragment() {
         }
         listView.onItemClickListener = AdapterView.OnItemClickListener{ parent, _, position, _ ->
             val selectedItemText = parent.getItemAtPosition(position)
-            Log.d("Listener", selectedItemText.toString())
+            Log.d("Listener", "selectedItemText.toString()")
+
         }
     }
 
