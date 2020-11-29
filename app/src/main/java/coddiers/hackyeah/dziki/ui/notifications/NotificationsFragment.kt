@@ -33,7 +33,7 @@ class NotificationsFragment : Fragment() {
     var positions = arrayOf("test","test")
     private var dead: Boolean? = null
 
-    data class Report(var name: String, var image: Bitmap)
+    data class Report(var name: String, var status:String, var ID: String, var image: Bitmap)
         override fun onCreateView(
 
             inflater: LayoutInflater,
@@ -121,10 +121,10 @@ class NotificationsFragment : Fragment() {
             }
         }
 
-        class CustomAdaptor(var context: Context, var report: ArrayList<Report>) : BaseAdapter() {
-
-            private inner class ViewHolder(row: View?){
+        class CustomAdaptor(var context: Context, private var report: ArrayList<Report>) : BaseAdapter() {
+            private inner class ViewHolder(row: View?) {
                 var txtName: TextView = row?.findViewById(R.id.textName) as TextView
+                var statusName: TextView = row?.findViewById(R.id.textStatus) as TextView
                 var ivImage: ImageView = row?.findViewById(R.id.iveImgae) as ImageView
             }
 
@@ -134,6 +134,7 @@ class NotificationsFragment : Fragment() {
 
             override fun getItem(position: Int): Any {
                 return report[position]
+
             }
 
             override fun getItemId(position: Int): Long {
@@ -141,23 +142,25 @@ class NotificationsFragment : Fragment() {
             }
 
             override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-                val viewLocal: View?
+                val view: View?
                 val viewHolder: ViewHolder
-                if (convertView == null){
+                if (convertView == null) {
                     val layout = LayoutInflater.from(context)
-                    viewLocal = layout.inflate(R.layout.report_item, parent, false)
-                    viewHolder = ViewHolder(viewLocal)
-                    viewLocal.tag = viewHolder
-                }else{
-                    viewLocal = convertView
-                    viewHolder = viewLocal.tag as ViewHolder
+                    view = layout.inflate(R.layout.report_item, parent, false)
+                    viewHolder = ViewHolder(view)
+                    view.tag = viewHolder
+                } else {
+                    view = convertView
+                    viewHolder = view.tag as ViewHolder
                 }
+
 
                 val report: Report = getItem(position) as Report
                 viewHolder.txtName.text = report.name
+                viewHolder.statusName.text = report.status
                 viewHolder.ivImage.setImageBitmap(report.image)
 
-                return viewLocal as View
+                return view as View
             }
         }
 
@@ -178,6 +181,8 @@ class NotificationsFragment : Fragment() {
                 if (reportsList != null) {
                     arrReport.clear()
                     for (report in reportsList) {
+                        val status: String = if (!report.dead) "Martwy"
+                        else "Żywy"
                         DataBase().getPhoto(report, resources).observe(
                             viewLifecycleOwner,
                             Observer { bitmap ->
@@ -191,10 +196,10 @@ class NotificationsFragment : Fragment() {
                                         }
                                     }
                                     if(!exist){
-                                        arrReport.add(Report(report.ID, bitmap))
+                                        arrReport.add(Report(report.description, status, report.ID ,bitmap ))
                                     }else{
                                         arrReport.remove(elementToRemove )
-                                        arrReport.add(Report(report.ID, bitmap))
+                                        arrReport.add(Report(report.description, status, report.ID ,bitmap ))
                                     }
                                     Log.d("bitmapa",arrReport.toString())
                                     listView.adapter = CustomAdaptor(requireContext(), arrReport)
