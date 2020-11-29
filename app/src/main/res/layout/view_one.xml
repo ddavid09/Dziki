@@ -37,19 +37,22 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="346dp"
-            android:layout_height="760dp"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
+                android:id="@+id/backFromOne"
                 style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-                android:layout_width="48dp"
-                android:layout_height="79dp"
-                android:src="@drawable/ic_baseline_arrow_back_24"
-                app:icon="@drawable/ic_baseline_arrow_back_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="fancyMethod"
+                android:text="Wyjdź"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -61,7 +64,7 @@
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.535"
+                app:layout_constraintHorizontal_bias="0.486"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -92,7 +95,7 @@
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MRiR WSI walczy z ASF!"
+                android:text="MRiRW walczy z ASF!"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold|italic"

@@ -8,6 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import coddiers.hackyeah.dziki.MainActivity
 import coddiers.hackyeah.dziki.R
+import kotlinx.android.synthetic.main.view_four.*
+import kotlinx.android.synthetic.main.view_one.*
+import kotlinx.android.synthetic.main.view_tree.*
+import kotlinx.android.synthetic.main.view_two.*
 
 
 class InfoSliderActivity : AppCompatActivity() {
@@ -24,12 +28,21 @@ class InfoSliderActivity : AppCompatActivity() {
 
         val viewPager = findViewById<View>(R.id.viewpager) as ViewPager
         viewPager.adapter = CustomPagerAdapter(this)
+
+
     }
+
+    fun fancyMethod(view: View){
+        finish()
+    }
+
+
 
     override fun onBackPressed() {
         super.onBackPressed()
         var main = Intent(this, MainActivity::class.java)
         startActivity(main);
     }
+
 
 }
