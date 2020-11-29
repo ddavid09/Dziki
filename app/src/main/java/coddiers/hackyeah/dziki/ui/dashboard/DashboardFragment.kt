@@ -45,7 +45,7 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        MainActivity.btn.visibility = View.VISIBLE
+        MainActivity.btn.visibility = View.GONE
         return inflater.inflate(R.layout.fragment_dashboard, container, false)
     }
 
