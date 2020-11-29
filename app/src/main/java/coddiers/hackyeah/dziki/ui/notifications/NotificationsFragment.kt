@@ -2,6 +2,7 @@ package coddiers.hackyeah.dziki.ui.notifications
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.location.Address
@@ -19,10 +20,12 @@ import androidx.lifecycle.Observer
 import coddiers.hackyeah.dziki.MainActivity
 import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.DataBase
+import coddiers.hackyeah.dziki.ui.ChooseMarkerDetailsActivity
 import coddiers.hackyeah.dziki.ui.dashboard.DashboardFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.firebase.Timestamp
+import com.google.firebase.firestore.GeoPoint
 import kotlinx.android.synthetic.main.fragment_notifications.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -36,7 +39,7 @@ class NotificationsFragment : Fragment() {
     var positions = arrayOf("test","test")
     private var dead: Boolean? = null
 
-    data class Report(var data: Timestamp, var name: String, var status:String, var ID: String, var image: Bitmap)
+    data class Report(var data: Timestamp, var name: String, var status:String, var ID: String, var image: Bitmap, var locationGeoPoint: GeoPoint)
         override fun onCreateView(
 
             inflater: LayoutInflater,
@@ -172,6 +175,13 @@ class NotificationsFragment : Fragment() {
                 viewHolder.wojewodztwo.text = report.name
                 viewHolder.powiatName.text = report.status
                 viewHolder.ivImage.setImageBitmap(report.image)
+                view?.setOnClickListener {
+                    val intent = Intent(context, ChooseMarkerDetailsActivity::class.java)
+                    intent.putExtra("long", report.locationGeoPoint.longitude)
+                    intent.putExtra("lat",  report.locationGeoPoint.latitude)
+                    intent.putExtra("button",  false)
+                    parent?.context?.startActivity(intent)
+                }
 
                 return view as View
             }
@@ -209,10 +219,9 @@ class NotificationsFragment : Fragment() {
                                         }
                                     }
                                     if(!exist){
-                                        arrReport.add(Report(report.timestamp, report.region, report.subregion, report.ID , bitmap ))
+                                        arrReport.add(Report(report.timestamp, report.region, report.subregion, report.ID , bitmap ,report.locationGeoPoint))
                                     }else{
-                                        arrReport.remove(elementToRemove )
-                                        arrReport.add(Report(report.timestamp, report.region, report.subregion, report.ID , bitmap ))
+                                        arrReport[arrReport.indexOf(elementToRemove)]=Report(report.timestamp, report.region, report.subregion, report.ID , bitmap, report.locationGeoPoint )
                                     }
                                     Log.d("bitmapa",arrReport.toString())
                                     listView.adapter = CustomAdaptor(requireContext(), arrReport)

@@ -3,6 +3,8 @@ package coddiers.hackyeah.dziki.ui;
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -27,6 +29,7 @@ class ChooseMarkerDetailsActivity : AppCompatActivity() {
         val intent : Intent = getIntent()
         val locationLong = intent.getDoubleExtra("long", 0.0)
         val locationLat = intent.getDoubleExtra("lat", 0.0)
+        val deleteButtonBoolean = intent.getBooleanExtra("button",false)
         val db = DataBase()
         val location = LatLng(locationLat, locationLong)
 
@@ -36,22 +39,26 @@ class ChooseMarkerDetailsActivity : AppCompatActivity() {
             finish()
         }
 
+        var deleteButton = delete_button as Button
 
-        MLdetails.observe(this, Observer {
-            if (it != null) {
+
+
+
+        MLdetails.observe(this, Observer { reportDoc ->
+            if (reportDoc != null) {
 
                 //ChooseTrashActivityTextViewId.setText(it.description)
-                var date = it.timestamp.toDate()
+                var date = reportDoc.timestamp.toDate()
                 val pattern = "dd-MM-yyyy hh:mm"
                 val simpleDateFormat = SimpleDateFormat(pattern)
                 val toPrintDate = simpleDateFormat.format(date)
 
                 report_data.text = toPrintDate
-                vojewudztwo.text = it.region
-                poviat.text = it.subregion
-                description.text = it.description
+                vojewudztwo.text = reportDoc.region
+                poviat.text = reportDoc.subregion
+                description.text = reportDoc.description
 
-                val MLPicture = db.getPhoto(it, resources)
+                val MLPicture = db.getPhoto(reportDoc, resources)
                 MLPicture.observe(this, Observer {
                     if (it != null) {
                         ChooseMarkerDetailsImageViewId.setImageBitmap(it)
@@ -60,6 +67,14 @@ class ChooseMarkerDetailsActivity : AppCompatActivity() {
                         Toast.makeText(this, "Nie można pobrać zdjęcia", Toast.LENGTH_SHORT).show()
                     }
                 })
+                if(deleteButtonBoolean){
+                    deleteButton.visibility= View.VISIBLE;
+                    deleteButton.setOnClickListener {
+                        DataBase().deleteReport(raportId = reportDoc.ID )
+                        finish()
+                    }
+                }
+
 
             } else{
                 //Log.d("ChooseTrashActivity", "out")
