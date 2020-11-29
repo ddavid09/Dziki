@@ -1,39 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_height="match_parent"
+    android:layout_weight="100dp">
+
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/card"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="15dp"
+    android:background="@color/grey_light">
 
-    <ImageView
-        android:id="@+id/iveImgae"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:srcCompat="@drawable/ic_boar"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="19dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/iveImgae"
-        android:layout_marginStart="22dp"
-        android:layout_alignTop="@id/iveImgae"
-        android:text="Name"
-        android:textStyle="bold"
-        android:textSize="30sp"/>
-    <TextView
-        android:id="@+id/textStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/iveImgae"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="15dp"
-        android:layout_alignBottom="@id/iveImgae"
-        android:textSize="15dp"
-        android:text="Status" />
-</RelativeLayout>
+        <!-- Media -->
+        <ImageView
+            android:layout_width="135dp"
+            android:layout_height="135dp"
+            app:srcCompat="@drawable/dzik"
+            android:scaleType="centerCrop"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:layout_marginLeft="15dp">
+
+            <!-- Title, secondary and supporting text -->
+            <TextView
+                android:id="@+id/zgloszenie_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Zgłoszenie"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/data_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="10.10.2020 12:30"
+                android:textSize="18dp"
+
+                />
+
+            <TextView
+                android:id="@+id/item_wojewodztwo_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Kujawsko-pomorskie"
+                android:textSize="16dp"
+
+                />
+
+            <TextView
+                android:id="@+id/item_powiat_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="bydgoski"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
