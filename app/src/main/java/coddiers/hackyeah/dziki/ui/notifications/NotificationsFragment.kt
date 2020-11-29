@@ -10,6 +10,7 @@ import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
+import android.text.BoringLayout
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -203,8 +204,23 @@ class NotificationsFragment : Fragment() {
                             viewLifecycleOwner,
                             Observer { bitmap ->
                                 if (bitmap != null) {
-                                    arrReport.add(Report(report.description, bitmap))
-                                   // Log.d("bitmapa",arrReport.)
+
+
+                                    var exist:Boolean = false;
+                                    var elementToRemove:Report? = null
+                                    for(reportItem in arrReport){
+                                        if(reportItem.name==report.ID){
+                                            exist=true;
+                                            elementToRemove = reportItem
+                                        }
+                                    }
+                                    if(exist==false){
+                                        arrReport.add(Report(report.ID, bitmap))
+                                    }else{
+                                        arrReport.remove(elementToRemove )
+                                        arrReport.add(Report(report.ID, bitmap))
+                                    }
+                                    Log.d("bitmapa",arrReport.toString())
                                     listView.adapter = CustomAdaptor(requireContext(), arrReport)
                                     Log.d("Adapter", report.toString())
 
