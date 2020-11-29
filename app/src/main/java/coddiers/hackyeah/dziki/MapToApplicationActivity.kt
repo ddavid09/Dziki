@@ -42,7 +42,7 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback, Google
         report = Report(
             region = intent.getStringExtra("region"),
             subregion = intent.getStringExtra("subregion"),
-            locationGeoPoint = GeoPoint(intent.getStringExtra("lat").toDouble(),intent.getStringExtra("lng").toDouble() )
+            locationGeoPoint = GeoPoint(intent.getDoubleExtra("lat",52.25645146),intent.getDoubleExtra("lng",20.899511) )
         )
         currentLocation = LatLng(report.locationGeoPoint.latitude, report.locationGeoPoint.longitude)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
@@ -116,7 +116,13 @@ class MapToApplicationActivity : AppCompatActivity(), OnMapReadyCallback, Google
 
         mMap.isMyLocationEnabled = true
         currentLocation = LatLng(report.locationGeoPoint.latitude, report.locationGeoPoint.longitude)
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 17f))
+        if(currentLocation.latitude == 52.25645146 && currentLocation.longitude == 20.899511){
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 6f))
+        }
+        else{
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 17f))
+        }
+
     }
 
     override fun onMarkerClick(p0: Marker?): Boolean {

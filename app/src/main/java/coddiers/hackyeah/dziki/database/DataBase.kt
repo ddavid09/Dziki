@@ -98,71 +98,75 @@ class DataBase() {
         return Bitmap.createScaledBitmap(image, width, height, true)
     }
 
-    fun uploadReport(location: LatLng, description: String, bitmap: Bitmap?, wildBoar: ArrayList<Int>, dead: Boolean, region: String, subregion: String, borough: String): Task<Void> {
+    fun uploadReport(location: LatLng, description: String, bitmap: Bitmap?, wildBoar: ArrayList<Int>, dead: Boolean, region: String, subregion: String, borough: String): Task<Void>? {
         val locationGeoPoint = GeoPoint(location.latitude, location.longitude)
         val firebaseRef = db.collection("pendingReports").document()
         val user = FirebaseAuth.getInstance().currentUser
         Log.d("User", user?.uid.toString())
+        if(user != null){
+            if (bitmap == null) {
 
-        if (bitmap == null) {
+                val report = Report(
+                        firebaseRef.id,
+                        user.uid,
+                        wildBoar,
+                        dead,
+                        locationGeoPoint,
+                        region,
+                        subregion,
+                        borough,
+                        description,
+                        Timestamp.now(),
+                        "brak"
+                )
+                return firebaseRef.set(report)
+                        .addOnSuccessListener {
+                            Log.d(TAG, "DocumentSnapshot added with ID: ${firebaseRef.id}")
+                        }
+                        .addOnFailureListener { e ->
+                            Log.w(TAG, "Error adding document", e)
+                        }
+            } else {
+                val report = Report(
+                        firebaseRef.id,
+                        user.uid,
+                        wildBoar,
+                        dead,
+                        locationGeoPoint,
+                        region,
+                        subregion,
+                        borough,
+                        description,
+                        Timestamp.now(),
+                        firebaseRef.id
+                )
+                val storageRef = storage.reference
+                val pictureRef = storageRef.child("photos/" + firebaseRef.id + ".jpg")
+                val baos = ByteArrayOutputStream()
 
-            val report = Report(
-                    firebaseRef.id,
-                    user!!.uid,
-                    wildBoar,
-                    dead,
-                    locationGeoPoint,
-                    region,
-                    subregion,
-                    borough,
-                    description,
-                    Timestamp.now(),
-                    "brak"
-            )
-            return firebaseRef.set(report)
-                    .addOnSuccessListener {
-                        Log.d(TAG, "DocumentSnapshot added with ID: ${firebaseRef.id}")
-                    }
-                    .addOnFailureListener { e ->
-                        Log.w(TAG, "Error adding document", e)
-                    }
-        } else {
-            val report = Report(
-                    firebaseRef.id,
-                    user!!.uid,
-                    wildBoar,
-                    dead,
-                    locationGeoPoint,
-                    region,
-                    subregion,
-                    borough,
-                    description,
-                    Timestamp.now(),
-                    firebaseRef.id
-            )
-            val storageRef = storage.reference
-            val pictureRef = storageRef.child("photos/" + firebaseRef.id + ".jpg")
-            val baos = ByteArrayOutputStream()
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+                val data = baos.toByteArray()
 
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-            val data = baos.toByteArray()
+                return pictureRef.putBytes(data)
+                        .addOnSuccessListener {
+                            Log.d(TAG, "Picture send id:" + firebaseRef.id)
+                        }.addOnFailureListener { e ->
+                            Log.w(TAG, "Error sending picture", e)
+                        }.continueWithTask {
+                            firebaseRef.set(report)
+                                    .addOnSuccessListener {
+                                        Log.d(TAG, "DocumentSnapshot added with ID: ${firebaseRef.id}")
+                                    }
+                                    .addOnFailureListener { e ->
+                                        Log.w(TAG, "Error adding document", e)
+                                    }
 
-            return pictureRef.putBytes(data)
-                    .addOnSuccessListener {
-                        Log.d(TAG, "Picture send id:" + firebaseRef.id)
-                    }.addOnFailureListener { e ->
-                        Log.w(TAG, "Error sending picture", e)
-                    }.continueWithTask {
-                        firebaseRef.set(report)
-                                .addOnSuccessListener {
-                                    Log.d(TAG, "DocumentSnapshot added with ID: ${firebaseRef.id}")
-                                }
-                                .addOnFailureListener { e ->
-                                    Log.w(TAG, "Error adding document", e)
-                                }
-
-                    }
+                        }
+            }
         }
+        else return null;
+
+
     }
 
     fun deleteReport(raportId: String): Task<Void> {

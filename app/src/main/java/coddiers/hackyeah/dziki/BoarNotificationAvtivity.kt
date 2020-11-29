@@ -111,6 +111,10 @@ class BoarNotificationAvtivity : AppCompatActivity() {
         topAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.accept -> {
+                    Log.d("BoarNotificationAvtivity",voivodeshipEditText.text.toString())
+                    Log.d("BoarNotificationAvtivity",boroughEditText.text.toString())
+                    intentToMap.putExtra("region", voivodeshipEditText.text.toString())
+                    intentToMap.putExtra("subregion", boroughEditText.text.toString())
                     intentToMap.putExtra("description", " " + descritpionEditText.text.toString())
                     startActivity(intentToMap)
                     true
