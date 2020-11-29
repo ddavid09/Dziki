@@ -1,6 +1,7 @@
 package coddiers.hackyeah.dziki.ui.map
 
 import android.Manifest
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -67,6 +68,7 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
         MainActivity.btn.visibility = View.VISIBLE
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
         return inflater.inflate(R.layout.fragment_map, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

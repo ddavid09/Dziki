@@ -56,6 +56,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.title = "Mapa"
         viewModel.selectedItem.observe(this, Observer { item ->
             Log.w("Passing", "Przekazano: $item")
         })
@@ -84,19 +85,23 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.navigation_info -> {
                     var intent = Intent(this, InfoSliderActivity::class.java)
+                    this.title = ""
                     startActivity(intent)
                     true
                 }
                 R.id.navigation_map -> {
                     fragment = MapFragment();
+                    this.title = "Mapa"
                     replaceFragment(fragment)
                     true
                 }R.id.navigation_dashboard -> {
-                    fragment = DashboardFragment();
+                    fragment = NotificationsFragment();
                     replaceFragment(fragment)
+                    this.title = "Zgłoszenia"
                     true
                 }R.id.navigation_notifications -> {
-                    fragment = NotificationsFragment();
+                    fragment = DashboardFragment();
+                    this.title = "Przesłane"
                     replaceFragment(fragment)
                     true
                 }
