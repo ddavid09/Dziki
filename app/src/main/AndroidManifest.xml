@@ -42,7 +42,8 @@
 
 
         <activity android:name=".ui.ChooseMarkerDetailsActivity"
-            android:theme="@style/Theme.AppCompat.Translucent"/>
+            android:theme="@style/Theme.Dziki.NO_FUCKING_ACTION_BAR"/>
+<!--            android:theme="@style/Theme.AppCompat.Translucent"/>-->
         <activity android:name=".ui.notifications.DetailsActivity" />
         <activity android:name=".ui.dashboard.MapToApplicationActivity" />
         <activity
