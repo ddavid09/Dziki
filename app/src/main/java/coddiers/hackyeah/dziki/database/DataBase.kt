@@ -3,7 +3,6 @@ package coddiers.hackyeah.dziki.database
 import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import coddiers.hackyeah.dziki.R
@@ -85,6 +84,20 @@ class DataBase() {
         return MLreport
     }
 
+    fun getResizedBitmap(image: Bitmap, maxSize: Int): Bitmap? {
+        var width = image.width
+        var height = image.height
+        val bitmapRatio = width.toFloat() / height.toFloat()
+        if (bitmapRatio > 1) {
+            width = maxSize
+            height = (width / bitmapRatio).toInt()
+        } else {
+            height = maxSize
+            width = (height * bitmapRatio).toInt()
+        }
+        return Bitmap.createScaledBitmap(image, width, height, true)
+    }
+
     fun uploadReport(location: LatLng, description: String, bitmap: Bitmap?, wildBoar: ArrayList<Int>, dead: Boolean, region: String, subregion: String, borough: String): Task<Void> {
         val locationGeoPoint = GeoPoint(location.latitude, location.longitude)
         val firebaseRef = db.collection("pendingReports").document()
@@ -130,8 +143,10 @@ class DataBase() {
             val storageRef = storage.reference
             val pictureRef = storageRef.child("photos/" + firebaseRef.id + ".jpg")
             val baos = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 0, baos)
+
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
             val data = baos.toByteArray()
+
             return pictureRef.putBytes(data)
                     .addOnSuccessListener {
                         Log.d(TAG, "Picture send id:" + firebaseRef.id)
@@ -209,7 +224,8 @@ class DataBase() {
             val localFile = File.createTempFile("image_" + report.ID, "jpg")
 
             pictureRef.getFile(localFile).addOnSuccessListener {
-                liveBitmap.value = BitmapFactory.decodeFile(localFile.absolutePath)
+                liveBitmap.value = getResizedBitmap(BitmapFactory.decodeFile(localFile.absolutePath),50)
+
                 Log.w(TAG, "Photo getting success.")
                 // Local temp file has been created
             }.addOnFailureListener {
