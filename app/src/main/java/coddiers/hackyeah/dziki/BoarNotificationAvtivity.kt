@@ -25,7 +25,6 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 
 class BoarNotificationAvtivity : AppCompatActivity() {
-    private lateinit var cityEditText: EditText
     private lateinit var boroughEditText: EditText
     private lateinit var voivodeshipEditText: EditText
     private lateinit var descritpionEditText: EditText
@@ -64,7 +63,6 @@ class BoarNotificationAvtivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_boar_notification_avtivity)
-        cityEditText = findViewById(R.id.city_text_view)
         boroughEditText = findViewById(R.id.borough_text_view)
         voivodeshipEditText = findViewById(R.id.voivodeship_text_view)
         sweetPhotoOfPiggy = findViewById(R.id.sweetPhotoOfPiggy)
@@ -95,14 +93,7 @@ class BoarNotificationAvtivity : AppCompatActivity() {
         }
         intentToMap = Intent(this, MapToApplicationActivity::class.java)
 
-        cityEditText.setOnKeyListener(View.OnKeyListener { _, keyCode, keyevent ->
-            if (keyCode == KeyEvent.KEYCODE_ENTER && keyevent.action == KeyEvent.ACTION_UP) {
-                getAddress(cityEditText.text.toString())
-                hideKeyboard(this)
-                return@OnKeyListener true
-            }
-            false
-        })
+
 
         topAppBar.setNavigationOnClickListener {
             finish();
@@ -199,7 +190,6 @@ class BoarNotificationAvtivity : AppCompatActivity() {
 
         try{
             address = coder.getFromLocation(location!!.latitude, location.longitude, 1)
-            cityEditText.setText("" + address[0].locality)
             boroughEditText.setText("" + address[0].subAdminArea)
             voivodeshipEditText.setText(address[0].adminArea)
             intentToMap.putExtra("lng", location.longitude.toString())

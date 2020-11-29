@@ -71,7 +71,7 @@ class NotificationsFragment : Fragment() {
         var districts = resources.getStringArray(R.array.dolnoslaskie)
         val voivodeshipAdapter = ArrayAdapter(
             requireContext(),
-            android.R.layout.simple_spinner_item,
+            android.R.layout.simple_spinner_dropdown_item,
             voivodeships
         )
         voivodeshipSpinner.adapter = voivodeshipAdapter
