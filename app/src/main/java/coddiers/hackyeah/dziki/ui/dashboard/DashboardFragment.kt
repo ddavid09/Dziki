@@ -13,11 +13,17 @@ import androidx.lifecycle.Observer
 import coddiers.hackyeah.dziki.MainActivity
 import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.DataBase
+import kotlinx.android.synthetic.main.activity_choose_marker_details.*
 import kotlinx.android.synthetic.main.fragment_dashboard.*
+import com.google.firebase.Timestamp
+
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class DashboardFragment : Fragment() {
-    data class Report(var name: String, var status:String, var ID: String, var image: Bitmap)
+    data class Report(var data: Timestamp,var name: String, var status:String, var ID: String, var image: Bitmap)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -56,9 +62,10 @@ class DashboardFragment : Fragment() {
                                     }
                                 }
                                 if(!exist){
-                                    arrReport.add(Report(report.description, status, report.ID ,bitmap ))
+                                    arrReport.add(Report(report.timestamp, report.region, report.subregion, report.ID , bitmap ))
                                 }else{
-                                    arrReport[arrReport.indexOf(elementToRemove)]=Report(report.description, status,report.ID ,bitmap )
+                                    arrReport.remove(elementToRemove )
+                                    arrReport.add(Report(report.timestamp, report.region, report.subregion, report.ID , bitmap  ))
                                 }
                                 Log.d("bitmapa",arrReport.toString())
                                 listView.adapter = CustomAdaptor(requireContext(), arrReport)
@@ -78,9 +85,11 @@ class DashboardFragment : Fragment() {
 
     class CustomAdaptor(var context: Context, private var report: ArrayList<Report>) : BaseAdapter() {
         private inner class ViewHolder(row: View?){
-            var txtName: TextView = row?.findViewById(R.id.textName) as TextView
-            var statusName: TextView = row?.findViewById(R.id.textStatus) as TextView
-            var ivImage: ImageView = row?.findViewById(R.id.iveImgae) as ImageView
+            var data: TextView = row?.findViewById(R.id.data_txt) as TextView
+            var wojewodztwo: TextView = row?.findViewById(R.id.item_wojewodztwo_txt) as TextView
+            var powiatName: TextView = row?.findViewById(R.id.item_powiat_txt) as TextView
+            var ivImage: ImageView = row?.findViewById(R.id.imageinput) as ImageView
+
         }
 
         override fun getCount(): Int {
@@ -111,8 +120,16 @@ class DashboardFragment : Fragment() {
 
 
             val report: Report = getItem(position) as Report
-            viewHolder.txtName.text = report.name
-            viewHolder.statusName.text = report.status
+
+            var date = report.data.toDate()
+            val pattern = "dd-MM-yyyy hh:mm"
+            val simpleDateFormat = SimpleDateFormat(pattern)
+            val toPrintDate = simpleDateFormat.format(date)
+
+            
+            viewHolder.data.text = toPrintDate
+            viewHolder.wojewodztwo.text = report.name
+            viewHolder.powiatName.text = report.status
             viewHolder.ivImage.setImageBitmap(report.image)
 
             return view as View

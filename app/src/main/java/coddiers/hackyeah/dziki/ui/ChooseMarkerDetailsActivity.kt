@@ -44,7 +44,7 @@ class ChooseMarkerDetailsActivity : AppCompatActivity() {
                 var date = it.timestamp.toDate()
                 val pattern = "dd-MM-yyyy hh:mm"
                 val simpleDateFormat = SimpleDateFormat(pattern)
-                val toPrintDate = simpleDateFormat.format(Date())
+                val toPrintDate = simpleDateFormat.format(date)
 
                 report_data.text = toPrintDate
                 vojewudztwo.text = it.region
