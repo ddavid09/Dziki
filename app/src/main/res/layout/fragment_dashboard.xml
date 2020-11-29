@@ -6,4 +6,9 @@
     android:orientation="vertical"
     android:layout_gravity="center_vertical"
     android:gravity="center">
+
+    <ListView
+        android:id="@+id/reportsUserListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

@@ -1,17 +1,26 @@
 package coddiers.hackyeah.dziki.ui.dashboard
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.BaseAdapter
+import android.widget.ImageView
+import android.widget.ListView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import coddiers.hackyeah.dziki.MainActivity
 import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.DataBase
 import coddiers.hackyeah.dziki.database.Report
+import coddiers.hackyeah.dziki.ui.notifications.NotificationsFragment
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.GeoPoint
+import kotlinx.android.synthetic.main.fragment_dashboard.*
+import kotlinx.android.synthetic.main.fragment_notifications.*
 
 
 class DashboardFragment : Fragment() {
@@ -43,6 +52,96 @@ class DashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         DataBase().getUserReports().observe( viewLifecycleOwner, Observer { arrayListOfUserReports ->  logAllUserReports(arrayListOfUserReports)})
+
+
+        var listView = reportsUserListView as ListView
+        var arrReport: ArrayList<NotificationsFragment.Report> = ArrayList()
+        listView.adapter = CustomAdaptor(requireContext(), arrReport)
+
+        val userReports = DataBase().getUserReports()
+        userReports.observe(viewLifecycleOwner, Observer { reportsList ->
+            arrReport.clear()
+            if (reportsList!=null){
+                for (report in reportsList) {
+                    DataBase().getPhoto(report, resources).observe(
+                        viewLifecycleOwner,
+                        Observer { bitmap ->
+                            if (bitmap != null) {
+                                var exist:Boolean = false;
+                                var elementToRemove: NotificationsFragment.Report? = null
+                                for(reportItem in arrReport){
+                                    if(reportItem.name==report.ID){
+                                        exist=true;
+                                        elementToRemove = reportItem
+                                    }
+                                }
+                                if(exist==false){
+                                    arrReport.add(NotificationsFragment.Report(report.ID, bitmap))
+                                }else{
+                                    arrReport.remove(elementToRemove )
+                                    arrReport.add(NotificationsFragment.Report(report.ID, bitmap))
+                                }
+                                Log.d("bitmapa",arrReport.toString())
+                                listView.adapter = CustomAdaptor(requireContext(), arrReport)
+                                Log.d("Adapter", report.toString())
+
+                            } else {
+                                Log.d("Adapter", "Bitmapa Jest nullem")
+                            }
+                        })
+                }
+            }else{
+                Log.d("Adapter", "ELSE")
+            }
+        })
+        listView.adapter = CustomAdaptor(requireContext(), arrReport)
+
+    }
+
+    class CustomAdaptor(var context: Context, var report: ArrayList<NotificationsFragment.Report>) : BaseAdapter() {
+
+        private inner class ViewHolder(row: View?){
+            var txtName: TextView
+            var ivImgae: ImageView
+
+            init {
+                this.txtName = row?.findViewById(R.id.textName) as TextView
+                this.ivImgae = row?.findViewById(R.id.iveImgae) as ImageView
+            }
+        }
+
+        override fun getCount(): Int {
+            return report.count()
+        }
+
+        override fun getItem(position: Int): Any {
+            return report.get(position)
+
+        }
+
+        override fun getItemId(position: Int): Long {
+            return position.toLong()
+        }
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            var view: View?
+            var viewHolder: ViewHolder
+            if (convertView == null){
+                var layout = LayoutInflater.from(context)
+                view = layout.inflate(R.layout.report_item, parent, false)
+                viewHolder = ViewHolder(view)
+                view.tag = viewHolder
+            }else{
+                view = convertView
+                viewHolder = view.tag as ViewHolder
+            }
+
+            var report: NotificationsFragment.Report = getItem(position) as NotificationsFragment.Report
+            viewHolder.txtName.text = report.name
+            viewHolder.ivImgae.setImageBitmap(report.image)
+
+            return view as View
+        }
     }
 
     private fun logAllUserReports(list: ArrayList<Report>){
