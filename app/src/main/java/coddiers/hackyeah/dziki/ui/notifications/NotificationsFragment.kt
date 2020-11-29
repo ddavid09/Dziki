@@ -19,9 +19,12 @@ import androidx.lifecycle.Observer
 import coddiers.hackyeah.dziki.MainActivity
 import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.DataBase
+import coddiers.hackyeah.dziki.ui.dashboard.DashboardFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.google.firebase.Timestamp
 import kotlinx.android.synthetic.main.fragment_notifications.*
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -33,7 +36,7 @@ class NotificationsFragment : Fragment() {
     var positions = arrayOf("test","test")
     private var dead: Boolean? = null
 
-    data class Report(var name: String, var status:String, var ID: String, var image: Bitmap)
+    data class Report(var data: Timestamp, var name: String, var status:String, var ID: String, var image: Bitmap)
         override fun onCreateView(
 
             inflater: LayoutInflater,
@@ -122,10 +125,12 @@ class NotificationsFragment : Fragment() {
         }
 
         class CustomAdaptor(var context: Context, private var report: ArrayList<Report>) : BaseAdapter() {
-            private inner class ViewHolder(row: View?) {
-                var txtName: TextView = row?.findViewById(R.id.textName) as TextView
-                var statusName: TextView = row?.findViewById(R.id.textStatus) as TextView
-                var ivImage: ImageView = row?.findViewById(R.id.iveImgae) as ImageView
+            private inner class ViewHolder(row: View?){
+                var data: TextView = row?.findViewById(R.id.data_txt) as TextView
+                var wojewodztwo: TextView = row?.findViewById(R.id.item_wojewodztwo_txt) as TextView
+                var powiatName: TextView = row?.findViewById(R.id.item_powiat_txt) as TextView
+                var ivImage: ImageView = row?.findViewById(R.id.imageinput) as ImageView
+
             }
 
             override fun getCount(): Int {
@@ -144,20 +149,28 @@ class NotificationsFragment : Fragment() {
             override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
                 val view: View?
                 val viewHolder: ViewHolder
-                if (convertView == null) {
+                if (convertView == null){
                     val layout = LayoutInflater.from(context)
                     view = layout.inflate(R.layout.report_item, parent, false)
                     viewHolder = ViewHolder(view)
                     view.tag = viewHolder
-                } else {
+                }else{
                     view = convertView
                     viewHolder = view.tag as ViewHolder
                 }
 
 
                 val report: Report = getItem(position) as Report
-                viewHolder.txtName.text = report.name
-                viewHolder.statusName.text = report.status
+
+                var date = report.data.toDate()
+                val pattern = "dd-MM-yyyy hh:mm"
+                val simpleDateFormat = SimpleDateFormat(pattern)
+                val toPrintDate = simpleDateFormat.format(date)
+
+
+                viewHolder.data.text = toPrintDate
+                viewHolder.wojewodztwo.text = report.name
+                viewHolder.powiatName.text = report.status
                 viewHolder.ivImage.setImageBitmap(report.image)
 
                 return view as View
@@ -196,10 +209,10 @@ class NotificationsFragment : Fragment() {
                                         }
                                     }
                                     if(!exist){
-                                        arrReport.add(Report(report.description, status, report.ID ,bitmap ))
+                                        arrReport.add(Report(report.timestamp, report.region, report.subregion, report.ID , bitmap ))
                                     }else{
                                         arrReport.remove(elementToRemove )
-                                        arrReport.add(Report(report.description, status, report.ID ,bitmap ))
+                                        arrReport.add(Report(report.timestamp, report.region, report.subregion, report.ID , bitmap ))
                                     }
                                     Log.d("bitmapa",arrReport.toString())
                                     listView.adapter = CustomAdaptor(requireContext(), arrReport)
