@@ -1,7 +1,6 @@
 package coddiers.hackyeah.dziki.ui.map
 
 import android.Manifest
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -10,7 +9,6 @@ import android.graphics.Canvas
 import android.location.Location
 import android.location.LocationListener
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,9 +36,9 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
     private lateinit var lastLocation: Location
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private var creating: Boolean = true
-    private var counterCliks: Int = 0;
-    private var locationClicked: LatLng? = null;
-    private var lastMarker: Marker? = null;
+    private var counterClicks: Int = 0
+    private var locationClicked: LatLng? = null
+    private var lastMarker: Marker? = null
 
     companion object{private const val LOCATION_PERMISSION_REQUEST_CODE = 1}
 
@@ -137,15 +135,15 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
         }
     }
 
-        fun returnMarkerIcon(snippet: String?) : Int {
-            return when (snippet) {
-                "Martwy dzik" -> R.drawable.ic_dead_boar_marker
-                "Żywy dzik" -> R.drawable.ic_lives_boar_marker
-                else -> 0
-            }
+    private fun returnMarkerIcon(snippet: String?) : Int {
+        return when (snippet) {
+            "Martwy dzik" -> R.drawable.ic_dead_boar_marker
+            "Żywy dzik" -> R.drawable.ic_lives_boar_marker
+            else -> 0
         }
+    }
 
-    fun returnBiggerMarkerIcon(snippet: String?) : Int {
+    private fun returnBiggerMarkerIcon(snippet: String?) : Int {
         return when (snippet) {
             "Martwy dzik" -> R.drawable.ic_dead_boar_marker_big
             "Żywy dzik" -> R.drawable.ic_lives_boar_marker_big
@@ -155,12 +153,12 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
 
 
     override fun onMarkerClick(p0: Marker?): Boolean {
-        counterCliks++
+        counterClicks++
         if((p0?.position!! == locationClicked)){
-            var intent = Intent(context, ChooseMarkerDetailsActivity::class.java)
-            intent.putExtra("long", p0?.position!!.longitude)
-            intent.putExtra("lat", p0?.position!!.latitude)
-            counterCliks = 0;
+            val intent = Intent(context, ChooseMarkerDetailsActivity::class.java)
+            intent.putExtra("long", p0.position!!.longitude)
+            intent.putExtra("lat", p0.position!!.latitude)
+            counterClicks = 0
             locationClicked = null
             lastMarker?.hideInfoWindow()
             lastMarker?.setIcon(getBitmapFromVectorDrawable(requireContext(), returnMarkerIcon(lastMarker?.snippet)))
@@ -168,11 +166,11 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
         }else{
             lastMarker?.setIcon(getBitmapFromVectorDrawable(requireContext(), returnMarkerIcon(lastMarker?.snippet)))
             lastMarker?.hideInfoWindow()
-            map.animateCamera(CameraUpdateFactory.newLatLngZoom(p0?.position, 17f))
-            p0?.showInfoWindow()
-            p0?.setIcon((getBitmapFromVectorDrawable(requireContext(), returnBiggerMarkerIcon(p0?.snippet))))
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(p0.position, 17f))
+            p0.showInfoWindow()
+            p0.setIcon((getBitmapFromVectorDrawable(requireContext(), returnBiggerMarkerIcon(p0.snippet))))
             lastMarker = p0
-            locationClicked = p0?.position
+            locationClicked = p0.position
         }
         return true
 
