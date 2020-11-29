@@ -72,7 +72,6 @@ class NotificationsFragment : Fragment() {
                 requireContext(),
                 Manifest.permission.ACCESS_COARSE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED) {
-            return
         }
 
 
@@ -198,12 +197,14 @@ class NotificationsFragment : Fragment() {
             val notifications = DataBase().getReports(dead, voivodeship, district, "")
             notifications.observe(viewLifecycleOwner, Observer { reportsList ->
                 if (reportsList != null) {
+                    arrReport.clear()
                     for (report in reportsList) {
                         DataBase().getPhoto(report, resources).observe(
                             viewLifecycleOwner,
                             Observer { bitmap ->
                                 if (bitmap != null) {
                                     arrReport.add(Report(report.description, bitmap))
+                                   // Log.d("bitmapa",arrReport.)
                                     listView.adapter = CustomAdaptor(requireContext(), arrReport)
                                     Log.d("Adapter", report.toString())
 
