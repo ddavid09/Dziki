@@ -1,29 +1,32 @@
 package coddiers.hackyeah.dziki.ui.dashboard
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.AdapterView.OnItemClickListener
+import android.widget.BaseAdapter
+import android.widget.ImageView
+import android.widget.ListView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import coddiers.hackyeah.dziki.MainActivity
 import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.DataBase
-import kotlinx.android.synthetic.main.activity_choose_marker_details.*
-import kotlinx.android.synthetic.main.fragment_dashboard.*
+import coddiers.hackyeah.dziki.ui.ChooseMarkerDetailsActivity
 import com.google.firebase.Timestamp
-
+import com.google.firebase.firestore.GeoPoint
+import kotlinx.android.synthetic.main.fragment_dashboard.*
 import java.text.SimpleDateFormat
-import java.util.*
-import kotlin.collections.ArrayList
 
 
 class DashboardFragment : Fragment() {
-    data class Report(var data: Timestamp,var name: String, var status:String, var ID: String, var image: Bitmap)
+    data class Report(var data: Timestamp, var name: String, var status: String, var ID: String, var image: Bitmap, var locationGeoPoint: GeoPoint)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -39,6 +42,7 @@ class DashboardFragment : Fragment() {
         val listView = reportsUserListView as ListView
         val arrReport: ArrayList<Report> = ArrayList()
         listView.adapter = CustomAdaptor(requireContext(), arrReport)
+
 
         val userReports = DataBase().getUserReports()
         userReports.observe(viewLifecycleOwner, Observer { reportsList ->
@@ -62,13 +66,23 @@ class DashboardFragment : Fragment() {
                                     }
                                 }
                                 if(!exist){
-                                    arrReport.add(Report(report.timestamp, report.region, report.subregion, report.ID , bitmap ))
+                                    arrReport.add(Report(report.timestamp, report.region, report.subregion, report.ID , bitmap, report.locationGeoPoint ))
                                 }else{
-                                    arrReport.remove(elementToRemove )
-                                    arrReport.add(Report(report.timestamp, report.region, report.subregion, report.ID , bitmap  ))
+                                    arrReport[arrReport.indexOf(elementToRemove)]=Report(report.timestamp, report.region, report.subregion, report.ID, bitmap, report.locationGeoPoint)
                                 }
                                 Log.d("bitmapa",arrReport.toString())
                                 listView.adapter = CustomAdaptor(requireContext(), arrReport)
+                                listView.onItemClickListener = OnItemClickListener { parent, view, position, id ->
+//            val intent = Intent(context, SendMessage::class.java)
+//            val message = "abc"
+//            intent.putExtra(EXTRA_MESSAGE, message)
+//            startActivity(intent)
+                                    Log.d("DashboardFragment",parent.toString())
+                                    Log.d("DashboardFragment",view.toString())
+                                    Log.d("DashboardFragment",position.toString())
+                                    Log.d("DashboardFragment",id.toString())
+
+                                }
                                 Log.d("Adapter", report.toString())
 
                             } else {
@@ -81,6 +95,7 @@ class DashboardFragment : Fragment() {
             }
         })
         listView.adapter = CustomAdaptor(requireContext(), arrReport)
+
     }
 
     class CustomAdaptor(var context: Context, private var report: ArrayList<Report>) : BaseAdapter() {
@@ -131,6 +146,14 @@ class DashboardFragment : Fragment() {
             viewHolder.wojewodztwo.text = report.name
             viewHolder.powiatName.text = report.status
             viewHolder.ivImage.setImageBitmap(report.image)
+            view?.setOnClickListener {
+                val intent = Intent(context, ChooseMarkerDetailsActivity::class.java)
+                intent.putExtra("long", report.locationGeoPoint.longitude)
+                intent.putExtra("lat",  report.locationGeoPoint.latitude)
+                intent.putExtra("button",  true)
+                parent?.context?.startActivity(intent)
+            }
+
 
             return view as View
         }
