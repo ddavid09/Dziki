@@ -7,8 +7,7 @@ public enum ModelObject {
     ONE(R.string.one, R.layout.view_one),
     TWO(R.string.two, R.layout.view_two),
     TREE(R.string.tree, R.layout.view_tree),
-    FOUR(R.string.four, R.layout.view_four),
-    FIVE(R.string.five, R.layout.view_five);
+    FOUR(R.string.four, R.layout.view_four);
 
     private int mTitleResId;
     private int mLayoutResId;
