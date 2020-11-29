@@ -40,6 +40,9 @@
             </intent-filter>
         </service>
 
+
+        <activity android:name=".ui.ChooseMarkerDetailsActivity"
+            android:theme="@style/Theme.AppCompat.Translucent"/>
         <activity android:name=".ui.notifications.DetailsActivity" />
         <activity android:name=".ui.dashboard.MapToApplicationActivity" />
         <activity

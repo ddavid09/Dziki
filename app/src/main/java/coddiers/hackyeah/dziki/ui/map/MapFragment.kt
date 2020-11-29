@@ -2,12 +2,14 @@ package coddiers.hackyeah.dziki.ui.map
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.location.Location
 import android.location.LocationListener
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +23,7 @@ import coddiers.hackyeah.dziki.ItemViewModel
 import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.DataBase
 import coddiers.hackyeah.dziki.database.Report
+import coddiers.hackyeah.dziki.ui.ChooseMarkerDetailsActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -34,6 +37,9 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
     private lateinit var lastLocation: Location
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private var creating: Boolean = true
+    private var counterCliks: Int = 0;
+    private var locationClicked: LatLng? = null;
+    private var lastMarker: Marker? = null;
 
     companion object{private const val LOCATION_PERMISSION_REQUEST_CODE = 1}
 
@@ -58,7 +64,7 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        MainActivity.btn.visibility = View.VISIBLE;
+        MainActivity.btn.visibility = View.VISIBLE
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
         return inflater.inflate(R.layout.fragment_map, container, false)
     }
@@ -109,29 +115,70 @@ class MapFragment : Fragment(), LocationListener, OnMapReadyCallback, GoogleMap.
     }
 
     private fun setMarkers(listOfReports: ArrayList<Report>) {
-        for (report in listOfReports ){
+        for (report in listOfReports) {
             val markerOptions = MarkerOptions().position(
-                LatLng(
-                    report.locationGeoPoint.latitude,
-                    report.locationGeoPoint.longitude
-                )
+                    LatLng(
+                            report.locationGeoPoint.latitude,
+                            report.locationGeoPoint.longitude
+                    )
             )
-            markerOptions.title(report.description)
-            if(report.dead)
+            markerOptions.title("Wybierz")
+            if (report.dead) {
                 markerOptions.icon(getBitmapFromVectorDrawable(requireContext(), R.drawable.ic_dead_boar_marker))
-            else
+                markerOptions.snippet("Martwy dzik")
+                map.addMarker(markerOptions)
+            } else {
                 markerOptions.icon(getBitmapFromVectorDrawable(requireContext(), R.drawable.ic_lives_boar_marker))
-            map.addMarker(markerOptions)
+                markerOptions.snippet("Żywy dzik")
+                map.addMarker(markerOptions)
+            }
         }
     }
 
+        fun returnMarkerIcon(snippet: String?) : Int {
+            return when (snippet) {
+                "Martwy dzik" -> R.drawable.ic_dead_boar_marker
+                "Żywy dzik" -> R.drawable.ic_lives_boar_marker
+                else -> 0
+            }
+        }
+
+    fun returnBiggerMarkerIcon(snippet: String?) : Int {
+        return when (snippet) {
+            "Martwy dzik" -> R.drawable.ic_dead_boar_marker_big
+            "Żywy dzik" -> R.drawable.ic_lives_boar_marker_big
+            else -> 0
+        }
+    }
+
+
     override fun onMarkerClick(p0: Marker?): Boolean {
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(p0?.position, 17f))
-        return false
+        counterCliks++
+        if((p0?.position!! == locationClicked)){
+            var intent = Intent(context, ChooseMarkerDetailsActivity::class.java)
+            intent.putExtra("long", p0?.position!!.longitude)
+            intent.putExtra("lat", p0?.position!!.latitude)
+            counterCliks = 0;
+            locationClicked = null
+            lastMarker?.hideInfoWindow()
+            lastMarker?.setIcon(getBitmapFromVectorDrawable(requireContext(), returnMarkerIcon(lastMarker?.snippet)))
+            startActivity(intent)
+        }else{
+            lastMarker?.setIcon(getBitmapFromVectorDrawable(requireContext(), returnMarkerIcon(lastMarker?.snippet)))
+            lastMarker?.hideInfoWindow()
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(p0?.position, 17f))
+            p0?.showInfoWindow()
+            p0?.setIcon((getBitmapFromVectorDrawable(requireContext(), returnBiggerMarkerIcon(p0?.snippet))))
+            lastMarker = p0
+            locationClicked = p0?.position
+        }
+        return true
+
     }
 
     override fun onCameraMove() {
         if(!creating) viewModel.setCurrentLocation(map.cameraPosition.target)
+
     }
 
     override fun onLocationChanged(location: Location?) {
