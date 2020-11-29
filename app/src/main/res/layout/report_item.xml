@@ -26,4 +26,14 @@
         android:text="Name"
         android:textStyle="bold"
         android:textSize="30sp"/>
+    <TextView
+        android:id="@+id/textStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/iveImgae"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="15dp"
+        android:layout_alignBottom="@id/iveImgae"
+        android:textSize="15dp"
+        android:text="Status" />
 </RelativeLayout>

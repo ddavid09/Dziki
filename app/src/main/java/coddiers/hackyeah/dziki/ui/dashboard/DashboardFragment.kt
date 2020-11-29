@@ -1,6 +1,7 @@
 package coddiers.hackyeah.dziki.ui.dashboard
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,12 +16,11 @@ import androidx.lifecycle.Observer
 import coddiers.hackyeah.dziki.MainActivity
 import coddiers.hackyeah.dziki.R
 import coddiers.hackyeah.dziki.database.DataBase
-import coddiers.hackyeah.dziki.ui.notifications.NotificationsFragment
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 
 class DashboardFragment : Fragment() {
-
+    data class Report(var name: String, var status:String, var ID: String, var image: Bitmap)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,7 +34,7 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val listView = reportsUserListView as ListView
-        val arrReport: ArrayList<NotificationsFragment.Report> = ArrayList()
+        val arrReport: ArrayList<Report> = ArrayList()
         listView.adapter = CustomAdaptor(requireContext(), arrReport)
 
         val userReports = DataBase().getUserReports()
@@ -42,23 +42,27 @@ class DashboardFragment : Fragment() {
             arrReport.clear()
             if (reportsList!=null){
                 for (report in reportsList) {
+                    val status: String = if (!report.dead) "Martwy"
+                    else "Żywy"
                     DataBase().getPhoto(report, resources).observe(
                         viewLifecycleOwner,
                         Observer { bitmap ->
+
                             if (bitmap != null) {
                                 var exist = false
-                                var elementToRemove: NotificationsFragment.Report? = null
+
+                                var elementToRemove: Report? = null
                                 for(reportItem in arrReport){
-                                    if(reportItem.name==report.ID){
+                                    if(reportItem.ID==report.ID){
                                         exist=true
                                         elementToRemove = reportItem
                                     }
                                 }
                                 if(!exist){
-                                    arrReport.add(NotificationsFragment.Report(report.ID, bitmap))
+                                    arrReport.add(Report(report.description, status, report.ID ,bitmap ))
                                 }else{
                                     arrReport.remove(elementToRemove )
-                                    arrReport.add(NotificationsFragment.Report(report.ID, bitmap))
+                                    arrReport.add(Report(report.description, status,report.ID ,bitmap ))
                                 }
                                 Log.d("bitmapa",arrReport.toString())
                                 listView.adapter = CustomAdaptor(requireContext(), arrReport)
@@ -76,9 +80,10 @@ class DashboardFragment : Fragment() {
         listView.adapter = CustomAdaptor(requireContext(), arrReport)
     }
 
-    class CustomAdaptor(var context: Context, private var report: ArrayList<NotificationsFragment.Report>) : BaseAdapter() {
+    class CustomAdaptor(var context: Context, private var report: ArrayList<Report>) : BaseAdapter() {
         private inner class ViewHolder(row: View?){
             var txtName: TextView = row?.findViewById(R.id.textName) as TextView
+            var statusName: TextView = row?.findViewById(R.id.textStatus) as TextView
             var ivImage: ImageView = row?.findViewById(R.id.iveImgae) as ImageView
         }
 
@@ -108,8 +113,10 @@ class DashboardFragment : Fragment() {
                 viewHolder = view.tag as ViewHolder
             }
 
-            val report: NotificationsFragment.Report = getItem(position) as NotificationsFragment.Report
+
+            val report: Report = getItem(position) as Report
             viewHolder.txtName.text = report.name
+            viewHolder.statusName.text = report.status
             viewHolder.ivImage.setImageBitmap(report.image)
 
             return view as View
