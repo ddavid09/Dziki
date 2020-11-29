@@ -165,6 +165,21 @@ class DataBase() {
         }
     }
 
+    fun deleteReport(raportId: String): Task<Void> {
+        val user = FirebaseAuth.getInstance().currentUser
+        Log.d("User", user?.uid.toString())
+        val firebaseRef = db.collection("pendingDelete").document(user?.uid.toString())
+        return firebaseRef.set(hashMapOf(
+                "raportID" to raportId,
+                "userID" to user?.uid.toString()
+        )).addOnSuccessListener {
+            Log.d(TAG, "DocumentSnapshot added with ID: ${firebaseRef.id}")
+        }
+        .addOnFailureListener { e ->
+            Log.w(TAG, "Error adding document", e)
+        }
+    }
+
     fun getReports(dead: Boolean?, region: String, subregion: String, commune: String): MutableLiveData<ArrayList<Report>> {
         //borough:String
         val MLreports: MutableLiveData<ArrayList<Report>> = MutableLiveData<ArrayList<Report>>()
